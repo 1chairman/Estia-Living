@@ -866,32 +866,32 @@
         αναλυτικά το μοντέλο μας, το κόστος και τις διαθέσιμες θέσεις.
       </p>
 
-      <form class="contact-form reveal" id="contactForm">
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mgonorkv" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Ονοματεπώνυμο</label>
-            <input type="text" id="name" placeholder="Γιώργος Παπαδόπουλος" required>
+            <input type="text" id="name" name="name" placeholder="Γιώργος Παπαδόπουλος" required>
           </div>
           <div class="form-group">
             <label for="age">Ηλικία</label>
-            <input type="number" id="age" placeholder="65" min="55" max="90">
+            <input type="number" id="age" name="age" placeholder="65" min="55" max="90">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="phone">Τηλέφωνο</label>
-            <input type="tel" id="phone" placeholder="+30 69X XXX XXXX">
+            <input type="tel" id="phone" name="phone" placeholder="+30 69X XXX XXXX" required>
           </div>
           <div class="form-group">
             <label for="email">Email (προαιρετικό)</label>
-            <input type="email" id="email" placeholder="email@example.com">
+            <input type="email" id="email" name="email" placeholder="email@example.com">
           </div>
         </div>
 
         <div class="form-group">
           <label for="interest">Πώς σε ενδιαφέρει;</label>
-          <select id="interest">
+          <select id="interest" name="interest">
             <option value="">Επίλεξε...</option>
             <option value="resident">Για τον εαυτό μου</option>
             <option value="family">Για μέλος της οικογένειάς μου</option>
@@ -902,8 +902,13 @@
 
         <div class="form-group">
           <label for="message">Σχόλια ή ερωτήσεις</label>
-          <textarea id="message" placeholder="Πες μας τι σε ενδιαφέρει περισσότερο..."></textarea>
+          <textarea id="message" name="message" placeholder="Πες μας τι σε ενδιαφέρει περισσότερο..."></textarea>
         </div>
+
+        <!-- Formspree honeypot spam filter -->
+        <input type="text" name="_gotcha" style="display:none">
+        <!-- Redirect after submission -->
+        <input type="hidden" name="_next" value="">
 
         <p class="form-note">
           Τα στοιχεία σου χρησιμοποιούνται αποκλειστικά για επικοινωνία σχετικά με το πρόγραμμα ΕΣΤΙΑ. 
@@ -943,20 +948,42 @@
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
 
-  // Form submit
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  // Formspree AJAX submit
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
+
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
 
     if (!name || !phone) {
       alert('Παρακαλώ συμπλήρωσε τουλάχιστον το όνομα και το τηλέφωνό σου.');
       return;
     }
 
-    this.style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
+    const btn = this.querySelector('.submit-btn');
+    btn.textContent = 'Αποστολή...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        this.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else {
+        btn.textContent = 'Αποστολή Στοιχείων';
+        btn.disabled = false;
+        alert('Κάτι πήγε στραβά. Παρακαλώ δοκίμασε ξανά ή επικοινώνησε μαζί μας στο estia.cohousing@gmail.com');
+      }
+    } catch (err) {
+      btn.textContent = 'Αποστολή Στοιχείων';
+      btn.disabled = false;
+      alert('Πρόβλημα σύνδεσης. Παρακαλώ δοκίμασε ξανά.');
+    }
   });
 </script>
 </body>
