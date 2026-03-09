@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ΕΣΤΙΑ — Ζούμε Μαζί</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAF7F2;
+    --terracotta: #C4673A;
+    --terracotta-light: #D4845C;
+    --olive: #6B7B4A;
+    --olive-light: #8A9B60;
+    --deep: #1E1A14;
+    --mid: #4A4035;
+    --muted: #8C7E6E;
+    --border: #DDD5C5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--deep);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    background: var(--deep);
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(30,26,20,0.92) 0%, rgba(30,26,20,0.55) 60%, rgba(30,26,20,0.3) 100%),
+      linear-gradient(to bottom, rgba(30,26,20,0.2) 0%, rgba(30,26,20,0.5) 100%);
+    z-index: 1;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.85;
+    z-index: 0;
+  }
+
+  /* Greek key decorative border */
+  .hero-border {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--terracotta), var(--olive), var(--terracotta));
+    z-index: 2;
+  }
+
+  nav {
+    position: relative;
+    z-index: 10;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--cream);
+  }
+
+  .logo span {
+    display: block;
+    font-size: 0.6rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    color: var(--terracotta-light);
+    margin-top: 2px;
+  }
+
+  .nav-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    border: 1px solid rgba(245,240,232,0.3);
+    padding: 0.6rem 1.4rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 3rem 2rem;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--terracotta-light);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.9s 0.3s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--terracotta-light);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.65);
+    max-width: 520px;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+
+  .hero-footer {
+    position: relative;
+    z-index: 10;
+    padding: 2rem 3rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    animation: fadeUp 1s 0.5s ease both;
+  }
+
+  .scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(245,240,232,0.4);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(245,240,232,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--terracotta-light);
+    animation: scrollAnim 2s 1.5s ease infinite;
+  }
+
+  /* ── SECTION BASE ── */
+  section { position: relative; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  /* ── PROBLEM / MISSION ── */
+  .mission-section {
+    background: var(--cream);
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .mission-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--deep);
+  }
+
+  .mission-headline strong {
+    font-weight: 600;
+    color: var(--terracotta);
+  }
+
+  .mission-body {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--mid);
+  }
+
+  .mission-body p + p { margin-top: 1.2rem; }
+
+  .mission-quote {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-left: 2px solid var(--terracotta);
+    background: rgba(196,103,58,0.06);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .mission-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--deep);
+  }
+
+  /* ── SERVICES ── */
+  .services-section {
+    background: var(--deep);
+  }
+
+  .services-section .section-label { color: var(--terracotta-light); }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+
+  .services-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--cream);
+    max-width: 500px;
+    line-height: 1.2;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: rgba(245,240,232,0.08);
+    border: 1px solid rgba(245,240,232,0.08);
+  }
+
+  .service-card {
+    background: var(--deep);
+    padding: 2.5rem;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--terracotta);
+    transition: height 0.4s ease;
+  }
+
+  .service-card:hover::before { height: 100%; }
+  .service-card:hover { background: rgba(245,240,232,0.03); }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(196,103,58,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.5);
+  }
+
+  /* ── ADVANTAGES ── */
+  .advantages-section {
+    background: var(--warm-white);
+  }
+
+  .adv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .adv-card {
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .adv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(30,26,20,0.08);
+  }
+
+  .adv-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(196,103,58,0.12);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .adv-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--deep);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .adv-text {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--olive);
+    overflow: hidden;
+  }
+
+  .vision-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 7rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .vision-label { color: rgba(245,240,232,0.6); }
+
+  .vision-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.15;
+  }
+
+  .vision-title em { font-style: italic; opacity: 0.7; }
+
+  .vision-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .vision-pillar {
+    padding: 1.5rem;
+    background: rgba(245,240,232,0.08);
+    border-radius: 2px;
+    border-left: 2px solid rgba(245,240,232,0.3);
+  }
+
+  .vision-pillar-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.6);
+    margin-bottom: 0.4rem;
+  }
+
+  .vision-pillar-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+
+  /* ── FORM ── */
+  .form-section {
+    background: var(--cream);
+  }
+
+  .form-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--deep);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .form-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-group label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.9rem 1rem;
+    color: var(--deep);
+    transition: border-color 0.3s;
+    outline: none;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--terracotta);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .submit-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    background: var(--terracotta);
+    color: var(--cream);
+    border: none;
+    padding: 1.1rem 3rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    align-self: stretch;
+  }
+
+  .submit-btn:hover {
+    background: var(--deep);
+    transform: translateY(-2px);
+  }
+
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    background: rgba(107,123,74,0.1);
+    border: 1px solid var(--olive-light);
+    border-radius: 4px;
+  }
+
+  .success-msg h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--olive);
+    margin-bottom: 0.5rem;
+  }
+
+  .success-msg p { color: var(--muted); font-size: 0.9rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    color: var(--cream);
+    font-weight: 600;
+  }
+
+  .footer-logo span {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: rgba(245,240,232,0.4);
+    margin-top: 2px;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(245,240,232,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ORNAMENT ── */
+  .ornament {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--terracotta);
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    opacity: 0.6;
+  }
+
+  /* ── DIVIDER ── */
+  .greek-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--terracotta);
+    margin: 2rem 0;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollAnim {
+    0%   { left: -100%; }
+    50%  { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  /* Scroll-reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav, .hero-content, .hero-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .mission-grid, .adv-grid, .vision-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .section-inner { padding: 4rem 1.5rem; }
+    .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=1800&q=80&auto=format&fit=crop" alt="Μεσογειακό τοπίο">
+  <div class="hero-bg"></div>
+  <div class="hero-border"></div>
+
+  <nav>
+    <div class="logo">
+      ΕΣΤΙΑ
+      <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+    </div>
+    <a href="#contact" class="nav-cta">Επικοινωνία</a>
+  </nav>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Συνεργατική Διαβίωση · Αθήνα, Ελλάδα</p>
+    <h1 class="hero-title">
+      Μετά τα 60,<br>
+      <em>η ζωή<br>ανθίζει.</em>
+    </h1>
+    <p class="hero-sub">
+      Προσφέρουμε αυτόνομη συστέγαση σε όμορφο και αμέριμνο περιβάλλον 
+      με εξαιρετική ποιότητα ζωής — γιατί τα καλύτερα χρόνια είναι μπροστά σου.
+    </p>
+  </div>
+
+  <div class="hero-footer">
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      Ανακάλυψε περισσότερα
+    </div>
+  </div>
+</section>
+
+<!-- ══ MISSION ══ -->
+<section class="mission-section">
+  <div class="section-inner">
+    <div class="mission-grid">
+      <div class="reveal">
+        <p class="section-label">Η Αποστολή μας</p>
+        <h2 class="mission-headline">
+          Η μοναξιά<br>
+          δεν είναι<br>
+          <strong>αναπόφευκτη.</strong>
+        </h2>
+        <div class="greek-divider"></div>
+      </div>
+      <div class="reveal">
+        <div class="mission-body">
+          <p>
+            Η έλλειψη διαθέσιμων σπιτιών σε καλή κατάσταση και ωραία τοποθεσία, 
+            η έλλειψη ποιοτικής υγειονομικής πρόσβασης και το αίσθημα μοναξιάς 
+            που φέρνει η πόλη μάς έδωσαν το κίνητρο να δράσουμε.
+          </p>
+          <p>
+            Τα τελευταία χρόνια ο μέσος όρος ποιοτικών χρόνων υγιούς ζωής 
+            αυξάνεται. Εμείς θέλουμε να σε βοηθήσουμε να τους ζήσεις στο έπακρο.
+          </p>
+          <div class="mission-quote">
+            <p>
+              «Αποστολή μας είναι να μετατρέψουμε τις δεκαετίες μετά τα 60 
+              στην πιο ποιοτική περίοδο της ζωής — με αυτονομία, ασφάλεια 
+              και χωρίς το άγχος της απομόνωσης.»
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services-section">
+  <div class="section-inner">
+    <div class="services-header">
+      <div>
+        <p class="section-label">Υπηρεσίες</p>
+        <h2 class="services-title reveal">Όλα όσα χρειάζεσαι, στον ίδιο χώρο.</h2>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🛜</div>
+        <p class="service-name">Υψηλή Σύνδεση</p>
+        <p class="service-desc">Οπτική ίνα υψηλής ταχύτητας σε όλο το χώρο — για να μένεις κοντά σε αυτούς που αγαπάς.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🏛️</div>
+        <p class="service-name">Κοινόχρηστοι Χώροι</p>
+        <p class="service-desc">Σαλόνι, τραπεζαρία, κήπος και βιβλιοθήκη — ο τόπος όπου οι τυχαίες συναντήσεις γίνονται φιλίες.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">💧</div>
+        <p class="service-name">Νερό & Κοινόχρηστα</p>
+        <p class="service-desc">Πλήρης κάλυψη λογαριασμών, ρεύματος και νερού. Καμία έκπληξη, καμία αγωνία.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✨</div>
+        <p class="service-name">Εβδομαδιαία Καθαριότητα</p>
+        <p class="service-desc">Επαγγελματικός καθαρισμός του ιδιωτικού σου χώρου κάθε εβδομάδα — για να ξέρεις πάντα ότι το σπίτι σε περιμένει φρέσκο.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🩺</div>
+        <p class="service-name">Μηνιαία Επίσκεψη Γιατρού</p>
+        <p class="service-desc">Ο γιατρός έρχεται σε εσένα. Τακτικός έλεγχος, συνταγογράφηση και προληπτική φροντίδα κάθε μήνα.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🆘</div>
+        <p class="service-name">24/7 SOS Παρακολούθηση</p>
+        <p class="service-desc">Σύστημα έκτακτης ανάγκης με άμεση ανταπόκριση γύρω στο ρολόι — γιατί η ασφάλεια δεν διαπραγματεύεται.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADVANTAGES ══ -->
+<section class="advantages-section">
+  <div class="section-inner">
+    <p class="section-label reveal">Γιατί ΕΣΤΙΑ</p>
+    <h2 class="mission-headline reveal" style="margin-bottom: 3rem;">
+      Τα πλεονεκτήματα<br>που κάνουν τη διαφορά.
+    </h2>
+
+    <div class="adv-grid">
+      <div class="adv-card reveal">
+        <div class="adv-number">01</div>
+        <h3 class="adv-title">Αυτονομία χωρίς Συμβιβασμό</h3>
+        <p class="adv-text">Το δικό σου διαμέρισμα 55 τ.μ. με πλήρη ιδιωτικότητα. Αποφασίζεις πότε και πώς κοινωνικοποιείσαι — δεν σου το επιβάλλει κανείς.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-number">02</div>
+        <h3 class="adv-title">Κοινότητα που σε Ξέρει</h3>
+        <p class="adv-text">20 άνθρωποι που μοιράζονται αξίες και ηλικία. Αρκετοί για ποικιλία, αρκετά λίγοι ώστε να θυμάσαι το όνομα του καθενός.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-number">03</div>
+        <h3 class="adv-title">Φροντίδα Πριν Χρειαστείς</h3>
+        <p class="adv-text">Μηνιαίος γιατρός, 24/7 SOS και προληπτικές υπηρεσίες υγείας. Δεν περιμένεις να συμβεί κάτι — προλαμβάνεις.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-number">04</div>
+        <h3 class="adv-title">Μεσογειακό Περιβάλλον</h3>
+        <p class="adv-text">Η Αττική δεν είναι τυχαία επιλογή. Φως, φύση, μεσογειακή διατροφή και εύκολη πρόσβαση σε υπηρεσίες, φίλους και οικογένεια.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-number">05</div>
+        <h3 class="adv-title">Μηδέν Άγχος Ιδιοκτησίας</h3>
+        <p class="adv-text">Δεν χρειάζεται να μεριμνάς για επισκευές, φόρους ή διαχείριση. Το σπίτι σου λειτουργεί — εσύ απολαμβάνεις.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-number">06</div>
+        <h3 class="adv-title">Δεδομένο Κόστος Ζωής</h3>
+        <p class="adv-text">Μία μηνιαία συνδρομή καλύπτει τα πάντα. Γνωρίζεις εκ των προτέρων τι πληρώνεις — χωρίς απροόπτα.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VISION ══ -->
+<section class="vision-section">
+  <div class="vision-inner">
+    <div>
+      <p class="section-label vision-label reveal">Το Όραμά μας</p>
+      <h2 class="vision-title reveal">
+        Να μεγαλώνεις<br>
+        σημαίνει να<br>
+        <em>συνδέεσαι βαθύτερα.</em>
+      </h2>
+    </div>
+    <div class="vision-pillars reveal">
+      <div class="vision-pillar">
+        <p class="vision-pillar-title">Σύνδεση</p>
+        <p class="vision-pillar-text">Δημιουργούμε χώρους όπου οι τυχαίες συναντήσεις γίνονται φιλίες, και οι φιλίες γίνονται οικογένεια.</p>
+      </div>
+      <div class="vision-pillar">
+        <p class="vision-pillar-title">Αξιοπρέπεια</p>
+        <p class="vision-pillar-text">Κάθε κάτοικος είναι μέλος και συν-ιδιοκτήτης — όχι ενοικιαστής, όχι ασθενής. Εδώ έχεις λόγο.</p>
+      </div>
+      <div class="vision-pillar">
+        <p class="vision-pillar-title">Βιωσιμότητα</p>
+        <p class="vision-pillar-text">Αναζωογονούμε υπάρχουσες υποδομές. Το μοντέλο μας σέβεται τον τόπο, το περιβάλλον και τον κόπο μιας ζωής.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT FORM ══ -->
+<section class="form-section" id="contact">
+  <div class="section-inner">
+    <div class="form-wrapper">
+      <p class="section-label">Επικοινωνία</p>
+      <h2 class="form-title reveal">Θέλεις να μάθεις περισσότερα;</h2>
+      <p class="form-sub reveal">
+        Άφησε τα στοιχεία σου και θα επικοινωνήσουμε μαζί σου για να σου εξηγήσουμε 
+        αναλυτικά το μοντέλο μας, το κόστος και τις διαθέσιμες θέσεις.
+      </p>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Ονοματεπώνυμο</label>
+            <input type="text" id="name" placeholder="Γιώργος Παπαδόπουλος" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Ηλικία</label>
+            <input type="number" id="age" placeholder="65" min="55" max="90">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Τηλέφωνο</label>
+            <input type="tel" id="phone" placeholder="+30 69X XXX XXXX">
+          </div>
+          <div class="form-group">
+            <label for="email">Email (προαιρετικό)</label>
+            <input type="email" id="email" placeholder="email@example.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interest">Πώς σε ενδιαφέρει;</label>
+          <select id="interest">
+            <option value="">Επίλεξε...</option>
+            <option value="resident">Για τον εαυτό μου</option>
+            <option value="family">Για μέλος της οικογένειάς μου</option>
+            <option value="investor">Ως επενδυτής</option>
+            <option value="other">Άλλο</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Σχόλια ή ερωτήσεις</label>
+          <textarea id="message" placeholder="Πες μας τι σε ενδιαφέρει περισσότερο..."></textarea>
+        </div>
+
+        <p class="form-note">
+          Τα στοιχεία σου χρησιμοποιούνται αποκλειστικά για επικοινωνία σχετικά με το πρόγραμμα ΕΣΤΙΑ. 
+          Δεν τα κοινοποιούμε σε τρίτους.
+        </p>
+
+        <button type="submit" class="submit-btn">Αποστολή Στοιχείων</button>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <h3>Ευχαριστούμε!</h3>
+        <p>Θα επικοινωνήσουμε μαζί σου σύντομα για να σου εξηγήσουμε αναλυτικά το πρόγραμμα.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-logo">
+    ΕΣΤΙΑ
+    <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+  </div>
+  <p class="footer-copy">© 2026 ΕΣΤΙΑ · Αθήνα, Ελλάδα · Συνεργατική Διαβίωση 60+</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Form submit
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+
+    if (!name || !phone) {
+      alert('Παρακαλώ συμπλήρωσε τουλάχιστον το όνομα και το τηλέφωνό σου.');
+      return;
+    }
+
+    this.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+</script>
+</body>
+</html>
