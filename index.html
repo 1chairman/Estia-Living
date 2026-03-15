@@ -135,7 +135,20 @@
       padding: 0.6rem 1.4rem;
       border-radius: 2px;
       text-decoration: none;
+      position: relative;
+      overflow: hidden;
       transition: all 0.3s;
+    }
+
+    .nav-cta::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(245, 240, 232, 0.1);
+      animation: scrollAnim 2s ease infinite;
     }
 
     .nav-cta:hover {
@@ -670,8 +683,21 @@
     .greek-divider {
       width: 60px;
       height: 2px;
-      background: var(--terracotta);
+      background: var(--border);
       margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .greek-divider::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--terracotta);
+      animation: scrollAnim 2s ease infinite;
     }
 
     /* ── ANIMATIONS ── */
@@ -784,7 +810,7 @@
     </nav>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">Συνεργατική Διαβίωση · Αθήνα, Ελλάδα</p>
+      <p class="hero-eyebrow">Συνεργατική Διαβίωση · Αθήνα</p>
       <h1 class="hero-title">
         Μετά τα 60,<br>
         <em>η ζωή<br>ανθίζει.</em>
@@ -796,15 +822,15 @@
     </div>
 
     <div class="hero-footer">
-      <div class="scroll-hint">
+      <a href="#mission" class="scroll-hint" style="text-decoration: none;">
         <div class="scroll-line"></div>
         Ανακάλυψε περισσότερα
-      </div>
+      </a>
     </div>
   </section>
 
   <!-- ══ MISSION ══ -->
-  <section class="mission-section">
+  <section class="mission-section" id="mission">
     <div class="section-inner">
       <div class="mission-grid">
         <div class="reveal">
@@ -832,6 +858,7 @@
                 στην πιο ποιοτική περίοδο της ζωής — με αυτονομία, ασφάλεια
                 και χωρίς το άγχος της απομόνωσης.»
               </p>
+
             </div>
           </div>
         </div>
@@ -1044,11 +1071,14 @@
 
   <!-- ══ FOOTER ══ -->
   <footer>
-    <div class="footer-logo">
-      ΕΣΤΙΑ
-      <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+    <div class="footer-logo" style="display: flex; align-items: center; gap: 0.8rem;">
+      <img src="logo.png" alt="ΕΣΤΙΑ logo" style="height: 35px; width: auto; filter: brightness(0) invert(1);">
+      <div>
+        ΕΣΤΙΑ
+        <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+      </div>
     </div>
-    <p class="footer-copy">© 2026 ΕΣΤΙΑ · Αθήνα, Ελλάδα · Συνεργατική Διαβίωση 60+</p>
+    <p class="footer-copy">© 2026 ΕΣΤΙΑ · Αθήνα · Συνεργατική Διαβίωση 60+</p>
   </footer>
 
   <script>
