@@ -164,6 +164,7 @@
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
+      font-variant-numeric: lining-nums;
       font-size: clamp(3.5rem, 8vw, 7rem);
       font-weight: 300;
       line-height: 1.0;
@@ -369,6 +370,7 @@
 
     .service-name {
       font-family: 'Cormorant Garamond', serif;
+      font-variant-numeric: lining-nums;
       font-size: 1.25rem;
       font-weight: 600;
       color: var(--cream);
@@ -408,6 +410,7 @@
 
     .adv-number {
       font-family: 'Cormorant Garamond', serif;
+      font-variant-numeric: lining-nums;
       font-size: 4rem;
       font-weight: 300;
       color: rgba(196, 103, 58, 0.12);
@@ -770,9 +773,12 @@
     <div class="hero-border"></div>
 
     <nav>
-      <div class="logo">
-        ΕΣΤΙΑ
-        <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+      <div class="logo" style="display: flex; align-items: center; gap: 0.8rem;">
+        <img src="logo.png" alt="ΕΣΤΙΑ logo" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+        <div>
+          ΕΣΤΙΑ
+          <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+        </div>
       </div>
       <a href="#contact" class="nav-cta">Επικοινωνία</a>
     </nav>
@@ -804,9 +810,8 @@
         <div class="reveal">
           <p class="section-label">Η Αποστολή μας</p>
           <h2 class="mission-headline">
-            Ζούμε <strong>Μαζί</strong> <br>
-            απολαμβάνοντας περισσότερο<br>
-            τη ζωή <br>
+            Ζούμε <strong>Μαζί</strong><br>
+            απολαμβάνοντας περισσότερο τη ζωή.<br>
           </h2>
           <div class="greek-divider"></div>
         </div>
@@ -846,54 +851,6 @@
 
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">🛜</div>
-          <p class="service-name">Υψηλή Σύνδεση</p>
-          <p class="service-desc">Οπτική ίνα υψηλής ταχύτητας σε όλο το χώρο — για να μένεις κοντά σε αυτούς που αγαπάς.
-          </p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🏛️</div>
-          <p class="service-name">Κοινόχρηστοι Χώροι</p>
-          <p class="service-desc">Σαλόνι, τραπεζαρία, κήπος και βιβλιοθήκη — ο τόπος όπου οι τυχαίες συναντήσεις
-            γίνονται φιλίες.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">💧</div>
-          <p class="service-name">Νερό & Κοινόχρηστα</p>
-          <p class="service-desc">Πλήρης κάλυψη λογαριασμών, ρεύματος και νερού. Καμία έκπληξη, καμία αγωνία.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">✨</div>
-          <p class="service-name">Εβδομαδιαία Καθαριότητα</p>
-          <p class="service-desc">Επαγγελματικός καθαρισμός του ιδιωτικού σου χώρου κάθε εβδομάδα — για να ξέρεις πάντα
-            ότι το σπίτι σε περιμένει φρέσκο.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🩺</div>
-          <p class="service-name">Μηνιαία Επίσκεψη Γιατρού</p>
-          <p class="service-desc">Ο γιατρός έρχεται σε εσένα. Τακτικός έλεγχος, συνταγογράφηση και προληπτική φροντίδα
-            κάθε μήνα.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🆘</div>
-          <p class="service-name">24/7 SOS Παρακολούθηση</p>
-          <p class="service-desc">Σύστημα έκτακτης ανάγκης με άμεση ανταπόκριση γύρω στο ρολόι — γιατί η ασφάλεια δεν
-            διαπραγματεύεται.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ ADVANTAGES ══ -->
-  <section class="advantages-section">
-    <div class="section-inner">
-      <p class="section-label reveal">Γιατί ΕΣΤΙΑ</p>
-      <h2 class="mission-headline reveal" style="margin-bottom: 3rem;">
-        Τα πλεονεκτήματα<br>που κάνουν τη διαφορά.
-      </h2>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
           <div class="service-icon">⚡</div>
           <p class="service-name">Κοινόχρηστα & Λογαριασμοί</p>
           <p class="service-desc">Πλήρης κάλυψη λογαριασμών ρεύματος, θέρμανσης, νερού, τηλεφωνίας. Καμία έκπληξη, καμία
@@ -925,9 +882,59 @@
         </div>
         <div class="service-card reveal">
           <div class="service-icon">🆘</div>
-          <p class="service-name">24ωρη Υποστήριξη Ασφάλειας</p>
+          <p class="service-name">Συνεχής Υποστήριξη Ασφάλειας</p>
           <p class="service-desc">Σύστημα έκτακτης ανάγκης με προσωπικό κουμπί SOS — γιατί η ασφάλεια δεν
             διαπραγματεύεται.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ADVANTAGES ══ -->
+  <section class="advantages-section">
+    <div class="section-inner">
+      <p class="section-label reveal">Γιατί ΕΣΤΙΑ</p>
+      <h2 class="mission-headline reveal" style="margin-bottom: 3rem;">
+        Τα πλεονεκτήματα<br>που κάνουν τη διαφορά.
+      </h2>
+
+      <div class="adv-grid">
+        <div class="adv-card reveal">
+          <div class="adv-number">01</div>
+          <h3 class="adv-title">Αυτονομία χωρίς Συμβιβασμό</h3>
+          <p class="adv-text">Το δικό σου διαμέρισμα 55 τ.μ. με πλήρη ιδιωτικότητα. Αποφασίζεις πότε και πώς
+            κοινωνικοποιείσαι — δεν σου το επιβάλλει κανείς.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-number">02</div>
+          <h3 class="adv-title">Κοινότητα που σε Ξέρει</h3>
+          <p class="adv-text">20 άνθρωποι που μοιράζονται αξίες και ηλικία. Αρκετοί για ποικιλία, αρκετά λίγοι ώστε να
+            θυμάσαι το όνομα του καθενός.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-number">03</div>
+          <h3 class="adv-title">Φροντίδα Πριν Χρειαστείς</h3>
+          <p class="adv-text">Μηνιαίος γιατρός, 24/7 SOS και προληπτικές υπηρεσίες υγείας. Δεν περιμένεις να συμβεί κάτι
+            — προλαμβάνεις.</p>
+          font-variant-numeric: lining-nums;
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-number">04</div>
+          <h3 class="adv-title">Μεσογειακό Περιβάλλον</h3>
+          <p class="adv-text">Η Αττική δεν είναι τυχαία επιλογή. Φως, φύση, μεσογειακή διατροφή και εύκολη πρόσβαση σε
+            υπηρεσίες, φίλους και οικογένεια.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-number">05</div>
+          <h3 class="adv-title">Μηδέν Άγχος Ιδιοκτησίας</h3>
+          <p class="adv-text">Δεν χρειάζεται να μεριμνάς για επισκευές, φόρους ή διαχείριση. Το σπίτι σου λειτουργεί —
+            εσύ απολαμβάνεις.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-number">06</div>
+          <h3 class="adv-title">Δεδομένο Κόστος Ζωής</h3>
+          <p class="adv-text">Μία μηνιαία συνδρομή καλύπτει τα πάντα. Γνωρίζεις εκ των προτέρων τι πληρώνεις — χωρίς
+            απροόπτα.</p>
         </div>
       </div>
     </div>
@@ -979,7 +986,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Ονοματεπώνυμο</label>
-              <input type="text" id="name" name="name" placeholder="Γιώργος Παπαδόπουλος" required>
+              <input type="text" id="name" name="name" placeholder="Αθανάσιος Παπαδόπουλος" required>
             </div>
             <div class="form-group">
               <label for="age">Ηλικία</label>
