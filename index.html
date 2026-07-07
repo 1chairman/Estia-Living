@@ -164,7 +164,7 @@
     }
 
     .social-icon {
-      color: #1877F2; /* Official Facebook Blue */
+      color: #1877F2; /* This colors the circle background */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -172,7 +172,7 @@
     }
 
     .social-icon:hover {
-      color: #145dbf; /* A slightly darker blue for the hover effect */
+      color: #145dbf; /* Darker blue on hover */
       transform: translateY(-2px);
     }
     
@@ -828,11 +828,12 @@
         </div>
       </div>
       
-      <!-- New Wrapper for Icon and Button -->
       <div class="nav-actions">
-        <a href="https://www.facebook.com/profile.php?id=61590165540577" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook Page">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+        <a href="https://www.facebook.com/your-page-url" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook Page">
+          <!-- Updated SVG with Blue Circle & White 'f' -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="12" fill="currentColor"/>
+            <path d="M14 24v-9h3l.5-3.5H14V9.3c0-1 .3-1.4 1.4-1.4H17V4.7c-.4-.1-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3V11.5H8V15h2.3V24H14z" fill="#FFFFFF"/>
           </svg>
         </a>
         <a href="#contact" class="nav-cta">Επικοινωνία</a>
