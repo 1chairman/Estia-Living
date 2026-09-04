@@ -1,0 +1,5 @@
+
+# Private platform codebase — never published to estia.live
+.DS_Store
+Claude outputs/
+estia-platform/
