@@ -25,7 +25,7 @@ if (hamburger && primaryNav) {
   });
 
   // Close the menu when a link is tapped (mobile)
-  primaryNav.querySelectorAll('.nav-link').forEach(link => {
+  primaryNav.querySelectorAll('.nav-link, .nav-sublink').forEach(link => {
     link.addEventListener('click', () => {
       primaryNav.classList.remove('nav-open');
       hamburger.setAttribute('aria-expanded', 'false');

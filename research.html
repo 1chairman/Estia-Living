@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ΕΣΤΙΑ — Έρευνες και Τεκμηρίωση</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ══ HERO (shortened) ══ -->
+  <section class="hero hero-page">
+    <img class="hero-img" src="hero_image.jpeg" alt="Πρότυπη Κατοικία">
+    <div class="hero-bg"></div>
+    <div class="hero-border"></div>
+
+    <!-- ══ NAV ══ -->
+    <nav>
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.8rem;">
+        <img src="logo.png" alt="ΕΣΤΙΑ logo" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+        <div>
+          ΕΣΤΙΑ
+          <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg>
+          <span>Αρχική</span>
+        </a>
+        <div class="nav-dropdown">
+          <a href="cohousing.html" class="nav-link active">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0 -3 -3.85"/></svg>
+            <span>Συστέγαση/Co-Housing</span>
+            <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+          </a>
+          <div class="nav-submenu">
+            <a href="cohousing.html" class="nav-sublink">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M14 8h1"/><path d="M14 12h1"/><path d="M14 16h1"/></svg>
+              <span>Το μοντέλο μας</span>
+            </a>
+            <a href="history.html" class="nav-sublink">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8l0 4l2 2"/><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"/></svg>
+              <span>Ιστορία του Cohousing</span>
+            </a>
+            <a href="research.html" class="nav-sublink active">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6l0 13"/><path d="M12 6l0 13"/><path d="M21 6l0 13"/></svg>
+              <span>Έρευνες και Τεκμηρίωση</span>
+            </a>
+          </div>
+        </div>
+        <a href="membership.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg>
+          <span>Γίνε Μέλος</span>
+        </a>
+        <a href="about.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="2"/><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"/><circle cx="17" cy="7" r="2"/><path d="M17 10h2a2 2 0 0 1 2 2v1"/><circle cx="7" cy="7" r="2"/><path d="M3 13v-1a2 2 0 0 1 2 -2h2"/></svg>
+          <span>Ποιοι Είμαστε</span>
+        </a>
+        <a href="index.html#contact" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/><path d="M3 7l9 6l9 -6"/></svg>
+          <span>Επικοινωνία</span>
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://www.facebook.com/profile.php?id=61590165540577" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook Page">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="12" fill="currentColor"/>
+            <path d="M14 24v-9h3l.5-3.5H14V9.3c0-1 .3-1.4 1.4-1.4H17V4.7c-.4-.1-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3V11.5H8V15h2.3V24H14z" fill="#FFFFFF"/>
+          </svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Μενού" aria-expanded="false">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Συστέγαση / Co-Housing</p>
+      <h1 class="hero-title">Έρευνες &<br><em>Τεκμηρίωση</em></h1>
+      <p class="hero-sub">
+        Τι δείχνουν οι διεθνείς επιστημονικές μελέτες για το Senior Cohousing —
+        με διαφάνεια και σεβασμό στα δεδομένα.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ ΤΙ ΔΕΙΧΝΟΥΝ ΟΙ ΜΕΛΕΤΕΣ ══ -->
+  <section class="content-section">
+    <div class="section-inner">
+      <p class="section-label reveal">Τι δείχνουν οι μελέτες</p>
+      <h2 class="mission-headline reveal" style="margin-bottom: 2rem;">
+        Ενθαρρυντικά<br><strong>ευρήματα.</strong>
+      </h2>
+      <div class="prose reveal">
+        <p>
+          Οι έρευνες των τελευταίων ετών δείχνουν ότι το Senior Cohousing μπορεί να
+          προσφέρει σημαντικά οφέλη στην ποιότητα ζωής των ανθρώπων μεγαλύτερης ηλικίας.
+          Η συνύπαρξη ιδιωτικού χώρου με κοινόχρηστους χώρους και η δυνατότητα καθημερινής
+          επαφής με μια μικρή, σταθερή κοινότητα φαίνεται να ενισχύουν την κοινωνική
+          υποστήριξη, την αίσθηση του «ανήκειν» και την ασφάλεια, ενώ μπορούν να
+          περιορίσουν το αίσθημα μοναξιάς και κοινωνικής απομόνωσης.
+        </p>
+        <p>
+          Σε αρκετές μελέτες, ιδιαίτερα σε κοινότητες που απευθύνονται σε μεγαλύτερες
+          ηλικίες, οι κάτοικοι ανέφεραν καλύτερη ποιότητα ζωής και ευεξία, μεγαλύτερη
+          αυτονομία και περισσότερες ευκαιρίες για κοινωνική δραστηριότητα.
+        </p>
+        <p>
+          Το σημαντικότερο ίσως είναι ότι το Co-Housing δεν σημαίνει ότι οι άνθρωποι
+          εγκαταλείπουν την ιδιωτικότητα και την ανεξαρτησία τους. Αντίθετα, το μοντέλο
+          βασίζεται στην ισορροπία ανάμεσα στον προσωπικό χώρο και την κοινότητα: ο καθένας
+          έχει το δικό του σπίτι και την προσωπική του ζωή, αλλά παράλληλα μπορεί να
+          μοιράζεται στιγμές, δραστηριότητες και καθημερινές εμπειρίες με ανθρώπους κοντά του.
+        </p>
+      </div>
+
+      <div class="mission-quote reveal" style="max-width: 720px;">
+        <p>
+          Σημείωση διαφάνειας: Οι επιστημονικές μελέτες είναι ενθαρρυντικές, χωρίς όμως
+          να επιτρέπουν ακόμη να αποδειχθεί ότι το Co-Housing από μόνο του προκαλεί
+          καλύτερη υγεία. Παρουσιάζουμε τα ευρήματα όπως πραγματικά είναι.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ΟΙ ΠΗΓΕΣ ══ -->
+  <section class="content-section alt">
+    <div class="section-inner">
+      <p class="section-label reveal">Οι επιστημονικές πηγές</p>
+      <h2 class="mission-headline reveal" style="margin-bottom: 1rem;">
+        Πού βασιζόμαστε.
+      </h2>
+
+      <div class="ref-list">
+        <div class="ref-item reveal">
+          <p class="ref-cite">Carrère, J., Reyes, A., Oliveras, L., et al. (2020). <em>The effects of cohousing model on people's health and wellbeing: a scoping review.</em> Public Health Reviews, 41, 22.</p>
+          <p class="ref-note">Η σημαντικότερη πηγή για υγεία, ευεξία, κοινωνική υποστήριξη, μοναξιά και ποιότητα ζωής. Εξέτασε 25 μελέτες και 77 εμπειρίες co-housing — με θετικές συσχετίσεις, αλλά χωρίς απόδειξη σχέσης αιτίας–αποτελέσματος.</p>
+          <a href="https://link.springer.com/article/10.1186/s40985-020-00138-1" target="_blank" rel="noopener noreferrer">Πλήρης μελέτη — Springer →</a>
+        </div>
+
+        <div class="ref-item reveal">
+          <p class="ref-cite">Rusinovic, K., van Bochove, M., & van de Sande, J. (2019). <em>Senior Co-Housing in the Netherlands: Benefits and Drawbacks for Its Residents.</em> IJERPH, 16(19), 3776.</p>
+          <p class="ref-note">Ειδικά για senior co-housing — εξετάζει τόσο τα οφέλη όσο και τις πιθανές δυσκολίες που αντιμετωπίζουν οι κάτοικοι.</p>
+          <a href="https://www.mdpi.com/1660-4601/16/19/3776" target="_blank" rel="noopener noreferrer">Πλήρης μελέτη — MDPI →</a>
+        </div>
+
+        <div class="ref-item reveal">
+          <p class="ref-cite">Wang, J. & Hadjri, K. (2017). <em>The role of co-housing in building sustainable communities: Case studies from the UK.</em> Environment-Behaviour Proceedings Journal, 2(6), 255–265.</p>
+          <p class="ref-note">Case studies στο Ηνωμένο Βασίλειο για την κοινωνική και περιβαλλοντική βιωσιμότητα — με βασικές προκλήσεις τη χρηματοδότηση και την προσέλκυση νέων μελών.</p>
+          <a href="https://eprints.whiterose.ac.uk/id/eprint/142062/" target="_blank" rel="noopener noreferrer">Πλήρης μελέτη — White Rose →</a>
+        </div>
+
+        <div class="ref-item reveal">
+          <p class="ref-cite">Bianchi, L. & Costa, G. (2024). <em>Living together as a solidarity and generative practice: the case of co-housing and organized cohabitations.</em></p>
+          <p class="ref-note">Το co-housing ως μορφή συλλογικής κατοίκησης που ενισχύει την κοινωνική σύνδεση, την αλληλεγγύη και τη δημιουργία κοινοτήτων, με αναφορά και στο senior co-housing.</p>
+          <a href="https://www.tandfonline.com/doi/abs/10.1080/03906701.2024.2316509" target="_blank" rel="noopener noreferrer">Μελέτη — Taylor & Francis →</a>
+        </div>
+
+        <div class="ref-item reveal">
+          <p class="ref-cite">Marckmann, B., Gram-Hanssen, R. & Christensen, T. H. (2012). <em>Sustainable Living and Co-Housing: Evidence from a Case Study of Eco-Villages.</em> Built Environment, 38(3).</p>
+          <p class="ref-note">Εξετάζει τη σχέση μεταξύ κοινόχρηστων υποδομών, κοινωνικής ζωής και ενός πιο βιώσιμου τρόπου κατοίκησης.</p>
+          <a href="https://www.ingentaconnect.com/content/alex/benv/2012/00000038/00000003/art00007" target="_blank" rel="noopener noreferrer">Μελέτη — Ingenta Connect →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <h2 class="cta-title reveal">Μάθε περισσότερα</h2>
+      <div class="page-links reveal">
+        <a href="cohousing.html" class="page-link-btn primary">Το μοντέλο μας →</a>
+        <a href="history.html" class="page-link-btn secondary">Ιστορία του Cohousing →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-logo" style="display: flex; align-items: center; gap: 0.8rem;">
+      <img src="logo.png" alt="ΕΣΤΙΑ logo" style="height: 35px; width: auto; filter: brightness(0) invert(1);">
+      <div>
+        ΕΣΤΙΑ
+        <span>ΖΟΥΜΕ ΜΑΖΙ</span>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 ΕΣΤΙΑ · Αθήνα · Συνεργατική Διαβίωση 60+</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
