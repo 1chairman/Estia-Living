@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="el" data-theme="auto" data-size="1" data-contrast="0" data-motion="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ΕΣΤΙΑ — Αναφορές</title>
+<meta name="description" content="Αναφορά προβλημάτων και ζωή της κοινότητας ΕΣΤΙΑ.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16130F" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ΕΣΤΙΑ">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+/* ──────────────────────────────────────────────────────────────────────────
+   ΕΣΤΙΑ — εφαρμογή αναφορών
+
+   Τα χρώματα κειμένου είναι ελεγμένα για WCAG 2.2 AA (4.5:1).
+   Το brand terracotta #C4673A δίνει 3.46:1 σε κρεμ — κόβεται. Μένει για
+   γεμίσματα και μεγάλους τίτλους, όπου αρκεί 3:1. Το κείμενο παίρνει
+   #A8512C (4.77:1). Το παλιό --muted #8C7E6E (3.48:1) έγινε #6E6256 (5.22:1).
+   ────────────────────────────────────────────────────────────────────────── */
+:root{
+  --bg:#F5F0E8; --surface:#FFFFFF; --sunk:#EDE7DC;
+  --ink:#1E1A14; --ink2:#4A4035; --ink3:#6E6256;
+  --rule:#DDD5C5; --rule-strong:#C3B8A3;
+  --brand:#A8512C;          /* κείμενο, σύνδεσμοι — 4.77:1 */
+  --brand-fill:#C4673A;     /* γεμίσματα, εικονίδια — 3.93:1, αρκεί για UI */
+  --brand-ink:#FFFFFF;
+  --olive:#5A6B3C;
+  --crit:#9A2F22; --crit-bg:#FBEDEA;
+  --warn:#7A5410; --warn-bg:#FBF3E3;
+  --good:#3F6A33; --good-bg:#EDF4EA;
+  --focus:#1E1A14;
+  --radius:14px;
+  --tap:56px;               /* WCAG 2.5.8 ζητά 24px· για 75+ βάζουμε 56 */
+  --base:19px;
+  --shadow:0 1px 2px rgba(30,26,20,.06), 0 4px 14px rgba(30,26,20,.06);
+}
+html[data-theme="dark"]{
+  --bg:#16130F; --surface:#211C17; --sunk:#2B251E;
+  --ink:#E8E1D6; --ink2:#C9BFB0; --ink3:#A89C8B;
+  --rule:#352E26; --rule-strong:#4A4036;
+  --brand:#E08A5F; --brand-fill:#C4673A; --brand-ink:#16130F;
+  --olive:#9BB06A;
+  --crit:#F0917F; --crit-bg:#33201C;
+  --warn:#E0B567; --warn-bg:#2E2617;
+  --good:#8FC07C; --good-bg:#1D2A19;
+  --focus:#E8E1D6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+}
+@media (prefers-color-scheme: dark){
+  html[data-theme="auto"]{
+    --bg:#16130F; --surface:#211C17; --sunk:#2B251E;
+    --ink:#E8E1D6; --ink2:#C9BFB0; --ink3:#A89C8B;
+    --rule:#352E26; --rule-strong:#4A4036;
+    --brand:#E08A5F; --brand-fill:#C4673A; --brand-ink:#16130F;
+    --olive:#9BB06A;
+    --crit:#F0917F; --crit-bg:#33201C;
+    --warn:#E0B567; --warn-bg:#2E2617;
+    --good:#8FC07C; --good-bg:#1D2A19;
+    --focus:#E8E1D6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+  }
+}
+/* Υψηλή αντίθεση: ξεχωριστός διακόπτης, γιατί «σκοτεινό» και «έντονο» δεν
+   είναι το ίδιο πράγμα — πολλοί ηλικιωμένοι θέλουν φωτεινό ΚΑΙ έντονο. */
+html[data-contrast="1"]{
+  --bg:#FFFFFF; --surface:#FFFFFF; --sunk:#F0F0F0;
+  --ink:#000000; --ink2:#1A1A1A; --ink3:#333333;
+  --rule:#000000; --rule-strong:#000000;
+  --brand:#8C3E1E; --brand-fill:#8C3E1E; --brand-ink:#FFFFFF;
+  --olive:#2F4420; --crit:#8A1B10; --warn:#5A3C06; --good:#1F4A16;
+  --crit-bg:#FFF; --warn-bg:#FFF; --good-bg:#FFF;
+  --shadow:none;
+}
+html[data-contrast="1"][data-theme="dark"],
+html[data-contrast="1"][data-theme="auto"].dark-pref{
+  --bg:#000000; --surface:#000000; --sunk:#141414;
+  --ink:#FFFFFF; --ink2:#F0F0F0; --ink3:#D8D8D8;
+  --rule:#FFFFFF; --rule-strong:#FFFFFF;
+  --brand:#FFB38A; --brand-fill:#FFB38A; --brand-ink:#000000;
+  --olive:#B9D98C; --crit:#FFA294; --warn:#FFD182; --good:#A6E093;
+  --crit-bg:#000; --warn-bg:#000; --good-bg:#000;
+}
+html[data-contrast="1"] .card,
+html[data-contrast="1"] .btn,
+html[data-contrast="1"] .chip{ border-width:2px !important }
+
+html[data-size="1"]{ --base:19px }
+html[data-size="2"]{ --base:23px }
+html[data-size="3"]{ --base:28px }
+html[data-size="4"]{ --base:34px }
+
+*{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100% }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:400 var(--base)/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+       "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  padding-bottom:env(safe-area-inset-bottom);
+  overflow-wrap:break-word;
+}
+/* 2.3.3 / πρόσθετη ρύθμιση: ο χρήστης μπορεί να κόψει κάθε κίνηση */
+@media (prefers-reduced-motion: reduce){ *,*::before,*::after{
+  animation-duration:.001ms !important; transition-duration:.001ms !important } }
+html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after{
+  animation:none !important; transition:none !important; scroll-behavior:auto !important }
+
+h1,h2,h3{ line-height:1.2; margin:0 0 .4em; font-weight:600; letter-spacing:-.01em;
+  overflow-wrap:anywhere }
+h1{ font-size:1.5em } h2{ font-size:1.22em } h3{ font-size:1.05em }
+p{ margin:0 0 .8em }
+a{ color:var(--brand) }
+
+/* ── Focus: έντονο και πάντα ορατό (2.4.7, 2.4.11) ───────────────────────── */
+:focus{ outline:none }
+:focus-visible{
+  outline:4px solid var(--focus); outline-offset:3px; border-radius:6px;
+}
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--surface); color:var(--ink); padding:14px 18px;
+  border:3px solid var(--focus); border-radius:0 0 var(--radius) 0;
+}
+.skip:focus{ left:0 }
+
+/* ── Σκελετός ────────────────────────────────────────────────────────────── */
+.wrap{ max-width:620px; margin:0 auto; padding:0 16px 120px }
+header.top{
+  position:sticky; top:0; z-index:20; background:var(--bg);
+  border-bottom:1px solid var(--rule);
+  padding:max(10px, env(safe-area-inset-top)) 0 10px;
+}
+.top-in{ max-width:620px; margin:0 auto; padding:0 16px;
+  display:flex; align-items:center; gap:12px }
+.brandmark{ display:flex; align-items:center; gap:10px; min-width:0 }
+.brandmark svg{ width:30px; height:30px; flex:none; color:var(--ink) }
+.wordmark{ font:600 1.15em/1 Georgia,"Cormorant Garamond",serif; letter-spacing:.06em;
+  white-space:nowrap }
+.top-sub{ font-size:.74em; color:var(--ink3); line-height:1.2 }
+.spacer{ margin-left:auto }
+
+/* ── Κουμπιά ─────────────────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:var(--tap); padding:14px 20px;
+  font:inherit; font-weight:600; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--rule-strong);
+  border-radius:var(--radius); cursor:pointer; text-decoration:none;
+  transition:transform .08s ease, background .15s ease;
+  width:100%; text-align:center;
+}
+.btn:active{ transform:scale(.985) }
+.btn-primary{ background:var(--brand-fill); color:var(--brand-ink); border-color:var(--brand-fill) }
+html[data-contrast="1"] .btn-primary{ background:var(--brand-fill); color:var(--brand-ink) }
+.btn-ghost{ background:transparent; border-color:var(--rule-strong) }
+.btn-row{ display:flex; gap:10px; flex-wrap:wrap }
+.btn-row .btn{ width:auto; flex:1 1 auto; min-width:min(150px, 100%) }
+.btn-icon{
+  min-width:var(--tap); min-height:var(--tap); width:var(--tap); padding:0;
+  border-radius:var(--radius); background:transparent; border:1.5px solid transparent;
+}
+.btn-icon:hover{ background:var(--sunk) }
+.btn[aria-pressed="true"]{ background:var(--ink); color:var(--bg); border-color:var(--ink) }
+.btn:disabled{ opacity:.5; cursor:not-allowed }
+
+/* ── Κάρτες ──────────────────────────────────────────────────────────────── */
+.card{
+  background:var(--surface); border:1px solid var(--rule);
+  border-radius:var(--radius); padding:18px; margin:0 0 14px; box-shadow:var(--shadow);
+}
+.card h2{ margin-top:0 }
+.card-link{ display:block; color:inherit; text-decoration:none; cursor:pointer;
+  width:100%; text-align:left; font:inherit; border:1px solid var(--rule) }
+.card-link:hover{ border-color:var(--rule-strong) }
+
+.section-head{ display:flex; align-items:baseline; gap:12px; margin:26px 0 12px;
+  flex-wrap:wrap }
+/* min-width:0 γιατί ένα flex item δεν συρρικνώνεται κάτω από το min-content του:
+   στα 34px η λέξη «Δραστηριότητες» είναι 329px και σε οθόνη 320px έσπρωχνε
+   ολόκληρη τη σελίδα πλάγια. */
+.section-head h2{ margin:0; min-width:0; overflow-wrap:anywhere }
+.section-head .more{ margin-left:auto; font-size:.84em; white-space:nowrap }
+
+/* ── Κατάσταση ───────────────────────────────────────────────────────────── */
+.status{
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:.78em; font-weight:600; padding:5px 11px; border-radius:999px;
+  border:1.5px solid currentColor; max-width:100%;
+}
+.status .dot{ width:9px; height:9px; border-radius:50%; background:currentColor; flex:none }
+.st-new{ color:var(--crit); background:var(--crit-bg) }
+.st-ack{ color:var(--warn); background:var(--warn-bg) }
+.st-prog{ color:var(--warn); background:var(--warn-bg) }
+.st-done{ color:var(--good); background:var(--good-bg) }
+/* Η κατάσταση δεν δίνεται ποτέ μόνο με χρώμα (1.4.1): κείμενο + σχήμα πάντα. */
+
+.meta{ font-size:.82em; color:var(--ink3) }
+.row{ display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap }
+/* Τυλίγεται. Στα 34px δύο ετικέτες κατάστασης και μια ώρα δεν χωράνε σε μία
+   γραμμή, και το WCAG 1.4.10 δεν επιτρέπει οριζόντια κύλιση της σελίδας. */
+.row-between{ display:flex; gap:8px 12px; align-items:center;
+  justify-content:space-between; flex-wrap:wrap; min-width:0 }
+.row-between > *{ min-width:0 }
+
+/* ── Έκτακτη ανάγκη ──────────────────────────────────────────────────────── */
+.emergency{
+  border:2px solid var(--crit); background:var(--crit-bg); color:var(--ink);
+  border-radius:var(--radius); padding:14px 16px; margin:14px 0;
+}
+.emergency p{ margin:0 0 10px; font-weight:600; color:var(--crit) }
+
+/* ── Μεγάλο κουμπί αναφοράς ──────────────────────────────────────────────── */
+.report-cta{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:12px; width:100%; min-height:168px; padding:26px 20px;
+  background:var(--brand-fill); color:var(--brand-ink);
+  border:none; border-radius:20px; cursor:pointer;
+  font:inherit; font-weight:700; font-size:1.2em; line-height:1.3; text-align:center;
+  box-shadow:var(--shadow);
+}
+html[data-contrast="1"] .report-cta{ border:3px solid var(--ink) }
+.report-cta svg{ width:46px; height:46px }
+.report-cta:active{ transform:scale(.99) }
+
+/* ── Φόρμα ───────────────────────────────────────────────────────────────── */
+label{ display:block; font-weight:600; margin:0 0 7px }
+.help{ font-size:.84em; color:var(--ink3); margin:-3px 0 9px }
+input[type=text],input[type=tel],input[type=date],input[type=time],textarea,select{
+  width:100%; min-height:var(--tap); padding:13px 15px;
+  font:inherit; color:var(--ink); background:var(--surface);
+  border:1.5px solid var(--rule-strong); border-radius:var(--radius);
+}
+textarea{ min-height:120px; resize:vertical }
+input::placeholder,textarea::placeholder{ color:var(--ink3); opacity:1 }
+fieldset{ border:none; padding:0; margin:0 0 20px }
+legend{ font-weight:600; padding:0; margin-bottom:8px }
+
+.chips{ display:flex; flex-wrap:wrap; gap:9px }
+.chip{
+  display:inline-flex; align-items:center; min-height:var(--tap);
+  padding:10px 16px; font:inherit; font-size:.95em;
+  background:var(--surface); color:var(--ink);
+  border:1.5px solid var(--rule-strong); border-radius:999px; cursor:pointer;
+}
+.chip[aria-pressed="true"]{
+  background:var(--ink); color:var(--bg); border-color:var(--ink);
+}
+.chip[aria-pressed="true"]::before{ content:"✓"; margin-right:8px; font-weight:700 }
+
+/* ── Ηχογράφηση ──────────────────────────────────────────────────────────── */
+.mic{
+  width:100%; min-height:150px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:10px;
+  background:var(--sunk); border:2px dashed var(--rule-strong);
+  border-radius:20px; cursor:pointer; font:inherit; font-weight:600; color:var(--ink);
+  padding:20px; text-align:center;
+}
+.mic[data-rec="1"]{ background:var(--crit-bg); border-color:var(--crit); border-style:solid }
+.mic svg{ width:40px; height:40px; color:var(--brand) }
+.mic[data-rec="1"] svg{ color:var(--crit) }
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.45} }
+.mic[data-rec="1"] svg{ animation:pulse 1.1s ease-in-out infinite }
+
+/* ── Χρονογραμμή ─────────────────────────────────────────────────────────── */
+.trail{ list-style:none; margin:14px 0 0; padding:0 }
+.trail li{ position:relative; padding:0 0 20px 30px; border-left:2px solid var(--rule) }
+.trail li:last-child{ border-left-color:transparent; padding-bottom:0 }
+.trail li::before{
+  content:""; position:absolute; left:-9px; top:4px; width:16px; height:16px;
+  border-radius:50%; background:var(--surface); border:3px solid var(--rule-strong);
+}
+.trail li.done::before{ background:var(--good); border-color:var(--good) }
+.trail li.now::before{ background:var(--brand-fill); border-color:var(--brand-fill) }
+.trail b{ display:block }
+
+/* ── Λίστα ───────────────────────────────────────────────────────────────── */
+.list{ list-style:none; margin:0; padding:0 }
+.list li{ margin:0 0 12px }
+.filters{ display:flex; gap:8px; overflow-x:auto; padding:2px 0 10px; margin:0 0 6px }
+.filters .chip{ min-height:48px; padding:8px 14px; font-size:.88em; white-space:nowrap }
+
+.empty{ text-align:center; color:var(--ink3); padding:34px 10px }
+
+.stats{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 12px }
+.stats > div{ min-width:0 }
+.stats b{ display:block; font-size:1.45em; line-height:1.1 }
+.stats .meta{ display:block }
+
+/* ── Κάτω μπάρα ──────────────────────────────────────────────────────────── */
+nav.tabs{
+  position:fixed; left:0; right:0; bottom:0; z-index:30;
+  background:var(--surface); border-top:1px solid var(--rule);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.tabs-in{ max-width:620px; margin:0 auto; display:flex }
+.tab{
+  flex:1 1 0; min-width:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+  min-height:62px; padding:9px 2px; background:none; border:none; cursor:pointer;
+  color:var(--ink3); font-family:inherit; font-weight:600;
+  /* Η ετικέτα της πλοήγησης δεν μεγαλώνει με το κείμενο. Στα 34px τα πέντε
+     κουμπιά ξεχείλιζαν και το «Ρυθμίσεις» έβγαινε εκτός οθόνης — μια μπάρα που
+     δεν φτάνεις είναι χειρότερη από μια μικρή ετικέτα. Το εικονίδιο μεγαλώνει,
+     το προσβάσιμο όνομα μένει ακέραιο για τον αναγνώστη οθόνης, και το
+     περιεχόμενο κλιμακώνεται κανονικά. */
+  font-size:clamp(9.5px, .58em, 12px); line-height:1.15;
+  text-align:center; hyphens:none; overflow-wrap:normal;
+}
+.tab svg{ width:clamp(24px, 1.4em, 34px); height:clamp(24px, 1.4em, 34px); flex:none }
+.tab[aria-current="page"]{ color:var(--brand) }
+html[data-contrast="1"] .tab[aria-current="page"]{ text-decoration:underline; text-underline-offset:3px }
+
+/* ── Οθόνες ──────────────────────────────────────────────────────────────── */
+.screen[hidden]{ display:none }
+.sr{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap; border:0 }
+
+.badge{ display:inline-block; min-width:24px; padding:2px 8px; border-radius:999px;
+  background:var(--brand-fill); color:var(--brand-ink); font-size:.74em; font-weight:700 }
+
+.toast{
+  position:fixed; left:50%; transform:translateX(-50%); bottom:84px; z-index:60;
+  background:var(--ink); color:var(--bg); padding:14px 20px; border-radius:var(--radius);
+  max-width:92vw; text-align:center; box-shadow:var(--shadow); font-weight:600;
+}
+.toast[hidden]{ display:none }
+
+.kv{ display:grid; grid-template-columns:minmax(0,auto) minmax(0,1fr);
+  gap:6px 14px; font-size:.9em }
+.kv dt{ color:var(--ink3) } .kv dd{ margin:0; min-width:0 }
+/* Στα δύο μεγαλύτερα μεγέθη η ετικέτα πάει πάνω από την τιμή: δύο στήλες δεν
+   χωράνε σε 390px και η εναλλακτική θα ήταν οριζόντια κύλιση. */
+html[data-size="3"] .kv, html[data-size="4"] .kv{ grid-template-columns:1fr; gap:0 }
+html[data-size="3"] .kv dd, html[data-size="4"] .kv dd{ margin:0 0 12px }
+
+.swatchrow{ display:flex; gap:8px; flex-wrap:wrap }
+.sizebtn{ flex:1; min-width:60px }
+.sizebtn span{ display:block }
+.s1{font-size:15px}.s2{font-size:19px}.s3{font-size:24px}.s4{font-size:29px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
+
+<header class="top">
+  <div class="top-in">
+    <span class="brandmark">
+      <svg viewBox="0 0 100 100" aria-hidden="true" fill="none">
+        <line x1="5" y1="52" x2="50" y2="10" stroke="currentColor" stroke-width="7" stroke-linecap="square"/>
+        <line x1="50" y1="10" x2="95" y2="52" stroke="currentColor" stroke-width="7" stroke-linecap="square"/>
+        <rect x="6" y="52" width="8" height="38" fill="currentColor"/>
+        <rect x="86" y="52" width="8" height="38" fill="currentColor"/>
+        <rect x="44" y="65" width="12" height="25" fill="currentColor"/>
+        <circle cx="93" cy="93" r="5" fill="currentColor"/>
+      </svg>
+      <span>
+        <span class="wordmark">ΕΣΤΙΑ</span>
+        <span class="top-sub" id="ctxLabel"></span>
+      </span>
+    </span>
+    <span class="spacer"></span>
+    <button class="btn btn-icon" id="btnA11y" aria-label="Ρυθμίσεις προσβασιμότητας και εμφάνισης">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="4.5" r="2"/><path d="M4 8h16M12 10v11M12 14l-4 7M12 14l4 7" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+
+<!-- ════════ ΣΥΝΔΕΣΗ ════════ -->
+<section class="screen" id="s-login" aria-labelledby="h-login">
+  <h1 id="h-login" style="margin-top:24px">Καλώς ήρθατε</h1>
+  <p style="color:var(--ink3)">Βάλτε το κινητό σας και τον κωδικό που σας έδωσε ο
+     διαχειριστής. Δεν χρειάζεται να θυμάστε συνθηματικό.</p>
+
+  <form id="loginForm" novalidate>
+    <label for="f-phone">Κινητό τηλέφωνο</label>
+    <input id="f-phone" name="phone" type="tel" inputmode="tel"
+           autocomplete="tel" placeholder="69········" required>
+
+    <div style="height:14px"></div>
+
+    <label for="f-code">Κωδικός πρόσκλησης</label>
+    <p class="help">Έξι ψηφία. Μπορείτε να τον επικολλήσετε από το SMS.</p>
+    <input id="f-code" name="code" type="text" inputmode="numeric"
+           autocomplete="one-time-code" pattern="[0-9]*" maxlength="6"
+           placeholder="······" required
+           style="letter-spacing:.3em; font-size:1.25em; text-align:center">
+
+    <p id="loginErr" role="alert" style="color:var(--crit); font-weight:600; min-height:1.5em; margin:10px 0"></p>
+
+    <button class="btn btn-primary" type="submit">Είσοδος</button>
+  </form>
+
+  <div class="card" style="margin-top:22px; background:var(--sunk)">
+    <h2 style="font-size:1em">Κωδικοί δοκιμής</h2>
+    <dl class="kv" style="margin:0">
+      <dt>Ένοικος</dt><dd><b>111111</b> — Μαρία Παπαδοπούλου, Α2</dd>
+      <dt>Διαχειριστής</dt><dd><b>999999</b> — πλήρης εικόνα κοινότητας</dd>
+    </dl>
+    <p class="meta" style="margin:12px 0 0">Το κινητό δεν ελέγχεται σε αυτή τη
+       δοκιμαστική έκδοση — βάλτε ό,τι θέλετε.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1em">Δεν έχετε κωδικό;</h2>
+    <p class="meta" style="margin-bottom:12px">Στείλτε αίτημα και θα σας εγκρίνει
+       ο διαχειριστής της πολυκατοικίας.</p>
+    <button class="btn btn-ghost" id="btnRequest">Αίτημα πρόσβασης</button>
+  </div>
+</section>
+
+<!-- ════════ ΑΡΧΙΚΗ ════════ -->
+<section class="screen" id="s-home" hidden aria-labelledby="h-home">
+  <h1 id="h-home" style="margin-top:20px">Γεια σας, <span id="userFirst"></span></h1>
+
+  <div class="emergency">
+    <p>Αν κινδυνεύει κάποιος τώρα, καλέστε 166</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:166">Κλήση 166</a>
+      <a class="btn btn-ghost" href="tel:+302100000000" id="callManager">Κλήση διαχειριστή</a>
+    </div>
+  </div>
+
+  <button class="report-cta" id="btnReport">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M12 2a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+      <path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8" stroke-linecap="round"/>
+    </svg>
+    Θέλω να αναφέρω κάτι
+  </button>
+
+  <div class="section-head">
+    <h2>Οι αναφορές μου</h2>
+    <button class="btn btn-icon more" id="moreMine"
+            style="width:auto; padding:8px 12px; border-color:var(--rule-strong)">Δες περισσότερα</button>
+  </div>
+  <ul class="list" id="homeMine"></ul>
+
+  <div class="section-head">
+    <h2>Στην κοινότητα</h2>
+    <button class="btn btn-icon more" id="moreAll"
+            style="width:auto; padding:8px 12px; border-color:var(--rule-strong)">Δες περισσότερα</button>
+  </div>
+  <ul class="list" id="homeAll"></ul>
+
+  <div class="section-head"><h2>Σήμερα</h2></div>
+  <ul class="list" id="homeToday"></ul>
+</section>
+
+<!-- ════════ ΔΙΑΧΕΙΡΙΣΤΗΣ ════════ -->
+<section class="screen" id="s-mgr" hidden aria-labelledby="h-mgr">
+  <h1 id="h-mgr" style="margin-top:20px">Κονσόλα διαχειριστή</h1>
+  <div class="card">
+    <div class="stats">
+      <div><b id="mgrOpen">0</b><span class="meta">ανοιχτές</span></div>
+      <div><b id="mgrProg">0</b><span class="meta">σε εξέλιξη</span></div>
+      <div><b id="mgrLate">0</b><span class="meta">εκτός χρόνου</span></div>
+      <div><b id="mgrDone">0</b><span class="meta">λύθηκαν (30μ)</span></div>
+    </div>
+  </div>
+  <p class="meta">Ταξινομημένες κατά το τι σπάει πρώτο — όχι κατά ημερομηνία.</p>
+  <ul class="list" id="mgrList"></ul>
+</section>
+
+<!-- ════════ ΝΕΑ ΑΝΑΦΟΡΑ ════════ -->
+<section class="screen" id="s-report" hidden aria-labelledby="h-report">
+  <button class="btn btn-ghost back" data-back style="width:auto; margin:16px 0">← Πίσω</button>
+  <h1 id="h-report">Τι συμβαίνει;</h1>
+  <p style="color:var(--ink3)">Πείτε το με δικά σας λόγια. Τίποτα άλλο δεν είναι
+     υποχρεωτικό.</p>
+
+  <button class="mic" id="mic" data-rec="0" aria-describedby="micHelp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M12 2a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+      <path d="M5 11a7 7 0 0 0 14 0M12 18v4" stroke-linecap="round"/>
+    </svg>
+    <span id="micLabel">Πατήστε και μιλήστε</span>
+    <span class="meta" id="micTime"></span>
+  </button>
+  <p class="help" id="micHelp">Πατήστε μία φορά για να ξεκινήσει, άλλη μία για να σταματήσει.</p>
+  <audio id="micPlay" controls hidden style="width:100%; margin-bottom:14px"></audio>
+
+  <fieldset>
+    <legend>Ή γράψτε το</legend>
+    <textarea id="f-text" placeholder="π.χ. Στάζει η βρύση στην κουζίνα από χθες το βράδυ"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend id="lg-where">Πού;</legend>
+    <div class="chips" role="group" aria-labelledby="lg-where" id="whereChips"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend id="lg-cat">Τι αφορά; <span class="meta">(προαιρετικό)</span></legend>
+    <div class="chips" role="group" aria-labelledby="lg-cat" id="catChips"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Φωτογραφία <span class="meta">(προαιρετικό)</span></legend>
+    <input type="file" id="f-photo" accept="image/*" capture="environment"
+           style="min-height:var(--tap); padding:12px">
+    <img id="photoPrev" alt="Προεπισκόπηση φωτογραφίας" hidden
+         style="max-width:100%; border-radius:var(--radius); margin-top:12px">
+  </fieldset>
+
+  <fieldset id="anonBox" hidden>
+    <label class="row" style="font-weight:400; cursor:pointer; align-items:center">
+      <input type="checkbox" id="f-anon" style="width:28px; height:28px; min-height:0; flex:none">
+      <span>Να μη φαίνεται το όνομά μου</span>
+    </label>
+    <p class="help">Η αναφορά φτάνει κανονικά. Ο διαχειριστής δεν βλέπει ποιος την έκανε.</p>
+  </fieldset>
+
+  <p id="reportErr" role="alert" style="color:var(--crit); font-weight:600; min-height:1.5em"></p>
+  <button class="btn btn-primary" id="btnSend">Στείλτε την αναφορά</button>
+  <p class="meta" style="text-align:center; margin-top:12px">
+     Θα λάβετε απάντηση εντός <span id="slaHint">4 ωρών</span>.</p>
+</section>
+
+<!-- ════════ ΛΙΣΤΑ ΑΝΑΦΟΡΩΝ ════════ -->
+<section class="screen" id="s-list" hidden aria-labelledby="h-list">
+  <button class="btn btn-ghost" data-back style="width:auto; margin:16px 0">← Πίσω</button>
+  <h1 id="h-list">Αναφορές</h1>
+
+  <div class="filters" role="group" aria-label="Φίλτρο πεδίου">
+    <button class="chip" data-scope="mine" aria-pressed="false">Δικές μου</button>
+    <button class="chip" data-scope="all"  aria-pressed="true">Όλη η κοινότητα</button>
+  </div>
+  <div class="filters" role="group" aria-label="Φίλτρο κατάστασης">
+    <button class="chip" data-filter="open"  aria-pressed="true">Ανοιχτές</button>
+    <button class="chip" data-filter="prog"  aria-pressed="false">Σε εξέλιξη</button>
+    <button class="chip" data-filter="done"  aria-pressed="false">Επιλύθηκαν</button>
+    <button class="chip" data-filter="any"   aria-pressed="false">Όλες</button>
+  </div>
+
+  <p class="meta" id="listCount" aria-live="polite"></p>
+  <ul class="list" id="listOut"></ul>
+</section>
+
+<!-- ════════ ΛΕΠΤΟΜΕΡΕΙΑ ════════ -->
+<section class="screen" id="s-detail" hidden aria-labelledby="h-detail">
+  <button class="btn btn-ghost" data-back style="width:auto; margin:16px 0">← Πίσω</button>
+  <div id="detailOut"></div>
+</section>
+
+<!-- ════════ ΑΝΑΚΟΙΝΩΣΕΙΣ ════════ -->
+<section class="screen" id="s-news" hidden aria-labelledby="h-news">
+  <h1 id="h-news" style="margin-top:20px">Ανακοινώσεις</h1>
+  <ul class="list" id="newsOut"></ul>
+</section>
+
+<!-- ════════ ΖΩΗ ΚΟΙΝΟΤΗΤΑΣ ════════ -->
+<section class="screen" id="s-life" hidden aria-labelledby="h-life">
+  <h1 id="h-life" style="margin-top:20px">Η κοινότητα</h1>
+
+  <div class="section-head"><h2>Δραστηριότητες</h2></div>
+  <ul class="list" id="actOut"></ul>
+
+  <div class="section-head"><h2>Κράτηση χώρου</h2></div>
+  <p class="meta">Αίθουσα, κήπος και ξενώνας. Πατήστε για να δεσμεύσετε.</p>
+  <ul class="list" id="roomOut"></ul>
+</section>
+
+<!-- ════════ ΡΥΘΜΙΣΕΙΣ ════════ -->
+<section class="screen" id="s-set" hidden aria-labelledby="h-set">
+  <h1 id="h-set" style="margin-top:20px">Εμφάνιση &amp; προσβασιμότητα</h1>
+
+  <div class="card">
+    <h2>Μέγεθος γραμμάτων</h2>
+    <p class="help">Αλλάζει αμέσως. Αν έχετε μεγαλώσει τα γράμματα στις ρυθμίσεις
+       του κινητού, αυτό προστίθεται από πάνω.</p>
+    <div class="swatchrow" role="group" aria-label="Μέγεθος γραμμάτων">
+      <button class="btn sizebtn" data-size="1" aria-pressed="false"><span class="s1">Αα</span></button>
+      <button class="btn sizebtn" data-size="2" aria-pressed="false"><span class="s2">Αα</span></button>
+      <button class="btn sizebtn" data-size="3" aria-pressed="false"><span class="s3">Αα</span></button>
+      <button class="btn sizebtn" data-size="4" aria-pressed="false"><span class="s4">Αα</span></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Χρώματα</h2>
+    <div class="btn-row" role="group" aria-label="Θέμα χρωμάτων">
+      <button class="btn" data-theme="light" aria-pressed="false">Φωτεινό</button>
+      <button class="btn" data-theme="dark" aria-pressed="false">Σκούρο</button>
+      <button class="btn" data-theme="auto" aria-pressed="false">Αυτόματο</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Πιο έντονα χρώματα</h2>
+    <p class="help">Μαύρο σε λευκό, παχύτερα περιγράμματα. Βοηθά σε δυνατό φως
+       και σε χαμηλή όραση.</p>
+    <button class="btn" id="btnContrast" aria-pressed="false">Υψηλή αντίθεση</button>
+  </div>
+
+  <div class="card">
+    <h2>Λιγότερη κίνηση</h2>
+    <p class="help">Σταματά τις μεταβάσεις και το παλμικό εικονίδιο της ηχογράφησης.</p>
+    <button class="btn" id="btnMotion" aria-pressed="false">Χωρίς κίνηση</button>
+  </div>
+
+  <div class="card">
+    <h2>Ο λογαριασμός μου</h2>
+    <dl class="kv" id="acctOut"></dl>
+    <div style="height:14px"></div>
+    <button class="btn btn-ghost" id="btnLogout">Αποσύνδεση</button>
+  </div>
+
+  <div class="card" style="background:var(--sunk)">
+    <h2 style="font-size:1em">Εγκατάσταση στην αρχική οθόνη</h2>
+    <p class="meta" id="installHelp"></p>
+    <button class="btn btn-ghost" id="btnInstall" hidden>Εγκατάσταση</button>
+  </div>
+
+  <p class="meta" style="text-align:center">
+     Δοκιμαστική έκδοση · τα δεδομένα μένουν μόνο σε αυτή τη συσκευή.
+  </p>
+</section>
+
+</main>
+
+<nav class="tabs" id="tabs" hidden aria-label="Κύρια πλοήγηση">
+  <div class="tabs-in">
+    <button class="tab" data-tab="home" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 10.5 12 3l9 7.5M5.5 9.5V20h13V9.5" stroke-linejoin="round"/></svg>
+      Αρχική</button>
+    <button class="tab" data-tab="list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
+      Αναφορές</button>
+    <button class="tab" data-tab="news">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M4 5h16v14H4zM7 9h10M7 13h7" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      Ανακοινώσεις</button>
+    <button class="tab" data-tab="life">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.5"/>
+        <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M16 14.5c2.5.3 4.5 2.2 4.5 4.5" stroke-linecap="round"/></svg>
+      Κοινότητα</button>
+    <button class="tab" data-tab="set">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="4.5" r="2"/><path d="M4 8h16M12 10v11M12 14l-4 7M12 14l4 7" stroke-linecap="round"/></svg>
+      Ρυθμίσεις</button>
+  </div>
+</nav>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<p class="sr" id="live" role="status" aria-live="polite"></p>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════════
+   ΕΣΤΙΑ — δοκιμαστική έκδοση
+
+   Όλα τα δεδομένα ζουν στο localStorage αυτής της συσκευής. Καμία σύνδεση με
+   διακομιστή, κανένα προσωπικό στοιχείο δεν φεύγει από το κινητό. Όταν μπει
+   το Supabase, αλλάζει μόνο το στρώμα DB — οι οθόνες μένουν ίδιες.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const K  = 'estia.v1';
+
+/* ── Κωδικοί δοκιμής ──────────────────────────────────────────────────────── */
+const CODES = {
+  '111111': { role:'resident', name:'Μαρία Παπαδοπούλου', unit:'Α2',
+              community:'ΕΣΤΙΑ Παγκράτι' },
+  '999999': { role:'manager',  name:'Φώτης Ξινταρόπουλος', unit:'—',
+              community:'ΕΣΤΙΑ Παγκράτι' },
+};
+
+/* ── Ταξινομία (από supabase/seed/0001_categories_and_sla.sql) ────────────── */
+const WHERE = [
+  { id:'unit',   label:'Στο σπίτι μου' },
+  { id:'common', label:'Κοινόχρηστος χώρος' },
+  { id:'system', label:'Ασανσέρ, θέρμανση, νερό' },
+  { id:'outdoor',label:'Αυλή, κήπος, είσοδος' },
+  { id:'people', label:'Κάποιος άνθρωπος' },
+];
+const CATS = {
+  unit:[['home.plumbing','Βρύση, τουαλέτα, διαρροή'],['home.electrical','Ρεύμα, φώτα, πρίζες'],
+        ['home.appliance','Συσκευή που δεν δουλεύει'],['home.door','Πόρτα, κλειδαριά, παράθυρο'],
+        ['home.temp','Κάνει κρύο ή ζέστη'],['home.damp','Υγρασία, μούχλα'],
+        ['home.access','Δυσκολεύομαι να φτάσω κάτι'],['home.pest','Έντομα ή τρωκτικά'],
+        ['home.clean','Καθαριότητα']],
+  common:[['bld.light','Φωτισμός σε κοινόχρηστο χώρο'],['bld.entry','Είσοδος, θυροτηλέφωνο'],
+          ['bld.clean','Καθαριότητα κοινόχρηστων'],['bld.noise','Θόρυβος']],
+  system:[['bld.lift','Ασανσέρ'],['bld.heat','Θέρμανση'],['bld.water','Νερό'],
+          ['bld.power','Ρεύμα κοινόχρηστων']],
+  outdoor:[['out.garden','Κήπος, φυτά'],['out.path','Διάδρομοι, σκαλιά'],
+           ['out.light','Εξωτερικός φωτισμός'],['out.park','Στάθμευση']],
+  people:[['ppl.staff','Κάποιος από το προσωπικό'],['ppl.neighbour','Γείτονας'],
+          ['ppl.care','Φροντιστής'],['ppl.other','Κάτι άλλο']],
+};
+/* Το SLA που έχει δημοσιευτεί προς τους ενοίκους, σε ώρες εργασίας. */
+const SLA = { 'bld.lift':2, 'bld.heat':4, 'bld.water':4, 'home.plumbing':4,
+              'home.electrical':4, 'ppl.staff':8, 'ppl.care':8, _default:24 };
+
+const STATUS = {
+  new:  { label:'Νέα',          cls:'st-new'  },
+  ack:  { label:'Την είδαμε',   cls:'st-ack'  },
+  prog: { label:'Σε εξέλιξη',   cls:'st-prog' },
+  done: { label:'Επιλύθηκε',    cls:'st-done' },
+};
+
+/* ── Κατάσταση ────────────────────────────────────────────────────────────── */
+let S = { user:null, issues:[], news:[], acts:[], rooms:[],
+          prefs:{ theme:'auto', size:'1', contrast:'0', motion:'auto' } };
+let stack = [];
+let draft = { where:null, cat:null, audio:null, photo:null };
+let listScope = 'all', listFilter = 'open';
+
+function save(){ try{ localStorage.setItem(K, JSON.stringify(S)) }catch(e){} }
+function load(){
+  try{ const r = localStorage.getItem(K); if(r) S = { ...S, ...JSON.parse(r) } }catch(e){}
+}
+
+/* ── Ημερομηνίες στα ελληνικά ─────────────────────────────────────────────── */
+const MON = ['Ιαν','Φεβ','Μαρ','Απρ','Μαΐ','Ιουν','Ιουλ','Αυγ','Σεπ','Οκτ','Νοε','Δεκ'];
+const DAY = ['Κυριακή','Δευτέρα','Τρίτη','Τετάρτη','Πέμπτη','Παρασκευή','Σάββατο'];
+function ago(iso){
+  const d = new Date(iso), m = Math.round((Date.now()-d)/60000);
+  if(m < 2) return 'μόλις τώρα';
+  if(m < 60) return `πριν ${m} λεπτά`;
+  const h = Math.round(m/60);
+  if(h < 24) return h===1 ? 'πριν 1 ώρα' : `πριν ${h} ώρες`;
+  const dd = Math.round(h/24);
+  if(dd === 1) return 'χθες';
+  if(dd < 30) return `πριν ${dd} μέρες`;
+  return `${d.getDate()} ${MON[d.getMonth()]}`;
+}
+function dayLabel(iso){
+  const d = new Date(iso), t = new Date();
+  const same = x => x.toDateString() === d.toDateString();
+  if(same(t)) return 'Σήμερα';
+  const tm = new Date(t.getTime()+864e5); if(same(tm)) return 'Αύριο';
+  return `${DAY[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`;
+}
+const hhmm = iso => new Date(iso).toLocaleTimeString('el-GR',{hour:'2-digit',minute:'2-digit'});
+
+/* ── Δοκιμαστικά δεδομένα ─────────────────────────────────────────────────── */
+function seed(){
+  if(S.issues.length) return;
+  const H = 36e5, D = 864e5, now = Date.now();
+  const mk = (o) => ({ id:'i'+Math.random().toString(36).slice(2,9), photo:null, audio:null, ...o });
+  S.issues = [
+    mk({ title:'Το ασανσέρ σταματάει ανάμεσα στους ορόφους', cat:'bld.lift', where:'system',
+         by:'Γιώργος Δ.', unit:'Β1', mine:false, status:'prog', sev:4,
+         at:new Date(now-5*H).toISOString(),
+         trail:[['Η αναφορά στάλθηκε', now-5*H],['Ο διαχειριστής την είδε', now-4.6*H],
+                ['Κλήθηκε το συνεργείο ανελκυστήρων', now-4*H]] }),
+    mk({ title:'Στάζει η βρύση στην κουζίνα', cat:'home.plumbing', where:'unit',
+         by:'Μαρία Παπαδοπούλου', unit:'Α2', mine:true, status:'ack', sev:2,
+         at:new Date(now-20*H).toISOString(),
+         trail:[['Η αναφορά στάλθηκε', now-20*H],['Ο διαχειριστής την είδε', now-18*H]] }),
+    mk({ title:'Καμένη λάμπα στον διάδρομο του 2ου', cat:'bld.light', where:'common',
+         by:'Ελένη Κ.', unit:'Β3', mine:false, status:'done', sev:1,
+         at:new Date(now-6*D).toISOString(), resolved:new Date(now-5*D).toISOString(),
+         note:'Αντικαταστάθηκε με LED. Μπήκαν εφεδρικές στην αποθήκη.',
+         trail:[['Η αναφορά στάλθηκε', now-6*D],['Ο διαχειριστής την είδε', now-5.9*D],
+                ['Σε εξέλιξη', now-5.4*D],['Επιλύθηκε', now-5*D]] }),
+    mk({ title:'Δεν βγάζει ζεστό νερό το πρωί', cat:'bld.heat', where:'system',
+         by:'Μαρία Παπαδοπούλου', unit:'Α2', mine:true, status:'done', sev:3,
+         at:new Date(now-14*D).toISOString(), resolved:new Date(now-13*D).toISOString(),
+         note:'Ρυθμίστηκε ο θερμοσίφωνας και άλλαξε το χρονοδιακόπτη στις 06:00.',
+         trail:[['Η αναφορά στάλθηκε', now-14*D],['Ο διαχειριστής την είδε', now-13.9*D],
+                ['Σε εξέλιξη', now-13.5*D],['Επιλύθηκε', now-13*D]] }),
+    mk({ title:'Το παγκάκι στον κήπο είναι σπασμένο', cat:'out.path', where:'outdoor',
+         by:'Ανώνυμη αναφορά', unit:'—', mine:false, status:'new', sev:2, anon:true,
+         at:new Date(now-2*H).toISOString(),
+         trail:[['Η αναφορά στάλθηκε', now-2*H]] }),
+    mk({ title:'Υγρασία στον τοίχο του υπνοδωματίου', cat:'home.damp', where:'unit',
+         by:'Νίκος Β.', unit:'Γ1', mine:false, status:'prog', sev:3,
+         at:new Date(now-3*D).toISOString(),
+         trail:[['Η αναφορά στάλθηκε', now-3*D],['Ο διαχειριστής την είδε', now-2.9*D],
+                ['Ήρθε μονωτής για εκτίμηση', now-1*D]] }),
+    mk({ title:'Η εξωτερική πόρτα δεν κλείνει καλά', cat:'bld.entry', where:'common',
+         by:'Σοφία Μ.', unit:'Α4', mine:false, status:'done', sev:3,
+         at:new Date(now-40*D).toISOString(), resolved:new Date(now-38*D).toISOString(),
+         note:'Ρυθμίστηκε ο μηχανισμός επαναφοράς.',
+         trail:[['Η αναφορά στάλθηκε', now-40*D],['Επιλύθηκε', now-38*D]] }),
+  ];
+  S.news = [
+    { id:'n1', title:'Συντήρηση ανελκυστήρα — Τρίτη 09:00-12:00',
+      body:'Την Τρίτη το πρωί το ασανσέρ θα είναι εκτός λειτουργίας για την ετήσια '+
+           'πιστοποίηση. Αν χρειάζεστε βοήθεια για να κατεβείτε, πάρτε με μέχρι τη Δευτέρα.',
+      at:new Date(Date.now()-6*36e5).toISOString(), by:'Διαχειριστής', pin:true },
+    { id:'n2', title:'Νέος κήπος βοτάνων στην αυλή',
+      body:'Φυτέψαμε ρίγανη, δενδρολίβανο και βασιλικό. Κόβετε ελεύθερα — απλώς '+
+           'αφήστε να προλάβει να ξαναβγάλει.',
+      at:new Date(Date.now()-3*864e5).toISOString(), by:'Ομάδα κήπου' },
+    { id:'n3', title:'Γενική συνέλευση — Κυριακή 18:00',
+      body:'Θέματα: προϋπολογισμός συντήρησης, πρόταση για σκίαστρα στη βεράντα, '+
+           'πρόγραμμα εκδρομών άνοιξης.',
+      at:new Date(Date.now()-8*864e5).toISOString(), by:'Διαχειριστής' },
+  ];
+  const t0 = new Date(); t0.setHours(11,0,0,0);
+  const mkA = (h,m,d,title,where,who) => {
+    const x = new Date(); x.setDate(x.getDate()+d); x.setHours(h,m,0,0);
+    return { id:'a'+Math.random().toString(36).slice(2,7), title, where, who,
+             at:x.toISOString(), going:false };
+  };
+  S.acts = [
+    mkA(11, 0,0,'Καφές στην αυλή','Αυλή','Ανοιχτό σε όλους'),
+    mkA(13,30,0,'Κοινό γεύμα','Τραπεζαρία','Ανοιχτό σε όλους'),
+    mkA(18, 0,0,'Τάβλι και χαρτιά','Αίθουσα','Ανοιχτό σε όλους'),
+    mkA(10, 0,1,'Περίπατος στον λόφο','Είσοδος','Αργό βήμα, 40 λεπτά'),
+    mkA(17, 0,1,'Μέτρηση πίεσης','Αίθουσα','Επισκέπτρια νοσηλεύτρια'),
+    mkA(11, 0,2,'Λαϊκή αγορά — κοινή μεταφορά','Είσοδος','Κράτηση θέσης'),
+    mkA(19, 0,3,'Βραδιά ταινίας','Αίθουσα','Ελληνικός κινηματογράφος'),
+  ];
+  S.rooms = [
+    { id:'r1', name:'Αίθουσα', cap:'έως 25 άτομα', slots:[] },
+    { id:'r2', name:'Τραπεζαρία', cap:'έως 12 άτομα', slots:[] },
+    { id:'r3', name:'Ξενώνας', cap:'1 δωμάτιο, 2 κλίνες', slots:[] },
+  ];
+  save();
+}
+
+/* ── Προτιμήσεις εμφάνισης ────────────────────────────────────────────────── */
+function applyPrefs(){
+  const p = S.prefs, r = document.documentElement;
+  r.dataset.theme = p.theme; r.dataset.size = p.size;
+  r.dataset.contrast = p.contrast; r.dataset.motion = p.motion;
+  r.classList.toggle('dark-pref',
+    p.theme === 'dark' || (p.theme === 'auto' &&
+      matchMedia('(prefers-color-scheme: dark)').matches));
+  $$('[data-size]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.size === p.size)));
+  $$('.btn[data-theme]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === p.theme)));
+  $('#btnContrast').setAttribute('aria-pressed', String(p.contrast === '1'));
+  $('#btnMotion').setAttribute('aria-pressed', String(p.motion === 'off'));
+}
+
+/* ── Πλοήγηση ─────────────────────────────────────────────────────────────── */
+const TABS = ['home','list','news','life','set'];
+function show(id, push = true){
+  if(push){ const cur = $$('.screen').find(s => !s.hidden); if(cur) stack.push(cur.id.slice(2)); }
+  $$('.screen').forEach(s => s.hidden = true);
+  const el = $('#s-' + id); if(!el) return;
+  el.hidden = false;
+  $('#tabs').hidden = !S.user;
+  $$('.tab').forEach(t => {
+    const on = t.dataset.tab === id || (id === 'mgr' && t.dataset.tab === 'home');
+    on ? t.setAttribute('aria-current','page') : t.removeAttribute('aria-current');
+  });
+  window.scrollTo(0,0);
+  /* Η εστίαση πάει στην επικεφαλίδα: ο αναγνώστης οθόνης ανακοινώνει πού είμαστε. */
+  const h = el.querySelector('h1');
+  if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}) }
+  render(id);
+}
+function back(){
+  const prev = stack.pop();
+  show(prev || (S.user?.role === 'manager' ? 'mgr' : 'home'), false);
+}
+$$('[data-back]').forEach(b => b.onclick = back);
+$$('.tab').forEach(t => t.onclick = () => {
+  stack = [];
+  const d = t.dataset.tab;
+  show(d === 'home' && S.user?.role === 'manager' ? 'mgr' : d, false);
+});
+
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; t.hidden = false;
+  clearTimeout(t._h); t._h = setTimeout(() => t.hidden = true, 3600);
+}
+const announce = m => { $('#live').textContent = ''; setTimeout(()=> $('#live').textContent = m, 60) };
+
+/* ── Σύνδεση ──────────────────────────────────────────────────────────────── */
+$('#loginForm').onsubmit = e => {
+  e.preventDefault();
+  const code = $('#f-code').value.replace(/\D/g,'');
+  const phone = $('#f-phone').value.trim();
+  const err = $('#loginErr');
+  if(!phone){ err.textContent = 'Συμπληρώστε το κινητό σας.'; $('#f-phone').focus(); return }
+  const u = CODES[code];
+  if(!u){ err.textContent = 'Ο κωδικός δεν αναγνωρίζεται. Ελέγξτε τα έξι ψηφία.';
+          $('#f-code').focus(); return }
+  err.textContent = '';
+  S.user = { ...u, phone }; save(); seed();
+  $('#ctxLabel').textContent = u.community + (u.role==='manager' ? ' · διαχείριση' : ' · ' + u.unit);
+  stack = [];
+  show(u.role === 'manager' ? 'mgr' : 'home', false);
+  announce('Συνδεθήκατε ως ' + u.name);
+};
+$('#btnRequest').onclick = () => {
+  toast('Το αίτημα στάλθηκε. Θα ειδοποιηθείτε με SMS μόλις εγκριθεί.');
+  announce('Το αίτημα πρόσβασης στάλθηκε στον διαχειριστή.');
+};
+$('#btnLogout').onclick = () => {
+  if(!confirm('Θέλετε να αποσυνδεθείτε;')) return;
+  S.user = null; save(); stack = []; show('login', false);
+};
+
+/* ── Αναφορές: βοηθητικά ─────────────────────────────────────────────────── */
+const slaFor = c => SLA[c] ?? SLA._default;
+function isLate(it){
+  if(it.status === 'done') return false;
+  return (Date.now() - new Date(it.at)) / 36e5 > slaFor(it.cat) * 2;
+}
+function catLabel(code){
+  for(const k in CATS){ const f = CATS[k].find(c => c[0] === code); if(f) return f[1] }
+  return '';
+}
+function pill(st, late){
+  const s = STATUS[st];
+  return `<span class="status ${s.cls}"><span class="dot"></span>${s.label}</span>` +
+         (late ? ` <span class="status st-new"><span class="dot"></span>Εκτός χρόνου</span>` : '');
+}
+function issueCard(it){
+  const who = it.anon ? 'Ανώνυμη αναφορά' : `${it.by}${it.unit !== '—' ? ' · ' + it.unit : ''}`;
+  return `<li><button class="card card-link" data-issue="${it.id}">
+    <div class="row-between" style="margin-bottom:8px">
+      ${pill(it.status, isLate(it))}
+      <span class="meta">${ago(it.at)}</span>
+    </div>
+    <b style="display:block; margin-bottom:5px">${it.title}</b>
+    <span class="meta">${who}${catLabel(it.cat) ? ' · ' + catLabel(it.cat) : ''}</span>
+  </button></li>`;
+}
+function bindIssueCards(root){
+  root.querySelectorAll('[data-issue]').forEach(b =>
+    b.onclick = () => { openIssue(b.dataset.issue) });
+}
+
+/* ── Απόδοση οθονών ──────────────────────────────────────────────────────── */
+function render(id){
+  if(id === 'home') renderHome();
+  if(id === 'mgr')  renderMgr();
+  if(id === 'list') renderList();
+  if(id === 'news') renderNews();
+  if(id === 'life') renderLife();
+  if(id === 'set')  renderSet();
+  if(id === 'report') renderReport();
+}
+
+function renderHome(){
+  $('#userFirst').textContent = (S.user?.name || '').split(' ')[0];
+  const mine = S.issues.filter(i => i.mine && i.status !== 'done').slice(0,2);
+  const all  = S.issues.filter(i => !i.mine && i.status !== 'done').slice(0,2);
+  $('#homeMine').innerHTML = mine.length ? mine.map(issueCard).join('')
+    : `<li class="empty">Δεν έχετε ανοιχτές αναφορές.</li>`;
+  $('#homeAll').innerHTML = all.length ? all.map(issueCard).join('')
+    : `<li class="empty">Τίποτα ανοιχτό αυτή τη στιγμή.</li>`;
+  bindIssueCards($('#homeMine')); bindIssueCards($('#homeAll'));
+
+  const today = S.acts.filter(a => new Date(a.at).toDateString() === new Date().toDateString());
+  $('#homeToday').innerHTML = today.length ? today.map(a => `
+    <li><div class="card" style="margin-bottom:10px">
+      <div class="row-between">
+        <div><b>${a.title}</b><div class="meta">${hhmm(a.at)} · ${a.where}</div></div>
+        <span class="meta">${a.who}</span>
+      </div></div></li>`).join('')
+    : `<li class="empty">Δεν υπάρχει κάτι προγραμματισμένο σήμερα.</li>`;
+}
+
+function renderMgr(){
+  const open = S.issues.filter(i => i.status === 'new' || i.status === 'ack');
+  const prog = S.issues.filter(i => i.status === 'prog');
+  const late = S.issues.filter(isLate);
+  const done = S.issues.filter(i => i.status === 'done' &&
+                Date.now() - new Date(i.resolved || i.at) < 30*864e5);
+  $('#mgrOpen').textContent = open.length;
+  $('#mgrProg').textContent = prog.length;
+  $('#mgrLate').textContent = late.length;
+  $('#mgrDone').textContent = done.length;
+
+  /* triageOrder(): πρώτα ό,τι έχει σπάσει το SLA, μετά σοβαρότητα, μετά ηλικία.
+     Μια ουρά ταξινομημένη κατά ημερομηνία κάνει το παλιότερο να φαίνεται πιο
+     επείγον — έτσι ένα χαλασμένο ασανσέρ περιμένει πίσω από ένα αίτημα ραφιού. */
+  const live = [...S.issues].filter(i => i.status !== 'done').sort((a,b) =>
+    (isLate(b) - isLate(a)) || (b.sev - a.sev) || (new Date(a.at) - new Date(b.at)));
+  $('#mgrList').innerHTML = live.length ? live.map(issueCard).join('')
+    : `<li class="empty">Καμία ανοιχτή αναφορά.</li>`;
+  bindIssueCards($('#mgrList'));
+}
+
+function renderList(){
+  $$('[data-scope]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.scope === listScope)));
+  $$('[data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === listFilter)));
+  let out = S.issues.slice();
+  if(listScope === 'mine') out = out.filter(i => i.mine);
+  if(listFilter === 'open') out = out.filter(i => i.status === 'new' || i.status === 'ack');
+  if(listFilter === 'prog') out = out.filter(i => i.status === 'prog');
+  if(listFilter === 'done') out = out.filter(i => i.status === 'done');
+  out.sort((a,b) => new Date(b.at) - new Date(a.at));
+  const n = out.length;
+  $('#listCount').textContent = n === 0 ? 'Καμία αναφορά με αυτά τα φίλτρα.'
+    : n === 1 ? '1 αναφορά' : `${n} αναφορές`;
+  $('#listOut').innerHTML = n ? out.map(issueCard).join('')
+    : `<li class="empty">Δοκιμάστε «Όλες».</li>`;
+  bindIssueCards($('#listOut'));
+}
+$$('[data-scope]').forEach(b => b.onclick = () => { listScope = b.dataset.scope; renderList() });
+$$('[data-filter]').forEach(b => b.onclick = () => { listFilter = b.dataset.filter; renderList() });
+$('#moreMine').onclick = () => { listScope = 'mine'; listFilter = 'any'; show('list') };
+$('#moreAll').onclick  = () => { listScope = 'all';  listFilter = 'any'; show('list') };
+
+function openIssue(id){
+  const it = S.issues.find(x => x.id === id); if(!it) return;
+  const isMgr = S.user?.role === 'manager';
+  const who = it.anon ? 'Ανώνυμη αναφορά' : `${it.by}${it.unit !== '—' ? ' · ' + it.unit : ''}`;
+  const steps = (it.trail || []).map((t,i,arr) =>
+    `<li class="${it.status==='done' || i<arr.length-1 ? 'done' : 'now'}">
+       <b>${t[0]}</b><span class="meta">${ago(new Date(t[1]).toISOString())}</span></li>`).join('');
+  const nextBtns = isMgr && it.status !== 'done' ? `
+    <div class="card">
+      <h2 style="font-size:1em">Ενέργεια</h2>
+      <div class="btn-row">
+        ${it.status==='new' ? `<button class="btn" data-set="ack">Την είδα</button>`:''}
+        ${it.status!=='prog'? `<button class="btn" data-set="prog">Ξεκίνησε η εργασία</button>`:''}
+        <button class="btn btn-primary" data-set="done">Επιλύθηκε</button>
+      </div>
+    </div>` : '';
+  $('#detailOut').innerHTML = `
+    <h1 id="h-detail">${it.title}</h1>
+    <div class="row-between" style="margin-bottom:14px">
+      ${pill(it.status, isLate(it))}<span class="meta">${ago(it.at)}</span>
+    </div>
+    <div class="card">
+      <dl class="kv">
+        <dt>Ποιος</dt><dd>${who}</dd>
+        <dt>Τι αφορά</dt><dd>${catLabel(it.cat) || '—'}</dd>
+        <dt>Υποσχεθείσα απάντηση</dt><dd>εντός ${slaFor(it.cat)} ωρών εργασίας</dd>
+      </dl>
+      ${it.note ? `<p style="margin-top:14px"><b>Τι έγινε:</b> ${it.note}</p>` : ''}
+      ${it.photo ? `<img src="${it.photo}" alt="Φωτογραφία της αναφοράς"
+           style="max-width:100%; border-radius:var(--radius); margin-top:14px">` : ''}
+      ${it.audio ? `<audio controls src="${it.audio}" style="width:100%; margin-top:14px"></audio>` : ''}
+    </div>
+    ${nextBtns}
+    <div class="card">
+      <h2 style="font-size:1em">Τι έχει γίνει</h2>
+      <ol class="trail">${steps}</ol>
+    </div>`;
+  $('#detailOut').querySelectorAll('[data-set]').forEach(b => b.onclick = () => {
+    const to = b.dataset.set;
+    it.status = to;
+    it.trail = it.trail || [];
+    it.trail.push([STATUS[to].label === 'Επιλύθηκε' ? 'Επιλύθηκε' : STATUS[to].label, Date.now()]);
+    if(to === 'done') it.resolved = new Date().toISOString();
+    save(); openIssue(id);
+    toast('Η κατάσταση ενημερώθηκε.');
+    announce('Η αναφορά σημειώθηκε ως ' + STATUS[to].label);
+  });
+  show('detail');
+}
+
+function renderNews(){
+  const items = [...S.news].sort((a,b) => (b.pin?1:0)-(a.pin?1:0) || new Date(b.at)-new Date(a.at));
+  $('#newsOut').innerHTML = items.map(n => `
+    <li><div class="card">
+      ${n.pin ? `<span class="badge" style="margin-bottom:8px; display:inline-block">Σημαντικό</span>` : ''}
+      <h2 style="font-size:1.05em">${n.title}</h2>
+      <p>${n.body}</p>
+      <p class="meta" style="margin:0">${n.by} · ${ago(n.at)}</p>
+    </div></li>`).join('');
+}
+
+function renderLife(){
+  const byDay = {};
+  S.acts.sort((a,b)=> new Date(a.at)-new Date(b.at)).forEach(a => {
+    (byDay[dayLabel(a.at)] ||= []).push(a);
+  });
+  $('#actOut').innerHTML = Object.entries(byDay).map(([d, list]) => `
+    <li><h3 style="margin:18px 0 8px">${d}</h3>
+      ${list.map(a => `<div class="card" style="margin-bottom:10px">
+        <div class="row-between">
+          <div style="min-width:0">
+            <b>${a.title}</b>
+            <div class="meta">${hhmm(a.at)} · ${a.where} · ${a.who}</div>
+          </div>
+          <button class="btn" data-going="${a.id}" aria-pressed="${a.going}"
+            style="width:auto; min-width:118px">${a.going ? 'Θα έρθω ✓' : 'Θα έρθω'}</button>
+        </div></div>`).join('')}
+    </li>`).join('');
+  $('#actOut').querySelectorAll('[data-going]').forEach(b => b.onclick = () => {
+    const a = S.acts.find(x => x.id === b.dataset.going);
+    a.going = !a.going; save(); renderLife();
+    announce(a.going ? 'Δηλώσατε συμμετοχή: ' + a.title : 'Ακυρώθηκε η συμμετοχή');
+  });
+
+  $('#roomOut').innerHTML = S.rooms.map(r => `
+    <li><div class="card">
+      <div class="row-between">
+        <div><b>${r.name}</b><div class="meta">${r.cap}</div></div>
+        <button class="btn" data-book="${r.id}" style="width:auto; min-width:118px">Κράτηση</button>
+      </div>
+      ${r.slots.length ? `<ul class="list" style="margin-top:12px">${r.slots.map(s =>
+        `<li class="meta">${dayLabel(s.at)} ${hhmm(s.at)} — ${s.by}</li>`).join('')}</ul>` : ''}
+    </div></li>`).join('');
+  $('#roomOut').querySelectorAll('[data-book]').forEach(b => b.onclick = () => {
+    const r = S.rooms.find(x => x.id === b.dataset.book);
+    const when = prompt(`Κράτηση: ${r.name}\nΓράψτε μέρα και ώρα, π.χ. «Κυριακή 13:00»`);
+    if(!when) return;
+    const d = new Date(); d.setDate(d.getDate()+1); d.setHours(13,0,0,0);
+    r.slots.push({ at:d.toISOString(), by:(S.user?.name||'Εγώ') + ' — ' + when });
+    save(); renderLife(); toast('Η κράτηση καταγράφηκε.');
+  });
+}
+
+function renderSet(){
+  const u = S.user || {};
+  $('#acctOut').innerHTML = `
+    <dt>Όνομα</dt><dd>${u.name || '—'}</dd>
+    <dt>Ρόλος</dt><dd>${u.role === 'manager' ? 'Διαχειριστής' : 'Ένοικος'}</dd>
+    <dt>Κοινότητα</dt><dd>${u.community || '—'}</dd>
+    <dt>Διαμέρισμα</dt><dd>${u.unit || '—'}</dd>
+    <dt>Κινητό</dt><dd>${u.phone || '—'}</dd>`;
+  applyPrefs();
+}
+
+/* ── Νέα αναφορά ─────────────────────────────────────────────────────────── */
+function renderReport(){
+  $('#whereChips').innerHTML = WHERE.map(w =>
+    `<button type="button" class="chip" data-where="${w.id}"
+       aria-pressed="${draft.where===w.id}">${w.label}</button>`).join('');
+  $('#whereChips').querySelectorAll('[data-where]').forEach(b => b.onclick = () => {
+    draft.where = b.dataset.where; draft.cat = null; renderReport();
+    /* Η ανωνυμία προσφέρεται μόνη της όταν το θέμα είναι άνθρωπος — το πιο
+       δύσκολο και το πιο πολύτιμο παράπονο να το λάβεις. */
+    $('#anonBox').hidden = draft.where !== 'people';
+  });
+  const cats = CATS[draft.where] || [];
+  $('#catChips').innerHTML = cats.length ? cats.map(([c,l]) =>
+    `<button type="button" class="chip" data-cat="${c}"
+       aria-pressed="${draft.cat===c}">${l}</button>`).join('')
+    : `<p class="meta">Διαλέξτε πρώτα πού.</p>`;
+  $('#catChips').querySelectorAll('[data-cat]').forEach(b => b.onclick = () => {
+    draft.cat = draft.cat === b.dataset.cat ? null : b.dataset.cat;
+    $('#slaHint').textContent = slaFor(draft.cat) + ' ωρών';
+    renderReport();
+  });
+  $('#anonBox').hidden = draft.where !== 'people';
+}
+$('#btnReport').onclick = () => {
+  draft = { where:null, cat:null, audio:null, photo:null };
+  $('#f-text').value = ''; $('#reportErr').textContent = '';
+  $('#micPlay').hidden = true; $('#photoPrev').hidden = true;
+  $('#micLabel').textContent = 'Πατήστε και μιλήστε'; $('#micTime').textContent = '';
+  show('report');
+};
+
+/* Ηχογράφηση. Το MediaRecorder δουλεύει σε Safari iOS 14.3+ και Chrome Android. */
+let rec = null, chunks = [], recTimer = null, recStart = 0;
+$('#mic').onclick = async () => {
+  const m = $('#mic');
+  if(m.dataset.rec === '1'){ rec && rec.state !== 'inactive' && rec.stop(); return }
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({ audio:true });
+    rec = new MediaRecorder(stream); chunks = [];
+    rec.ondataavailable = e => chunks.push(e.data);
+    rec.onstop = () => {
+      stream.getTracks().forEach(t => t.stop());
+      clearInterval(recTimer);
+      const secs = (Date.now() - recStart) / 1000;
+      m.dataset.rec = '0';
+      /* Κάτω από ένα δευτερόλεπτο είναι κατά λάθος άγγιγμα, όχι ηχογράφηση. */
+      if(secs < 1){ $('#micLabel').textContent = 'Πατήστε και μιλήστε';
+                    $('#micTime').textContent = ''; return }
+      const blob = new Blob(chunks, { type: rec.mimeType || 'audio/webm' });
+      const fr = new FileReader();
+      fr.onload = () => { draft.audio = fr.result;
+        $('#micPlay').src = fr.result; $('#micPlay').hidden = false };
+      fr.readAsDataURL(blob);
+      $('#micLabel').textContent = 'Ηχογραφήθηκε ✓ — πατήστε για νέα';
+      announce('Η ηχογράφηση ολοκληρώθηκε, ' + Math.round(secs) + ' δευτερόλεπτα');
+    };
+    rec.start(); recStart = Date.now(); m.dataset.rec = '1';
+    $('#micLabel').textContent = 'Μιλήστε… πατήστε για να σταματήσει';
+    recTimer = setInterval(() => {
+      $('#micTime').textContent = Math.round((Date.now()-recStart)/1000) + '″';
+    }, 250);
+    announce('Η ηχογράφηση ξεκίνησε');
+  }catch(e){
+    $('#micLabel').textContent = 'Το μικρόφωνο δεν είναι διαθέσιμο';
+    $('#micTime').textContent = 'Γράψτε το παρακάτω';
+  }
+};
+$('#f-photo').onchange = e => {
+  const f = e.target.files[0]; if(!f) return;
+  const fr = new FileReader();
+  fr.onload = () => { draft.photo = fr.result;
+    $('#photoPrev').src = fr.result; $('#photoPrev').hidden = false };
+  fr.readAsDataURL(f);
+};
+$('#btnSend').onclick = () => {
+  const text = $('#f-text').value.trim();
+  /* Η μόνη επικύρωση: ότι είπε κάτι. Ο κίνδυνος με αυτό το κοινό είναι οι
+     αναφορές που δεν γίνονται ποτέ, όχι οι ατημέλητες. */
+  if(!text && !draft.audio){
+    $('#reportErr').textContent = 'Πείτε ή γράψτε λίγα λόγια για το τι συμβαίνει.';
+    $('#f-text').focus(); return;
+  }
+  const anon = $('#f-anon').checked && draft.where === 'people';
+  const it = {
+    id:'i'+Math.random().toString(36).slice(2,9),
+    title: text || 'Φωνητική αναφορά',
+    cat: draft.cat, where: draft.where,
+    by: S.user.name, unit: S.user.unit, mine:true, anon,
+    status:'new', sev: draft.cat === 'bld.lift' ? 4 : 2,
+    at: new Date().toISOString(),
+    photo: draft.photo, audio: draft.audio,
+    trail: [['Η αναφορά στάλθηκε', Date.now()]],
+  };
+  S.issues.unshift(it); save();
+  toast('Στάλθηκε. Θα σας απαντήσουμε εντός ' + slaFor(it.cat) + ' ωρών.');
+  announce('Η αναφορά στάλθηκε.');
+  stack = []; show(S.user.role === 'manager' ? 'mgr' : 'home', false);
+};
+
+/* ── Ρυθμίσεις ───────────────────────────────────────────────────────────── */
+$('#btnA11y').onclick = () => show('set');
+$$('[data-size]').forEach(b => b.onclick = () => {
+  S.prefs.size = b.dataset.size; save(); applyPrefs();
+  announce('Μέγεθος γραμμάτων ' + b.dataset.size + ' από 4');
+});
+$$('.btn[data-theme]').forEach(b => b.onclick = () => {
+  S.prefs.theme = b.dataset.theme; save(); applyPrefs();
+});
+$('#btnContrast').onclick = () => {
+  S.prefs.contrast = S.prefs.contrast === '1' ? '0' : '1'; save(); applyPrefs();
+  announce(S.prefs.contrast === '1' ? 'Υψηλή αντίθεση ενεργή' : 'Υψηλή αντίθεση ανενεργή');
+};
+$('#btnMotion').onclick = () => {
+  S.prefs.motion = S.prefs.motion === 'off' ? 'auto' : 'off'; save(); applyPrefs();
+};
+
+/* ── Εγκατάσταση ─────────────────────────────────────────────────────────── */
+let deferred = null;
+addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); deferred = e; $('#btnInstall').hidden = false;
+});
+$('#btnInstall').onclick = async () => {
+  if(!deferred) return; deferred.prompt(); deferred = null; $('#btnInstall').hidden = true;
+};
+(function installHelp(){
+  const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+              (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const standalone = matchMedia('(display-mode: standalone)').matches ||
+                     navigator.standalone === true;
+  $('#installHelp').textContent = standalone
+    ? 'Η εφαρμογή τρέχει ήδη από την αρχική οθόνη.'
+    : ios
+      ? 'Στο iPhone: πατήστε το κουμπί «Κοινή χρήση» κάτω στο Safari (το τετράγωνο '
+        + 'με το βελάκι), μετά «Προσθήκη στην οθόνη Αφετηρίας».'
+      : 'Στο Android: μενού του Chrome (⋮) → «Εγκατάσταση εφαρμογής» ή '
+        + '«Προσθήκη στην αρχική οθόνη».';
+})();
+
+/* ── Εκκίνηση ────────────────────────────────────────────────────────────── */
+load(); applyPrefs();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyPrefs);
+if(S.user){
+  seed();
+  $('#ctxLabel').textContent = S.user.community +
+    (S.user.role === 'manager' ? ' · διαχείριση' : ' · ' + S.user.unit);
+  show(S.user.role === 'manager' ? 'mgr' : 'home', false);
+}else{
+  show('login', false);
+}
+if('serviceWorker' in navigator){
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>
