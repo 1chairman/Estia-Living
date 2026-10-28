@@ -86,7 +86,7 @@ def head(lang, p, title, desc):
     '  <meta name="description" content="' + desc + '">\n'
     '  <link rel="icon" href="' + p + 'logo.svg" type="image/svg+xml">\n'
     '  <link rel="preconnect" href="https://fonts.googleapis.com">\n'
-    '  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">\n'
+    '  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">\n'
     '  <link rel="stylesheet" href="' + p + 'styles.css">\n</head>\n\n<body>\n')
 
 # ============================================================ NAV
