@@ -470,3 +470,10 @@ a.info-row:hover { color: var(--terracotta); }
   background-size: 60px 9px; background-repeat: no-repeat;
 }
 @media (prefers-reduced-motion: reduce) { .card-icon { animation: none !important; } }
+
+/* ── Real images in place of placeholders ── */
+.ph-img { width: 100%; display: block; border-radius: var(--radius); object-fit: cover; aspect-ratio: 4 / 3; }
+.ph-img.tall { aspect-ratio: 3 / 4; }
+.ph-img.wide { aspect-ratio: 16 / 9; }
+.gallery .ph-img { aspect-ratio: 1 / 1; }
+.hero-visual .ph-img { box-shadow: 0 30px 70px -30px rgba(30,26,20,0.28); }

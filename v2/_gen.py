@@ -40,6 +40,10 @@ def ph(label, sub="", cls=""):
         inner += '<small>' + sub + '</small>'
     return '<div class="img-ph ' + cls + '">' + inner + '</div>'
 
+def imgtag(src, alt, lang, cls=""):
+    p = '' if lang == 'el' else '../'
+    return '<img class="ph-img ' + cls + '" src="' + p + urllib.parse.quote(src) + '" alt="' + alt + '" loading="lazy">'
+
 def tick(text):
     return '<li>' + CHK + ' ' + text + '</li>'
 
@@ -208,7 +212,8 @@ def footer(lang, p):
     '  <script src="' + p + 'script.js"></script>\n</body>\n\n</html>\n')
 
 # ============================================================ SHARED BLOCKS
-def hero(eyebrow, title_html, sub, ctas, vlabel, vsub="", vcls=""):
+def hero(eyebrow, title_html, sub, ctas, vlabel, vsub="", vcls="", img=None, lang="el"):
+    visual = imgtag(img, vlabel, lang, vcls) if img else ph(vlabel, vsub, vcls)
     return ('  <section class="hero">\n    <div class="wrap">\n      <div class="hero-grid">\n'
     '        <div class="reveal">\n'
     '          <p class="eyebrow">' + eyebrow + '</p>\n'
@@ -216,7 +221,7 @@ def hero(eyebrow, title_html, sub, ctas, vlabel, vsub="", vcls=""):
     '          <p class="hero-sub">' + sub + '</p>\n'
     '          <div class="hero-cta">' + ctas + '</div>\n'
     '        </div>\n'
-    '        <div class="hero-visual reveal">' + ph(vlabel, vsub, vcls) + '</div>\n'
+    '        <div class="hero-visual reveal">' + visual + '</div>\n'
     '      </div>\n    </div>\n  </section>\n\n')
 
 def cta_band(title, text, ctas):
@@ -242,7 +247,7 @@ def body_home(lang):
             'Μετά τα 60,<br><em>η ζωή ανθίζει.</em>',
             'Αυτόνομη συστέγαση για ανθρώπους άνω των 60 — ο δικός σου ιδιωτικός χώρος, μέσα σε μια μικρή, δεμένη κοινότητα ανθρώπων που ταιριάζουν μεταξύ τους.',
             '<a href="membership.html" class="btn btn-primary">Γίνε Μέλος</a> <a href="cohousing.html" class="btn btn-ghost">Δες το μοντέλο</a>',
-            'Φωτογραφία hero', 'πραγματική φωτο κοινότητας / χώρου')
+            'Φωτογραφία hero', 'πραγματική φωτο κοινότητας / χώρου', img='images/κοινόχρηστος κτηρίου 2.jpg', lang=lang)
         stats = [('20','Κάτοικοι ανά κοινότητα'),('21<span style="font-size:0.5em"> τ.μ.</span>','Ιδιωτικός χώρος ανά άτομο'),
                  ('50+','Χρόνια cohousing διεθνώς'),('100%','All-inclusive μηνιαία συνδρομή')]
         mission_eye, mission_h = 'Η Αποστολή μας', 'Η μοναξιά δεν είναι <em>αναπόφευκτη.</em>'
@@ -269,7 +274,7 @@ def body_home(lang):
             'After 60,<br><em>life blossoms.</em>',
             'Independent co-living for people over 60 — your own private space, inside a small, close-knit community of people who truly fit together.',
             '<a href="membership.html" class="btn btn-primary">Become a Member</a> <a href="cohousing.html" class="btn btn-ghost">See the model</a>',
-            'Hero photo', 'real photo of the community / space')
+            'Hero photo', 'real photo of the community / space', img='images/κοινόχρηστος κτηρίου 2.jpg', lang=lang)
         stats = [('20','Residents per community'),('21<span style="font-size:0.5em"> m²</span>','Private space per person'),
                  ('50+','Years of cohousing worldwide'),('100%','All-inclusive monthly fee')]
         mission_eye, mission_h = 'Our Mission', 'Loneliness is not <em>inevitable.</em>'
@@ -308,7 +313,7 @@ def body_home(lang):
      '        <div class="split-text reveal">\n          <p class="eyebrow">' + mission_eye + '</p>\n'
      '          <h2 class="h-lg">' + mission_h + '</h2>\n'
      '          <div class="prose" style="margin-top:1.5rem;">' + mission_p + '</div>\n        </div>\n'
-     '        <div class="split-visual reveal">' + ph(mvis[0], mvis[1]) + '</div>\n'
+     '        <div class="split-visual reveal">' + imgtag('images/κοινόχρηστος κτηρίου 1.jpg', mvis[0], lang) + '</div>\n'
      '      </div>\n    </div>\n  </section>\n\n'
      '  <section class="section warm">\n    <div class="wrap">\n' + sechead(serv_eye, serv_h) +
      '      <div class="cards">\n' + serv_html + '      </div>\n    </div>\n  </section>\n\n'
@@ -322,17 +327,17 @@ def body_cohousing(lang):
         H = hero('Συστέγαση / Co-Housing','Το μοντέλο<br><em>μας.</em>',
             'Ο δικός σου ιδιωτικός χώρος, με όλη την άνεση και την ιδιωτικότητα ενός σπιτιού — και, δίπλα, μια ζεστή κοινότητα και κοινόχρηστοι χώροι για να μοιράζεσαι τη μέρα σου.',
             '<a href="membership.html" class="btn btn-primary">Γίνε Μέλος</a> <a href="contact.html" class="btn btn-ghost">Ρώτησέ μας</a>',
-            'Ενδεικτική απεικόνιση χώρου','render (AI) — προς αντικατάσταση')
+            'Ενδεικτική απεικόνιση χώρου','render (AI) — προς αντικατάσταση', img='images/δωμάτιο 1.jpg', lang=lang)
         priv = ('Ο ιδιωτικός σου χώρος','Δικό σου σπίτι, <em>όχι δωμάτιο.</em>',
             '<p>Κάθε κάτοικος έχει <strong>21 τ.μ. αποκλειστικά δικά του</strong>: υπνοδωμάτιο με κρεβάτι, δικό του μπάνιο, γραφείο και ντουλάπες. Μοιράζεσαι ένα άνετο σαλονάκι με καναπέ και κουζίνα με ακόμη ένα άτομο — κάποιον που ταιριάζει μαζί σου ή έναν δικό σου φίλο.</p>',
             [ '21 τ.μ. ιδιωτικός χώρος ανά άτομο','Δικό σου μπάνιο, γραφείο και ντουλάπες',
               'Κοινό σαλονάκι & κουζίνα με ένα ακόμη άτομο ή φίλο σου',
               'Για ζευγάρια: <strong>27 τ.μ.</strong> με διπλό κρεβάτι — ολόκληρο το διαμέρισμα (~50 τ.μ.) δικό τους'],
-            'Ενδεικτική απεικόνιση','ιδιωτικός χώρος / υπνοδωμάτιο')
+            'Ενδεικτική απεικόνιση','ιδιωτικός χώρος / υπνοδωμάτιο','images/δωμάτιο 2.jpg')
         shared = ('Κοινόχρηστοι χώροι','Η καρδιά της <em>κοινότητας.</em>',
             '<p>Στον κάτω όροφο βρίσκεται η καρδιά του σπιτιού: χώροι για να συναντιέσαι, να χαλαρώνεις και να περνάς όμορφα, όποτε το θελήσεις.</p>',
             ['Σαλόνι & βιβλιοθήκη','Εξωτερικός χώρος για μπάρμπεκιου & μαζώξεις','Κήπος','Ιδιωτικός χώρος στάθμευσης','Αίθουσα άθλησης / εκγύμνασης'],
-            'Ενδεικτική απεικόνιση','κοινόχρηστο σαλόνι / κήπος')
+            'Ενδεικτική απεικόνιση','κοινόχρηστο σαλόνι / κήπος','images/κοινόχρηστος δωματίων 2.jpg')
         gal_eye, gal_h = 'Απεικονίσεις χώρων', 'Έτσι τους <em>οραματιζόμαστε.</em>'
         gal_lead = 'Οι παρακάτω εικόνες είναι ενδεικτικές απεικονίσεις των χώρων που σχεδιάζουμε — για να πάρεις μια ιδέα. Με τον καιρό θα προσθέσουμε πραγματικές φωτογραφίες.'
         gal_lbl = 'Render'
@@ -342,17 +347,17 @@ def body_cohousing(lang):
         H = hero('Co-Housing','Our<br><em>model.</em>',
             'Your own private space, with all the comfort and privacy of a home — and, right beside it, a warm community and shared areas to share your day.',
             '<a href="membership.html" class="btn btn-primary">Become a Member</a> <a href="contact.html" class="btn btn-ghost">Ask us</a>',
-            'Indicative render of a space','render (AI) — to be replaced')
+            'Indicative render of a space','render (AI) — to be replaced', img='images/δωμάτιο 1.jpg', lang=lang)
         priv = ('Your private space','A home of your own, <em>not a room.</em>',
             '<p>Each resident has <strong>21 m² entirely their own</strong>: a bedroom, their own bathroom, a study and wardrobes. You share a comfortable lounge with a sofa and a kitchen with one other person — someone who fits with you, or a friend of yours.</p>',
             [ '21 m² of private space per person','Your own bathroom, study and wardrobes',
               'A shared lounge & kitchen with one other person or a friend',
               'For couples: <strong>27 m²</strong> with a double bed — the whole apartment (~50 m²) is theirs'],
-            'Indicative render','private space / bedroom')
+            'Indicative render','private space / bedroom','images/δωμάτιο 2.jpg')
         shared = ('Shared spaces','The heart of the <em>community.</em>',
             '<p>Downstairs is the heart of the home: spaces to meet, relax and enjoy yourself, whenever you feel like it.</p>',
             ['Lounge & library','Outdoor area for barbecues & gatherings','Garden','Private parking','Gym / exercise room'],
-            'Indicative render','shared lounge / garden')
+            'Indicative render','shared lounge / garden','images/κοινόχρηστος δωματίων 2.jpg')
         gal_eye, gal_h = 'Renders of the spaces', 'This is how we <em>envision them.</em>'
         gal_lead = 'The images below are indicative renders of the spaces we are designing — to give you an idea. Over time we will add real photos.'
         gal_lbl = 'Render'
@@ -360,7 +365,7 @@ def body_cohousing(lang):
                '<a href="membership.html" class="btn btn-primary">See how to join</a> <a href="history.html" class="btn btn-ghost">History of Cohousing</a>')
 
     def block(data, warm=False, reverse=False):
-        eye, h, prose, ticks, vl, vs = data
+        eye, h, prose, ticks, vl, vs, im = data
         ticks_html = "".join('            ' + tick(x) + '\n' for x in ticks)
         sec = 'section warm' if warm else 'section'
         rev = ' reverse' if reverse else ''
@@ -369,12 +374,13 @@ def body_cohousing(lang):
             '          <h2 class="h-lg">' + h + '</h2>\n'
             '          <div class="prose" style="margin-top:1.3rem;">' + prose + '</div>\n'
             '          <ul class="ticks">\n' + ticks_html + '          </ul>\n        </div>\n'
-            '        <div class="split-visual reveal">' + ph(vl, vs, "tall") + '</div>\n'
+            '        <div class="split-visual reveal">' + (imgtag(im, vl, lang, "tall") if im else ph(vl, vs, "tall")) + '</div>\n'
             '      </div>\n    </div>\n  </section>\n\n')
 
+    gal_imgs = ['images/κοινόχρηστος δωματίων 1.jpg','images/κοινόχρηστος δωματίων 3.jpg','images/κοινόχρηστος δωματίων 4.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/μπάνιο 1.jpg','images/κήπος 1.jpg']
     gallery = '      <div class="gallery">\n'
-    for i in range(1, 7):
-        gallery += '        <div class="img-ph reveal">' + PHOTO + '<span>' + gal_lbl + ' ' + str(i) + '</span></div>\n'
+    for gi in gal_imgs:
+        gallery += '        ' + imgtag(gi, 'ΕΣΤΙΑ', lang, 'reveal') + '\n'
     gallery += '      </div>\n'
 
     return (H + block(priv) + block(shared, warm=True, reverse=True) +
@@ -427,7 +433,7 @@ def body_membership(lang):
         H = hero('Συμμετοχή','Γίνε<br><em>Μέλος.</em>',
             'Από την πρώτη γνωριμία μέχρι τη μετακόμιση — ένα απλό, ανθρώπινο ταξίδι, χωρίς πιέσεις.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a> <a href="cohousing.html" class="btn btn-ghost">Δες το μοντέλο</a>',
-            'Φωτογραφία','στιγμή καλωσορίσματος')
+            'Φωτογραφία','στιγμή καλωσορίσματος', img='images/κοινόχρηστος κτηρίου 3.jpg', lang=lang)
         eye, h = 'Τα βήματα', 'Πώς γίνεσαι <em>μέλος.</em>'
         steps = [
          ('Αρχική Επικοινωνία','Μας αφήνεις τα στοιχεία σου μέσω της φόρμας — χωρίς καμία δέσμευση.'),
@@ -447,7 +453,7 @@ def body_membership(lang):
         H = hero('Joining','Become<br><em>a Member.</em>',
             'From the first conversation to moving in — a simple, human journey, with no pressure.',
             '<a href="contact.html" class="btn btn-primary">Contact</a> <a href="cohousing.html" class="btn btn-ghost">See the model</a>',
-            'Photo','a moment of welcome')
+            'Photo','a moment of welcome', img='images/κοινόχρηστος κτηρίου 3.jpg', lang=lang)
         eye, h = 'The steps', 'How you <em>become a member.</em>'
         steps = [
          ('Initial Contact','You leave your details through the form — with no commitment at all.'),
@@ -532,7 +538,7 @@ def body_expats(lang):
         H = hero('Για Ξένους · Μετακόμιση στην Ελλάδα','Συνταξιοδότηση στην Ελλάδα,<br><em>χωρίς τον πονοκέφαλο.</em>',
             'Ονειρεύεσαι να ζήσεις τα χρόνια της σύνταξης στον ήλιο της Μεσογείου; Σε υποδεχόμαστε σε μια έτοιμη κοινότητα — και αναλαμβάνουμε όλη τη μετακόμιση, από την πρώτη απόφαση μέχρι το κλειδί του δωματίου σου.',
             '<a href="#interest" class="btn btn-primary">Εκδήλωση Ενδιαφέροντος</a> <a href="cohousing.html" class="btn btn-ghost">Δες το μοντέλο</a>',
-            'Φωτογραφία','μεσογειακό τοπίο / κοινότητα')
+            'Φωτογραφία','μεσογειακό τοπίο / κοινότητα', img='images/εξωτερική κτιρίου.jpg', lang=lang)
         wye, wh = 'Γιατί η Ελλάδα', 'Ένας τόπος για να <em>ανθίσεις ξανά.</em>'
         why = [(IC_GLOBE,'Μεσογειακή ζωή','Ήλιος, θάλασσα, φρέσκο φαγητό και έναν ρυθμό ζωής που σε κάνει καλά — όλο τον χρόνο.'),
                (IC_HEART,'Χαμηλότερο κόστος','Η καθημερινότητα στην Ελλάδα κοστίζει σημαντικά λιγότερο από τις περισσότερες χώρες της Δύσης.'),
@@ -556,7 +562,7 @@ def body_expats(lang):
         H = hero('For Expats · Relocating to Greece','Retire in Greece,<br><em>without the headache.</em>',
             'Dreaming of spending your retirement years in the Mediterranean sun? We welcome you into a ready-made community — and we handle the whole move, from your first decision to the key to your room.',
             '<a href="#interest" class="btn btn-primary">Register Your Interest</a> <a href="cohousing.html" class="btn btn-ghost">See the model</a>',
-            'Photo','Mediterranean landscape / community')
+            'Photo','Mediterranean landscape / community', img='images/εξωτερική κτιρίου.jpg', lang=lang)
         wye, wh = 'Why Greece', 'A place to <em>blossom again.</em>'
         why = [(IC_GLOBE,'Mediterranean life','Sun, sea, fresh food and a pace of life that does you good — all year round.'),
                (IC_HEART,'A lower cost of living','Everyday life in Greece costs significantly less than in most Western countries.'),
@@ -592,7 +598,7 @@ def body_expats(lang):
      '        <div class="split-text reveal">\n          <p class="eyebrow">' + cye + '</p>\n'
      '          <h2 class="h-lg">' + ch + '</h2>\n'
      '          <div class="prose" style="margin-top:1.3rem;">' + cprose + '</div>\n        </div>\n'
-     '        <div class="split-visual reveal">' + ph(('Φωτογραφία' if EL else 'Photo'), ('παρέα / κοινότητα' if EL else 'friends / community'), "tall") + '</div>\n'
+     '        <div class="split-visual reveal">' + imgtag('images/κήπος 1.jpg', ('Φωτογραφία' if EL else 'Photo'), lang, "tall") + '</div>\n'
      '      </div>\n    </div>\n  </section>\n\n'
      '  <section class="section cream" id="interest">\n    <div class="wrap">\n' + sechead(iye, ih, ilead) + form +
      '    </div>\n  </section>\n\n')
