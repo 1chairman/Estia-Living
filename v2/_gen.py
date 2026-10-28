@@ -91,7 +91,7 @@ def head(lang, p, title, desc):
     '  <link rel="icon" href="' + p + 'logo.svg" type="image/svg+xml">\n'
     '  <link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">\n'
-    '  <link rel="stylesheet" href="' + p + 'styles.css">\n</head>\n\n<body>\n')
+    '  <link rel="stylesheet" href="' + p + 'styles.css?v=2">\n</head>\n\n<body>\n')
 
 # ============================================================ NAV
 def nav(lang, p, active, sub):
@@ -327,7 +327,7 @@ def body_cohousing(lang):
         H = hero('Συστέγαση / Co-Housing','Το μοντέλο<br><em>μας.</em>',
             'Ο δικός σου ιδιωτικός χώρος, με όλη την άνεση και την ιδιωτικότητα ενός σπιτιού — και, δίπλα, μια ζεστή κοινότητα και κοινόχρηστοι χώροι για να μοιράζεσαι τη μέρα σου.',
             '<a href="membership.html" class="btn btn-primary">Γίνε Μέλος</a> <a href="contact.html" class="btn btn-ghost">Ρώτησέ μας</a>',
-            'Ενδεικτική απεικόνιση χώρου','render (AI) — προς αντικατάσταση', img='images/δωμάτιο 1.jpg', lang=lang)
+            'Ενδεικτική απεικόνιση χώρου','render (AI) — προς αντικατάσταση', img='images/κοινόχρηστος δωματίων 2.jpg', lang=lang)
         priv = ('Ο ιδιωτικός σου χώρος','Δικό σου σπίτι, <em>όχι δωμάτιο.</em>',
             '<p>Κάθε κάτοικος έχει <strong>21 τ.μ. αποκλειστικά δικά του</strong>: υπνοδωμάτιο με κρεβάτι, δικό του μπάνιο, γραφείο και ντουλάπες. Μοιράζεσαι ένα άνετο σαλονάκι με καναπέ και κουζίνα με ακόμη ένα άτομο — κάποιον που ταιριάζει μαζί σου ή έναν δικό σου φίλο.</p>',
             [ '21 τ.μ. ιδιωτικός χώρος ανά άτομο','Δικό σου μπάνιο, γραφείο και ντουλάπες',
@@ -337,7 +337,7 @@ def body_cohousing(lang):
         shared = ('Κοινόχρηστοι χώροι','Η καρδιά της <em>κοινότητας.</em>',
             '<p>Στον κάτω όροφο βρίσκεται η καρδιά του σπιτιού: χώροι για να συναντιέσαι, να χαλαρώνεις και να περνάς όμορφα, όποτε το θελήσεις.</p>',
             ['Σαλόνι & βιβλιοθήκη','Εξωτερικός χώρος για μπάρμπεκιου & μαζώξεις','Κήπος','Ιδιωτικός χώρος στάθμευσης','Αίθουσα άθλησης / εκγύμνασης'],
-            'Ενδεικτική απεικόνιση','κοινόχρηστο σαλόνι / κήπος','images/κοινόχρηστος δωματίων 2.jpg')
+            'Ενδεικτική απεικόνιση','κοινόχρηστο σαλόνι / κήπος','images/κοινόχρηστος δωματίων 3.jpg')
         gal_eye, gal_h = 'Απεικονίσεις χώρων', 'Έτσι τους <em>οραματιζόμαστε.</em>'
         gal_lead = 'Οι παρακάτω εικόνες είναι ενδεικτικές απεικονίσεις των χώρων που σχεδιάζουμε — για να πάρεις μια ιδέα. Με τον καιρό θα προσθέσουμε πραγματικές φωτογραφίες.'
         gal_lbl = 'Render'
@@ -347,7 +347,7 @@ def body_cohousing(lang):
         H = hero('Co-Housing','Our<br><em>model.</em>',
             'Your own private space, with all the comfort and privacy of a home — and, right beside it, a warm community and shared areas to share your day.',
             '<a href="membership.html" class="btn btn-primary">Become a Member</a> <a href="contact.html" class="btn btn-ghost">Ask us</a>',
-            'Indicative render of a space','render (AI) — to be replaced', img='images/δωμάτιο 1.jpg', lang=lang)
+            'Indicative render of a space','render (AI) — to be replaced', img='images/κοινόχρηστος δωματίων 2.jpg', lang=lang)
         priv = ('Your private space','A home of your own, <em>not a room.</em>',
             '<p>Each resident has <strong>21 m² entirely their own</strong>: a bedroom, their own bathroom, a study and wardrobes. You share a comfortable lounge with a sofa and a kitchen with one other person — someone who fits with you, or a friend of yours.</p>',
             [ '21 m² of private space per person','Your own bathroom, study and wardrobes',
@@ -357,7 +357,7 @@ def body_cohousing(lang):
         shared = ('Shared spaces','The heart of the <em>community.</em>',
             '<p>Downstairs is the heart of the home: spaces to meet, relax and enjoy yourself, whenever you feel like it.</p>',
             ['Lounge & library','Outdoor area for barbecues & gatherings','Garden','Private parking','Gym / exercise room'],
-            'Indicative render','shared lounge / garden','images/κοινόχρηστος δωματίων 2.jpg')
+            'Indicative render','shared lounge / garden','images/κοινόχρηστος δωματίων 3.jpg')
         gal_eye, gal_h = 'Renders of the spaces', 'This is how we <em>envision them.</em>'
         gal_lead = 'The images below are indicative renders of the spaces we are designing — to give you an idea. Over time we will add real photos.'
         gal_lbl = 'Render'
@@ -377,10 +377,10 @@ def body_cohousing(lang):
             '        <div class="split-visual reveal">' + (imgtag(im, vl, lang, "tall") if im else ph(vl, vs, "tall")) + '</div>\n'
             '      </div>\n    </div>\n  </section>\n\n')
 
-    gal_imgs = ['images/κοινόχρηστος δωματίων 1.jpg','images/κοινόχρηστος δωματίων 3.jpg','images/κοινόχρηστος δωματίων 4.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/μπάνιο 1.jpg','images/κήπος 1.jpg']
+    gal_imgs = ['images/κοινόχρηστος δωματίων 1.jpg','images/μπάνιο 1.jpg','images/κήπος 1.jpg','images/κοινόχρηστος κτηρίου 1.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/εξωτερική κτιρίου.jpg']
     gallery = '      <div class="gallery">\n'
     for gi in gal_imgs:
-        gallery += '        ' + imgtag(gi, 'ΕΣΤΙΑ', lang, 'reveal') + '\n'
+        gallery += '        ' + imgtag(gi, 'ΕΣΤΙΑ', lang) + '\n'
     gallery += '      </div>\n'
 
     return (H + block(priv) + block(shared, warm=True, reverse=True) +
