@@ -431,17 +431,17 @@ def body_membership(lang):
     EL = lang == 'el'
     if EL:
         H = hero('Συμμετοχή','Γίνε<br><em>Μέλος.</em>',
-            'Από την πρώτη γνωριμία μέχρι τη μετακόμιση — ένα απλό, ανθρώπινο ταξίδι, χωρίς πιέσεις.',
+            'Από την πρώτη γνωριμία μέχρι τη μετακόμιση — ένα όμορφο ταξίδι αλληλεπίδρασης.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a> <a href="cohousing.html" class="btn btn-ghost">Γνωρίστε το μοντέλο</a>',
             'Φωτογραφία','στιγμή καλωσορίσματος', img='images/κοινόχρηστος κτηρίου 3.jpg', lang=lang)
-        eye, h = 'Τα βήματα', 'Πώς γίνεσαι <em>μέλος.</em>'
+        eye, h = 'Τα βήματα', 'Πώς γίνεστε <em>μέλος.</em>'
         steps = [
-         ('Αρχική Επικοινωνία','Μας αφήνετε τα στοιχεία σας μέσω της φόρμας — χωρίς καμία δέσμευση.'),
-         ('Τηλεφωνική Γνωριμία','Σας παίρνουμε τηλέφωνο, σας εξηγούμε το μοντέλο και ακούμε τις δικές σας ερωτήσεις.'),
-         ('Συνάντηση από Κοντά','Γνωριζόμαστε καλύτερα — τα ενδιαφέροντα, οι ανάγκες και ο τρόπος ζωής που αναζητάτε.'),
-         ('[ΣΥΜΠΛΗΡΩΝΕΤΑΙ] Επιλογή & Ταίριασμα','[Περιγραφή του ενδιάμεσου βήματος: επιλογή διαμερίσματος και ταίριασμα συγκατοίκου.]'),
-         ('[ΣΥΜΠΛΗΡΩΝΕΤΑΙ] Συμφωνία','[Περιγραφή: συμφωνητικό, όροι συμμετοχής, κόστος.]'),
-         ('Μετακόμιση','Καλωσορίζεστε στο νέο σας σπίτι και στην κοινότητά σας.'),
+         ('Αρχική Επικοινωνία','Αφήνετε τα στοιχεία σας μέσω της φόρμας ή μας καλείτε στο τηλέφωνο.'),
+         ('Ενημέρωση','Σας εξηγούμε το μοντέλο και ακούμε τις δικές σας ερωτήσεις.'),
+         ('Γνωριμία από Κοντά','Γνωριζόμαστε καλύτερα — συζητάμε τα ενδιαφέροντα, τις ανάγκες και τον τρόπο ζωής που επιθυμείτε.'),
+         ('Δημιουργία Κοινότητας','Δημιουργούμε τις κοινότητες σύμφωνα με τις επιθυμίες σας και τα κοινά ενδιαφέροντα.'),
+         ('Διαδικασίες','Ολοκληρώνονται όλες οι απαραίτητες διαδικασίες.'),
+         ('Μετακόμιση','Μετακομίζετε στο νέο σας σπίτι και γνωρίζετε την κοινότητά σας.'),
         ]
         prop = ('Αξιοποίηση Περιουσίας','Το παλιό σας σπίτι <em>δουλεύει για εσάς.</em>',
             '<p>Δεν χρειάζεται να πουλήσετε. Αν το επιθυμείτε, αναλαμβάνουμε την <strong>ανακαίνιση και την ενοικίαση</strong> του προηγούμενου σπιτιού σας, ώστε να σας αποφέρει ένα σημαντικό μηνιαίο εισόδημα.</p>',
@@ -456,12 +456,12 @@ def body_membership(lang):
             'Photo','a moment of welcome', img='images/κοινόχρηστος κτηρίου 3.jpg', lang=lang)
         eye, h = 'The steps', 'How you <em>become a member.</em>'
         steps = [
-         ('Initial Contact','You leave your details through the form — with no commitment at all.'),
-         ('A Phone Introduction','We call you, explain the model, and listen to your own questions.'),
+         ('Initial Contact','You leave your details through the form, or you call us on the phone.'),
+         ('Information','We explain the model and listen to your own questions.'),
          ('Meeting in Person','We get to know each other better — your interests, your needs and the lifestyle you are looking for.'),
-         ('[TO BE COMPLETED] Selection & Matching','[Description of the intermediate step: choosing an apartment and matching a housemate.]'),
-         ('[TO BE COMPLETED] Agreement','[Description: the agreement, terms of participation, cost.]'),
-         ('Moving In','You are welcomed into your new home and your community.'),
+         ('Building the Community','We form the communities around your wishes and shared interests.'),
+         ('The Formalities','All the necessary procedures are completed.'),
+         ('Moving In','You move into your new home and get to know your community.'),
         ]
         prop = ('Making Your Property Work','Your old home <em>working for you.</em>',
             '<p>You do not need to sell. If you wish, we take on the <strong>renovation and the renting</strong> of your previous home, so that it earns you a meaningful monthly income.</p>',
@@ -487,35 +487,35 @@ def body_membership(lang):
 def body_municipalities(lang):
     EL = lang == 'el'
     if EL:
-        H = hero('Για Δήμους','Μια λύση για τους<br><em>ηλικιωμένους σας.</em>',
-            'Ο δήμος διαθέτει ένα ακίνητο. Εμείς το ανακαινίζουμε και το διαμορφώνουμε. Σε αντάλλαγμα, ο δήμος εξασφαλίζει θέσεις για δικούς του κατοίκους.',
+        H = hero('Για Δήμους','Μια λύση για τους<br><em>δημότες σας.</em>',
+            'Ο Δήμος διαθέτει ένα ακίνητο για την ανάπτυξη μιας κοινότητας, ενώ εμείς αναλαμβάνουμε την ανακαίνιση και την κατάλληλη διαμόρφωσή του, παρέχοντας στον δήμο συγκεκριμένες θέσεις για δημότες του.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>',
             'Απεικόνιση','δημοτικό κτίριο / ανακαίνιση')
         split = ('Η συνεργασία','Μια συμφωνία <em>που ωφελεί όλους.</em>',
-            '<p>Πολλοί δήμοι έχουν ακίνητα που μένουν αναξιοποίητα — και, ταυτόχρονα, ηλικιωμένους που ζουν σε κακές συνθήκες. Η ΕΣΤΙΑ συνδέει τα δύο.</p>',
+            '<p>Πολλοί δήμοι διαθέτουν ακίνητα που παραμένουν αναξιοποίητα, ενώ αρκετοί ηλικιωμένοι συμπολίτες μας αντιμετωπίζουν δυσκολίες στην εξεύρεση προσιτής στέγασης ή και μένουν σε ακίνητα με κακές συνθήκες. Μετατρέπουμε αυτή την πρόκληση σε μια ευκαιρία κοινωνικής προσφοράς, αξιοποιώντας δημοτικά ακίνητα για τη δημιουργία σύγχρονων, αξιοπρεπών και φιλόξενων χώρων κατοίκησης, με ουσιαστικό όφελος τόσο για τους δημότες όσο και για την τοπική κοινωνία.</p>',
             ['Ο δήμος διαθέτει το ακίνητο — χωρίς κεφαλαιακή δαπάνη.','Εμείς αναλαμβάνουμε την ανακαίνιση και τη λειτουργία.',
              'Ο δήμος παίρνει ποσοστό των θέσεων [ΣΥΜΠΛΗΡΩΝΕΤΑΙ: %] για δικούς του κατοίκους.','Το κτίριο αναβαθμίζεται και αξιοποιείται ξανά.'],
             'Απεικόνιση','κοινόχρηστος χώρος')
-        beye, bh = 'Οφέλη για τον δήμο', 'Κοινωνικό έργο, <em>μηδενικό κόστος.</em>'
-        benefits = [('Στέγη για τους δικούς σας','Θέσεις για ηλικιωμένους του δήμου που τις έχουν πραγματικά ανάγκη.'),
+        beye, bh = 'Οφέλη για τον δήμο', 'Κοινωνικό όφελος, <em>μηδενικό κόστος.</em>'
+        benefits = [('Κατοικία για δημότες','Θέσεις για τους δημότες μεγαλύτερης ηλικίας που ενδιαφέρονται για μια ενεργή και αυτόνομη καθημερινότητα.'),
                     ('Αξιοποίηση ακινήτου','Ένα ανενεργό κτίριο μεταμορφώνεται σε ζωντανή κοινότητα.'),
-                    ('Κοινωνικό αποτύπωμα','Μια έμπρακτη λύση για το δημογραφικό και την φροντίδα τρίτης ηλικίας.')]
+                    ('Κοινωνικό αποτύπωμα','Μια πρωτοβουλία που απαντά στις προκλήσεις της δημογραφικής γήρανσης και τοποθετεί στο επίκεντρο τον άνθρωπο και την κοινωνική αλληλεγγύη.')]
         cta = ('Είστε δήμος και ενδιαφέρεστε;','Επικοινωνήστε μαζί μας και θα σας παρουσιάσουμε αναλυτικά την πρόταση συνεργασίας.',
                '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a>')
     else:
-        H = hero('For Municipalities','A solution for your<br><em>older residents.</em>',
-            'The municipality provides a building. We renovate and fit it out. In return, the municipality secures places for its own residents.',
+        H = hero('For Municipalities','A solution for your<br><em>residents.</em>',
+            'The municipality provides a building for a new community, while we take on its renovation and fit-out, giving the municipality dedicated places for its own residents.',
             '<a href="contact.html" class="btn btn-primary">Get in touch</a>',
             'Illustration','municipal building / renovation')
         split = ('The partnership','An agreement <em>that benefits everyone.</em>',
-            '<p>Many municipalities have buildings sitting unused — and, at the same time, older residents living in poor conditions. ESTIA connects the two.</p>',
+            '<p>Many municipalities own buildings that sit unused, while many older residents struggle to find affordable housing or live in poor conditions. We turn that challenge into an opportunity for social good — using municipal buildings to create modern, dignified and welcoming places to live, with real benefit for residents and the wider community alike.</p>',
             ['The municipality provides the building — with no capital outlay.','We take on the renovation and the operation.',
              'The municipality receives a share of the places [TO BE COMPLETED: %] for its own residents.','The building is upgraded and put back to use.'],
             'Illustration','a shared space')
-        beye, bh = 'Benefits for the municipality', 'Social impact, <em>at zero cost.</em>'
-        benefits = [('Housing for your people','Places for the municipality’s older residents who genuinely need them.'),
+        beye, bh = 'Benefits for the municipality', 'Social benefit, <em>at zero cost.</em>'
+        benefits = [('Housing for residents','Places for older residents looking for an active, independent everyday life.'),
                     ('Property put to use','A dormant building is transformed into a living community.'),
-                    ('Social footprint','A concrete answer to the demographic challenge and elderly care.')]
+                    ('Social footprint','An initiative that answers the challenges of demographic ageing, putting people and social solidarity at its heart.')]
         cta = ('Are you a municipality and interested?','Get in touch and we will present the partnership proposal in full.',
                '<a href="contact.html" class="btn btn-primary">Contact</a>')
     se, sh, sp, sticks, svl, svs = split
@@ -535,14 +535,14 @@ def body_municipalities(lang):
 def body_expats(lang):
     EL = lang == 'el'
     if EL:
-        H = hero('Για κατοίκους εξωτερικού · Μετακόμιση στην Ελλάδα','Συνταξιοδότηση στην Ελλάδα,<br><em>χωρίς τον πονοκέφαλο.</em>',
+        H = hero('Για κατοίκους εξωτερικού · Μετακόμιση στην Ελλάδα','Συνταξιοδότηση στην Ελλάδα,<br><em>μια νέα αρχή, όπως σας αξίζει.</em>',
             'Ονειρεύεστε να ζήσετε τα χρόνια της σύνταξης στον ήλιο της Μεσογείου; Σας υποδεχόμαστε σε μια έτοιμη κοινότητα — και αναλαμβάνουμε όλη τη μετακόμιση, από την πρώτη απόφαση μέχρι το κλειδί του δωματίου σας.',
             '<a href="#interest" class="btn btn-primary">Εκδήλωση Ενδιαφέροντος</a> <a href="cohousing.html" class="btn btn-ghost">Γνωρίστε το μοντέλο</a>',
             'Φωτογραφία','μεσογειακό τοπίο / κοινότητα', img='images/εξωτερική κτιρίου.jpg', lang=lang)
-        wye, wh = 'Γιατί η Ελλάδα', 'Ένας τόπος για να <em>ανθίσετε ξανά.</em>'
-        why = [(IC_GLOBE,'Μεσογειακή ζωή','Ήλιος, θάλασσα, φρέσκο φαγητό και έναν ρυθμό ζωής που σας κάνει καλά — όλο τον χρόνο.'),
+        wye, wh = 'Γιατί η Ελλάδα', 'Ένας τόπος <em>με πολλές προοπτικές.</em>'
+        why = [(IC_GLOBE,'Μεσογειακή ζωή','Ήλιος, φύση και φαγητό που όλοι ονειρεύονται.'),
                (IC_HEART,'Χαμηλότερο κόστος','Η καθημερινότητα στην Ελλάδα κοστίζει σημαντικά λιγότερο από τις περισσότερες χώρες της Δύσης.'),
-               (IC_USERS,'Έτοιμη κοινότητα','Δεν φτάνετε σε έναν άγνωστο τόπο μόνοι. Μπαίνετε κατευθείαν σε μια παρέα ανθρώπων που ταιριάζουν μαζί σας.')]
+               (IC_USERS,'Έτοιμη κοινότητα','Δεν ξεκινάτε από το μηδέν. Γνωρίζετε ανθρώπους με κοινές αξίες και παρόμοιο τρόπο ζωής.')]
         rye, rh = 'Υπηρεσίες Μετακόμισης', 'Από την απόφαση, <em>μέχρι το κλειδί.</em>'
         rlead = 'Αναλαμβάνουμε όλη τη διαδικασία και τη γραφειοκρατία, ώστε εσείς να ασχοληθείτε μόνο με το ωραίο κομμάτι: τη νέα σας ζωή.'
         steps = [
@@ -559,14 +559,14 @@ def body_expats(lang):
         iye, ih = 'Εκδήλωση Ενδιαφέροντος', 'Πείτε μας <em>για εσάς.</em>'
         ilead = 'Αφήστε τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας — στη γλώσσα σας.'
     else:
-        H = hero('For Expats/Retirees · Relocating to Greece','Retire in Greece,<br><em>without the headache.</em>',
+        H = hero('For Expats/Retirees · Relocating to Greece','Retire in Greece,<br><em>a new beginning you deserve.</em>',
             'Dreaming of spending your retirement years in the Mediterranean sun? We welcome you into a ready-made community — and we handle the whole move, from your first decision to the key to your room.',
             '<a href="#interest" class="btn btn-primary">Register Your Interest</a> <a href="cohousing.html" class="btn btn-ghost">See the model</a>',
             'Photo','Mediterranean landscape / community', img='images/εξωτερική κτιρίου.jpg', lang=lang)
-        wye, wh = 'Why Greece', 'A place to <em>blossom again.</em>'
-        why = [(IC_GLOBE,'Mediterranean life','Sun, sea, fresh food and a pace of life that does you good — all year round.'),
+        wye, wh = 'Why Greece', 'A place <em>full of possibility.</em>'
+        why = [(IC_GLOBE,'Mediterranean life','Sun, nature and food everyone dreams of.'),
                (IC_HEART,'A lower cost of living','Everyday life in Greece costs significantly less than in most Western countries.'),
-               (IC_USERS,'A ready-made community','You do not arrive in a strange place alone. You step straight into a circle of people who fit with you.')]
+               (IC_USERS,'A ready-made community','You don’t start from scratch. You meet people who share your values and a similar way of life.')]
         rye, rh = 'Relocation Services', 'From the decision, <em>to the key.</em>'
         rlead = 'We take on the entire process and the paperwork, so that you only have to deal with the good part: your new life.'
         steps = [
