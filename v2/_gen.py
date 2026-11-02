@@ -91,7 +91,7 @@ def head(lang, p, title, desc):
     '  <link rel="icon" href="' + p + 'logo.svg" type="image/svg+xml">\n'
     '  <link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">\n'
-    '  <link rel="stylesheet" href="' + p + 'styles.css?v=4">\n</head>\n\n<body>\n')
+    '  <link rel="stylesheet" href="' + p + 'styles.css?v=5">\n</head>\n\n<body>\n')
 
 # ============================================================ NAV
 def nav(lang, p, active, sub):

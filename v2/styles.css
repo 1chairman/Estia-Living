@@ -478,3 +478,27 @@ a.info-row:hover { color: var(--terracotta); }
 .ph-img.wide { aspect-ratio: 16 / 9; }
 .gallery .ph-img { aspect-ratio: 4 / 3; }
 .hero-visual .ph-img { box-shadow: 0 30px 70px -30px rgba(30,26,20,0.28); }
+
+/* ── Faint circles in the background (hero + CTA band), from "Ροή" ── */
+.hero > .wrap, .cta-band > .wrap { position: relative; z-index: 1; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(42% 68% at 88% 10%, rgba(212,132,92,0.16), transparent 70%),
+    radial-gradient(40% 62% at 4% 94%, rgba(231,224,212,0.85), transparent 72%);
+}
+.hero::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: 640px; height: 640px; right: -70px; top: 50%; transform: translateY(-50%);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3Ccircle%20cx='300'%20cy='300'%20r='250'%20fill='none'%20stroke='%23C4673A'%20stroke-width='2'%20stroke-dasharray='5%2015'%20opacity='0.30'/%3E%3Ccircle%20cx='300'%20cy='300'%20r='292'%20fill='none'%20stroke='%236B7B4A'%20stroke-width='2'%20stroke-dasharray='3%2017'%20opacity='0.22'/%3E%3Ccircle%20cx='110'%20cy='130'%20r='32'%20fill='none'%20stroke='%23C4673A'%20stroke-width='1.5'%20opacity='0.22'/%3E%3Ccircle%20cx='500'%20cy='480'%20r='18'%20fill='none'%20stroke='%236B7B4A'%20stroke-width='1.5'%20opacity='0.22'/%3E%3C/svg%3E") center / contain no-repeat;
+  animation: heroSpin 120s linear infinite;
+}
+@keyframes heroSpin { from { transform: translateY(-50%) rotate(0); } to { transform: translateY(-50%) rotate(360deg); } }
+.cta-band::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(32% 58% at 86% 18%, rgba(196,103,58,0.22), transparent 70%),
+    radial-gradient(30% 54% at 8% 86%, rgba(107,123,74,0.20), transparent 72%);
+}
+@media (prefers-reduced-motion: reduce) { .hero::after { animation: none !important; } }
+@media (max-width: 760px) { .hero::after { width: 440px; height: 440px; right: -140px; opacity: 0.85; } }
