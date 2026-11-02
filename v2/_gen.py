@@ -91,7 +91,7 @@ def head(lang, p, title, desc):
     '  <link rel="icon" href="' + p + 'logo.svg" type="image/svg+xml">\n'
     '  <link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">\n'
-    '  <link rel="stylesheet" href="' + p + 'styles.css?v=2">\n</head>\n\n<body>\n')
+    '  <link rel="stylesheet" href="' + p + 'styles.css?v=3">\n</head>\n\n<body>\n')
 
 # ============================================================ NAV
 def nav(lang, p, active, sub):
@@ -253,7 +253,7 @@ def body_home(lang):
         mission_eye, mission_h = 'Η Αποστολή μας', 'Η μοναξιά δεν είναι <em>αναπόφευκτη.</em>'
         mission_p = ('<p>Η έλλειψη ποιοτικών σπιτιών σε ωραία τοποθεσία, η δύσκολη πρόσβαση σε υπηρεσίες υγείας και η μοναξιά της πόλης μάς έδωσαν το κίνητρο να δράσουμε.</p>'
                      '<p>Αποστολή μας είναι να μετατρέψουμε τις δεκαετίες μετά τα 60 στην πιο ποιοτική περίοδο της ζωής — με <strong>αυτονομία, ασφάλεια</strong> και χωρίς το άγχος της απομόνωσης.</p>')
-        serv_eye, serv_h = 'Τι περιλαμβάνεται', 'Όλα όσα χρειάζεσαι, <em>στον ίδιο χώρο.</em>'
+        serv_eye, serv_h = 'Τι περιλαμβάνεται', 'Όλα όσα χρειάζεστε, <em>στον ίδιο χώρο.</em>'
         services = [
           (IC_BILL,'Κοινόχρηστα & Λογαριασμοί','Πλήρης κάλυψη ρεύματος, θέρμανσης, νερού και τηλεφωνίας. Καμία έκπληξη, καμία αγωνία.'),
           (IC_CLEAN,'Καθαριότητα','Επαγγελματικός καθαρισμός του διαμερίσματος κάθε εβδομάδα — το σπίτι πάντα φρέσκο.'),
@@ -262,7 +262,7 @@ def body_home(lang):
           (IC_WIFI,'Υψηλές Ταχύτητες Σύνδεσης','Οπτική ίνα σε όλους τους χώρους — για να μένετε κοντά σε όσους αγαπάτε.'),
           (IC_SHIELD,'Διαρκής Υποστήριξη Ασφάλειας','Συστήματα προστασίας και ασφάλειας προσαρμοσμένα στις προσωπικές ανάγκες — γιατί η ασφάλεια δεν διαπραγματεύεται.'),
         ]
-        vis_eye, vis_h = 'Το Όραμά μας', 'Να μεγαλώνετε σημαίνει <em>να συνδέεστε βαθύτερα.</em>'
+        vis_eye, vis_h = 'Το Όραμά μας', 'Να μεγαλώνεις σημαίνει <em>να συνδέεσαι βαθύτερα.</em>'
         pillars = [('Σύνδεση','Σχεδιάζουμε χώρους όπου οι τυχαίες συναντήσεις γίνονται φιλίες, και οι φιλίες οικογένεια.'),
                    ('Αξιοπρέπεια','Κάθε κάτοικος είναι μέλος της κοινότητας — όχι ενοικιαστής, όχι ασθενής. Εδώ έχετε λόγο.'),
                    ('Βιωσιμότητα','Οι άνθρωποι σε κάθε σπίτι ταιριάζουν μεταξύ τους. Αυτό είναι που κάνει μια κοινότητα να δουλεύει.')]
@@ -275,7 +275,7 @@ def body_home(lang):
             'Independent co-living for people over 60 — your own private space, inside a small, close-knit community of people who truly fit together.',
             '<a href="membership.html" class="btn btn-primary">Become a Member</a> <a href="cohousing.html" class="btn btn-ghost">See the model</a>',
             'Hero photo', 'real photo of the community / space', img='images/κοινόχρηστος κτηρίου 2.jpg', lang=lang)
-        stats = [('20','Residents per community'),('21<span style="font-size:0.5em"> m²</span>','Private space per person'),
+        stats = [('10','Residents per community'),('55<span style="font-size:0.5em"> m²</span>','Total space per person'),
                  ('50+','Years of cohousing worldwide'),('100%','All-inclusive monthly fee')]
         mission_eye, mission_h = 'Our Mission', 'Loneliness is not <em>inevitable.</em>'
         mission_p = ('<p>The shortage of quality homes in beautiful locations, the difficulty of accessing healthcare, and the loneliness of city life gave us the drive to act.</p>'
@@ -287,12 +287,12 @@ def body_home(lang):
           (IC_SOFA,'Shared Spaces','Lounge, library, garden and a barbecue area — where friendships are born.'),
           (IC_STETH,'Monthly Doctor Visit','The doctor comes to you. Regular check-ups, prescriptions and preventive care.'),
           (IC_WIFI,'High-Speed Connectivity','Fibre throughout — so you stay close to the people you love.'),
-          (IC_SHIELD,'24/7 Safety Support','An emergency system with a personal SOS button — because safety is non-negotiable.'),
+          (IC_SHIELD,'Ongoing Safety Support','Protection and safety systems adapted to personal needs — because safety is non-negotiable.'),
         ]
         vis_eye, vis_h = 'Our Vision', 'Growing older means <em>connecting more deeply.</em>'
         pillars = [('Connection','We design spaces where chance encounters become friendships, and friendships become family.'),
                    ('Dignity','Every resident is a member of the community — not a tenant, not a patient. Here, you have a voice.'),
-                   ('Matching','The people in each home genuinely fit together. That is what makes a community work.')]
+                   ('Sustainability','The people in each home genuinely fit together. That is what makes a community work.')]
         cta = ('Want to learn more?','Leave your details and we will get in touch to walk you through the model, the cost and the available places.',
                '<a href="contact.html" class="btn btn-primary">Get in touch</a> <a href="membership.html" class="btn btn-ghost">See how to join</a>')
         mvis = ('Photo','a moment of community / company')
@@ -333,7 +333,7 @@ def body_cohousing(lang):
             [ '21 τ.μ. ιδιωτικός χώρος ανά άτομο','Δικό σας μπάνιο, γραφείο και ντουλάπες',
               'Κοινό σαλονάκι & κουζίνα με ένα ακόμη άτομο ή φίλο σας',
               'Για ζευγάρια: <strong>27 τ.μ.</strong> με διπλό κρεβάτι — ολόκληρο το διαμέρισμα (~50 τ.μ.) δικό τους'],
-            'Ενδεικτική απεικόνιση','ιδιωτικός χώρος / υπνοδωμάτιο','images/δωμάτιο 2.jpg')
+            'Ενδεικτική απεικόνιση','ιδιωτικό μπάνιο με προσβασιμότητα','images/μπάνιο 2.jpg','')
         shared = ('Κοινόχρηστοι χώροι','Η καρδιά της <em>κοινότητας.</em>',
             '<p>Στον κάτω όροφο βρίσκεται η καρδιά του σπιτιού: χώροι για να συναντιέστε, να χαλαρώνετε και να περνάτε όμορφα, όποτε το θελήσετε.</p>',
             ['Σαλόνι & βιβλιοθήκη','Εξωτερικός χώρος για μπάρμπεκιου & μαζώξεις','Κήπος','Ιδιωτικός χώρος στάθμευσης','Αίθουσα άθλησης / εκγύμνασης'],
@@ -353,7 +353,7 @@ def body_cohousing(lang):
             [ '21 m² of private space per person','Your own bathroom, study and wardrobes',
               'A shared lounge & kitchen with one other person or a friend',
               'For couples: <strong>27 m²</strong> with a double bed — the whole apartment (~50 m²) is theirs'],
-            'Indicative render','private space / bedroom','images/δωμάτιο 2.jpg')
+            'Indicative render','private accessible bathroom','images/μπάνιο 2.jpg','')
         shared = ('Shared spaces','The heart of the <em>community.</em>',
             '<p>Downstairs is the heart of the home: spaces to meet, relax and enjoy yourself, whenever you feel like it.</p>',
             ['Lounge & library','Outdoor area for barbecues & gatherings','Garden','Private parking','Gym / exercise room'],
@@ -365,7 +365,8 @@ def body_cohousing(lang):
                '<a href="membership.html" class="btn btn-primary">See how to join</a> <a href="history.html" class="btn btn-ghost">History of Cohousing</a>')
 
     def block(data, warm=False, reverse=False):
-        eye, h, prose, ticks, vl, vs, im = data
+        eye, h, prose, ticks, vl, vs, im = data[:7]
+        imcls = data[7] if len(data) > 7 else "tall"
         ticks_html = "".join('            ' + tick(x) + '\n' for x in ticks)
         sec = 'section warm' if warm else 'section'
         rev = ' reverse' if reverse else ''
@@ -374,7 +375,7 @@ def body_cohousing(lang):
             '          <h2 class="h-lg">' + h + '</h2>\n'
             '          <div class="prose" style="margin-top:1.3rem;">' + prose + '</div>\n'
             '          <ul class="ticks">\n' + ticks_html + '          </ul>\n        </div>\n'
-            '        <div class="split-visual reveal">' + (imgtag(im, vl, lang, "tall") if im else ph(vl, vs, "tall")) + '</div>\n'
+            '        <div class="split-visual reveal">' + (imgtag(im, vl, lang, imcls) if im else ph(vl, vs, "tall")) + '</div>\n'
             '      </div>\n    </div>\n  </section>\n\n')
 
     gal_imgs = ['images/κοινόχρηστος δωματίων 1.jpg','images/μπάνιο 1.jpg','images/κήπος 1.jpg','images/κοινόχρηστος κτηρίου 1.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/εξωτερική κτιρίου.jpg']
@@ -398,11 +399,11 @@ def body_technology(lang):
         items = [
          ('Έξυπνο Σπίτι','Αυτοματισμοί φωτισμού, θέρμανσης και ασφάλειας που κάνουν την καθημερινότητα απλή, άνετη και ασφαλή.'),
          ('Βιωσιμότητα','Ενεργειακή αναβάθμιση, ηλιακή ενέργεια και αντλίες θερμότητας — χαμηλότερο κόστος και μικρότερο αποτύπωμα.'),
-         ('Ταίριασμα Ανθρώπων','Ειδικό λογισμικό (υπό ανάπτυξη) που βοηθά να συνυπάρχουν άνθρωποι που ταιριάζουν — η καρδιά του μοντέλου μας.'),
+         ('Αντιστοίχιση με την Κοινότητα','Ειδικό λογισμικό (υπό ανάπτυξη) που σας προτείνει και σας εντάσσει στην κοινότητα που σας ταιριάζει, με βάση τα ενδιαφέροντα, τις αξίες και το υπόβαθρό σας — η καρδιά του μοντέλου μας.'),
          ('Αναφορά & Ενημέρωση','Πλατφόρμα κεντρικής ενημέρωσης και αναφοράς παραπόνων — που μπορεί να αξιοποιηθεί και από άλλους παρόχους, συνδρομητές και πολυκατοικίες.'),
          ('Αλγόριθμος Περιοχής','Επιλογή της καταλληλότερης περιοχής με βάση τις ανάγκες των ανθρώπων που έχουν εκδηλώσει ενδιαφέρον.'),
         ]
-        note = '<p><strong>Σημείωση:</strong> μέρος του λογισμικού βρίσκεται υπό ανάπτυξη. [ΣΥΜΠΛΗΡΩΝΕΤΑΙ: πόσες λεπτομέρειες θέλουμε να αποκαλύψουμε δημόσια.]</p>'
+        note = '<p><strong>Σημείωση:</strong> μέρος του λογισμικού βρίσκεται ακόμη υπό ανάπτυξη και θα ανακοινωθεί σύντομα.</p>'
         cta = ('Θέλετε να μάθετε περισσότερα;','Επικοινωνήστε μαζί μας και θα σας εξηγήσουμε πώς η τεχνολογία κάνει τη διαφορά.',
                '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a> <a href="cohousing.html" class="btn btn-ghost">Το μοντέλο μας</a>')
     else:
@@ -414,11 +415,11 @@ def body_technology(lang):
         items = [
          ('Smart Home','Lighting, heating and safety automation that makes everyday life simple, comfortable and secure.'),
          ('Sustainability','Energy upgrades, solar power and heat pumps — lower costs and a smaller footprint.'),
-         ('People Matching','Dedicated software (in development) that helps compatible people live well together — the heart of our model.'),
+         ('Community Matching','Dedicated software (in development) that recommends and places you in the community that fits you best, based on your interests, values and background — the heart of our model.'),
          ('Reporting & Info','A central information and complaint-reporting platform — one that other providers, subscribers and apartment buildings could use too.'),
          ('Location Algorithm','Choosing the most suitable area based on the needs of the people who have expressed interest.'),
         ]
-        note = '<p><strong>Note:</strong> part of the software is in development. [TO BE COMPLETED: how much detail we want to reveal publicly.]</p>'
+        note = '<p><strong>Note:</strong> part of the software is still in development and will be announced soon.</p>'
         cta = ('Want to know more?','Get in touch and we will explain how technology makes the difference.',
                '<a href="contact.html" class="btn btn-primary">Contact</a> <a href="cohousing.html" class="btn btn-ghost">Our model</a>')
     cards = "".join(card(CHK, t, d) for t, d in items)
@@ -430,7 +431,7 @@ def body_technology(lang):
 def body_membership(lang):
     EL = lang == 'el'
     if EL:
-        H = hero('Συμμετοχή','Γίνε<br><em>Μέλος.</em>',
+        H = hero('Συμμετοχή','Γίνετε <em>Μέλος.</em>',
             'Από την πρώτη γνωριμία μέχρι τη μετακόμιση — ένα όμορφο ταξίδι αλληλεπίδρασης.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a> <a href="cohousing.html" class="btn btn-ghost">Γνωρίστε το μοντέλο</a>',
             'Φωτογραφία','στιγμή καλωσορίσματος', img='images/κοινόχρηστος κτηρίου 3.jpg', lang=lang)
@@ -445,7 +446,7 @@ def body_membership(lang):
         ]
         prop = ('Αξιοποίηση Περιουσίας','Το παλιό σας σπίτι <em>δουλεύει για εσάς.</em>',
             '<p>Δεν χρειάζεται να πουλήσετε. Αν το επιθυμείτε, αναλαμβάνουμε την <strong>ανακαίνιση και την ενοικίαση</strong> του προηγούμενου σπιτιού σας, ώστε να σας αποφέρει ένα σημαντικό μηνιαίο εισόδημα.</p>',
-            '[ΣΥΜΠΛΗΡΩΝΕΤΑΙ: οι ακριβείς όροι της αξιοποίησης — ποιος αναλαμβάνει τι, ποσοστά, διάρκεια.]',
+            'Οι όροι της αξιοποίησης εξαρτώνται από πολλούς παράγοντες και διαμορφώνονται από κοινού, κατόπιν μελέτης και προσωπικής επικοινωνίας μαζί σας.',
             'Φωτογραφία','ανακαινισμένο διαμέρισμα')
         cta = ('Έτοιμοι να ξεκινήσετε;','Αφήστε τα στοιχεία σας και κάνουμε το πρώτο βήμα μαζί.',
                '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a> <a href="cohousing.html" class="btn btn-ghost">Γνωρίστε το μοντέλο</a>')
@@ -465,7 +466,7 @@ def body_membership(lang):
         ]
         prop = ('Making Your Property Work','Your old home <em>working for you.</em>',
             '<p>You do not need to sell. If you wish, we take on the <strong>renovation and the renting</strong> of your previous home, so that it earns you a meaningful monthly income.</p>',
-            '[TO BE COMPLETED: the exact terms — who handles what, percentages, duration.]',
+            'The terms of this arrangement depend on a number of factors and are shaped together with you, after a study and a personal conversation.',
             'Photo','a renovated apartment')
         cta = ('Ready to begin?','Leave your details and we take the first step together.',
                '<a href="contact.html" class="btn btn-primary">Contact</a> <a href="cohousing.html" class="btn btn-ghost">See the model</a>')
@@ -481,7 +482,7 @@ def body_membership(lang):
      '          <h2 class="h-lg">' + ph_h + '</h2>\n'
      '          <div class="prose" style="margin-top:1.3rem;">' + pp + '</div>\n'
      '          <div class="callout reveal"><p>' + pc + '</p></div>\n        </div>\n'
-     '        <div class="split-visual reveal">' + ph(pvl, pvs, "tall") + '</div>\n'
+     '        <div class="split-visual reveal">' + imgtag('images/ανακαίνιση 1.jpg', pvs, lang) + '</div>\n'
      '      </div>\n    </div>\n  </section>\n\n' + cta_band(*cta))
 
 def body_municipalities(lang):
@@ -494,7 +495,7 @@ def body_municipalities(lang):
         split = ('Η συνεργασία','Μια συμφωνία <em>που ωφελεί όλους.</em>',
             '<p>Πολλοί δήμοι διαθέτουν ακίνητα που παραμένουν αναξιοποίητα, ενώ αρκετοί ηλικιωμένοι συμπολίτες μας αντιμετωπίζουν δυσκολίες στην εξεύρεση προσιτής στέγασης ή και μένουν σε ακίνητα με κακές συνθήκες. Μετατρέπουμε αυτή την πρόκληση σε μια ευκαιρία κοινωνικής προσφοράς, αξιοποιώντας δημοτικά ακίνητα για τη δημιουργία σύγχρονων, αξιοπρεπών και φιλόξενων χώρων κατοίκησης, με ουσιαστικό όφελος τόσο για τους δημότες όσο και για την τοπική κοινωνία.</p>',
             ['Ο δήμος διαθέτει το ακίνητο — χωρίς κεφαλαιακή δαπάνη.','Εμείς αναλαμβάνουμε την ανακαίνιση και τη λειτουργία.',
-             'Ο δήμος παίρνει ποσοστό των θέσεων [ΣΥΜΠΛΗΡΩΝΕΤΑΙ: %] για δικούς του κατοίκους.','Το κτίριο αναβαθμίζεται και αξιοποιείται ξανά.'],
+             'Ο δήμος διατηρεί δικαίωμα προτεραιότητας στη διάθεση θέσεων κατοίκησης προς τους δημότες του.','Το κτίριο αναβαθμίζεται και αξιοποιείται ξανά.'],
             'Απεικόνιση','κοινόχρηστος χώρος')
         beye, bh = 'Οφέλη για τον δήμο', 'Κοινωνικό όφελος, <em>μηδενικό κόστος.</em>'
         benefits = [('Κατοικία για δημότες','Θέσεις για τους δημότες μεγαλύτερης ηλικίας που ενδιαφέρονται για μια ενεργή και αυτόνομη καθημερινότητα.'),
@@ -510,7 +511,7 @@ def body_municipalities(lang):
         split = ('The partnership','An agreement <em>that benefits everyone.</em>',
             '<p>Many municipalities own buildings that sit unused, while many older residents struggle to find affordable housing or live in poor conditions. We turn that challenge into an opportunity for social good — using municipal buildings to create modern, dignified and welcoming places to live, with real benefit for residents and the wider community alike.</p>',
             ['The municipality provides the building — with no capital outlay.','We take on the renovation and the operation.',
-             'The municipality receives a share of the places [TO BE COMPLETED: %] for its own residents.','The building is upgraded and put back to use.'],
+             'The municipality retains a right of priority in allocating housing places to its own residents.','The building is upgraded and put back to use.'],
             'Illustration','a shared space')
         beye, bh = 'Benefits for the municipality', 'Social benefit, <em>at zero cost.</em>'
         benefits = [('Housing for residents','Places for older residents looking for an active, independent everyday life.'),
@@ -547,7 +548,7 @@ def body_expats(lang):
         rlead = 'Αναλαμβάνουμε όλη τη διαδικασία και τη γραφειοκρατία, ώστε εσείς να ασχοληθείτε μόνο με το ωραίο κομμάτι: τη νέα σας ζωή.'
         steps = [
           ('Πρώτη Γνωριμία','Μια βιντεοκλήση για να καταλάβουμε τι ονειρεύεστε, τις ανάγκες σας και το χρονοδιάγραμμά σας.'),
-          ('Άδεια Διαμονής & Χαρτιά','Σας καθοδηγούμε και σας υποστηρίζουμε σε όλα τα απαραίτητα έγγραφα για να ζήσετε νόμιμα στην Ελλάδα. [ΣΥΜΠΛΗΡΩΝΕΤΑΙ: τι ακριβώς αναλαμβάνουμε.]'),
+          ('Άδεια Διαμονής & Χαρτιά','Σας καθοδηγούμε σε όλα τα απαραίτητα έγγραφα για να ζήσετε νόμιμα στην Ελλάδα:<br>• Έκδοση βίζας ή άδειας παραμονής (αν χρειάζεται)<br>• Καθοδήγηση για τα αποδεικτικά οικονομικών πόρων<br>• Συντονισμό για την ασφαλιστική κάλυψη και το έντυπο Ε1 (S1)<br>• Συντονισμό του ραντεβού και της εγγραφής στην αρμόδια αστυνομική υπηρεσία<br>• Υποστήριξη σε φορολογικά και πρακτικά ζητήματα'),
           ('ΑΦΜ, Τράπεζα & Ασφάλιση','Φορολογικό μητρώο, άνοιγμα τραπεζικού λογαριασμού και πρόσβαση σε υγειονομική κάλυψη — τα τακτοποιούμε μαζί.'),
           ('Μετακόμιση & Μεταφορά','Οργάνωση της μεταφοράς των πραγμάτων σας και όλα τα πρακτικά της εγκατάστασης.'),
           ('Εγκατάσταση & Γνωριμία','Το δωμάτιό σας είναι έτοιμο. Σας συστήνουμε στην κοινότητα και σας βοηθάμε να γνωρίσετε τη γειτονιά σας.'),
@@ -571,7 +572,7 @@ def body_expats(lang):
         rlead = 'We take on the entire process and the paperwork, so that you only have to deal with the good part: your new life.'
         steps = [
           ('First Conversation','A video call to understand what you are dreaming of, your needs and your timeline.'),
-          ('Residence Permit & Paperwork','We guide and support you through all the documents you need to live in Greece legally. [TO BE COMPLETED: exactly what we handle.]'),
+          ('Residence Permit & Paperwork','We guide you through all the documents you need to live in Greece legally:<br>• Issuing a visa or residence permit (if required)<br>• Guidance on proof of financial means<br>• Coordinating healthcare cover and the E1 / S1 form<br>• Arranging the appointment and registration with the relevant police authority<br>• Support with tax and practical matters'),
           ('Tax ID, Bank & Insurance','Tax registration, opening a bank account and access to healthcare cover — we sort them out together.'),
           ('Moving & Shipping','Organising the shipping of your belongings and all the practicalities of settling in.'),
           ('Settling In & Introductions','Your room is ready. We introduce you to the community and help you get to know your neighbourhood.'),
@@ -607,36 +608,36 @@ def body_about(lang):
     EL = lang == 'el'
     if EL:
         H = hero('Η Ομάδα μας','Ποιοι<br><em>Είμαστε.</em>',
-            'Δύο φίλοι με μια κοινή πεποίθηση: ότι τα χρόνια μετά τα 60 μπορούν να είναι τα πιο ουσιαστικά.',
+            'Δύο φίλοι με μια κοινή πεποίθηση: ότι τα χρόνια μετά τα 60 πρέπει να είναι πιο ουσιαστικά.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a>',
             'Φωτογραφία','η ομάδα / οι ιδρυτές')
         se, sh = 'Πώς ξεκινήσαμε', 'Από μια απλή <em>διαπίστωση.</em>'
-        sp = '<p>[ΣΥΜΠΛΗΡΩΝΕΤΑΙ: η ιστορία της ΕΣΤΙΑ — πώς ξεκίνησε η ιδέα, τι σας έδωσε το έναυσμα, ποιος άνθρωπος ή στιγμή έκανε τη διαφορά.]</p>'
+        sp = '<p>Ζούμε περισσότερο — και οφείλουμε να ζούμε καλύτερα. Τα χρόνια της μέσης ηλικίας έχουν πάρει παράταση, με τους ανθρώπους να είναι πιο δραστήριοι, γεμάτοι σχέδια, αρνούμενοι να πατήσουν φρένο στην κοινωνική και προσωπική τους ζωή. Αυτή η νέα εποχή ζητά και νέες επιλογές στον τρόπο κατοίκησης.</p>'
         svl, svs = 'Φωτογραφία','η αρχή της ιδέας'
         vye, vh = 'Οι αξίες μας', 'Αυτά που <em>δεν διαπραγματευόμαστε.</em>'
         values = [('Σύνδεση','Πιστεύουμε ότι η μοναξιά είναι η μεγαλύτερη απειλή — και η σύνδεση το αντίδοτό της.'),
                   ('Αυτονομία','Σχεδιάζουμε για να κάνει ο κάθε άνθρωπος τα πράγματα μόνος του. Η αξιοπρέπεια πηγάζει από την ανεξαρτησία.'),
                   ('Αξιοπρέπεια','Κάθε κάτοικος είναι μέλος μιας κοινότητας — όχι ασθενής, όχι νούμερο.')]
-        vnote = '[ΣΥΜΠΛΗΡΩΝΕΤΑΙ: η τελική διατύπωση των αξιών — αν θέλετε διαφορετικές ή περισσότερες.]'
+        vnote = 'Να μεγαλώνεις σημαίνει <em>να συνδέεσαι βαθύτερα.</em>'
         tye, th = 'Η ομάδα μας', 'Οι άνθρωποι <em>πίσω από την ΕΣΤΙΑ.</em>'
-        team = [('[Όνομα]','Συν-ιδρυτής','[Σύντομο βιογραφικό.]'),('[Όνομα]','Συν-ιδρυτής','[Σύντομο βιογραφικό.]'),('[Όνομα]','[Ρόλος]','[Σύντομο βιογραφικό.]')]
+        team = [('Χρήστος Χρόνης','Συνιδρυτής','Ο Χρήστος Χρόνης είναι συνιδρυτής της ΕΣΤΙΑ. Με καταγωγή από το Ναύπλιο, σπούδασε Φυσικοθεραπεία στο Πανεπιστήμιο Δυτικής Αττικής, με κλινικό ενδιαφέρον στη μυοσκελετική και γηριατρική φυσικοθεραπεία. Είναι μέλος του επιστημονικού τμήματος Φυσικοθεραπείας στην Ψυχική Υγεία του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών. Το όραμά του συνοψίζεται σε μια φράση του Ν. Καζαντζάκη από την «Αναφορά στον Γκρέκο»: «Φτάσε όπου δεν μπορείς!»'),('[Όνομα]','Συνιδρυτής','[Σύντομο βιογραφικό — προς συμπλήρωση.]')]
         cta = ('Ελάτε στην ομάδα μας','Χτίζουμε κάτι καινούργιο για την Ελλάδα. Αν μοιράζεστε το όραμά μας, θα χαρούμε να σας γνωρίσουμε.',
                '<a href="careers.html" class="btn btn-primary">Δείτε τις θέσεις μας</a>')
     else:
         H = hero('Our Team','Who<br><em>We Are.</em>',
-            'Two friends with one shared belief: that the years after 60 can be the most meaningful of all.',
+            'Two friends with one shared belief: that the years after 60 should be more meaningful.',
             '<a href="contact.html" class="btn btn-primary">Contact</a>',
             'Photo','the team / the founders')
         se, sh = 'How we started', 'From a simple <em>realisation.</em>'
-        sp = '<p>[TO BE COMPLETED: the story of ESTIA — how the idea began, what sparked it, which person or moment made the difference.]</p>'
+        sp = '<p>We live longer — and we owe it to ourselves to live better. Middle age has been extended: people are more active, full of plans, and refuse to put the brakes on their social and personal lives. This new era calls for new choices in how we live, too.</p>'
         svl, svs = 'Photo','the beginning of the idea'
         vye, vh = 'Our values', 'The things we <em>will not compromise on.</em>'
         values = [('Connection','We believe loneliness is the greatest threat — and connection is its antidote.'),
                   ('Autonomy','We design so that each person can do things for themselves. Dignity flows from independence.'),
                   ('Dignity','Every resident is a member of a community — not a patient, not a number.')]
-        vnote = '[TO BE COMPLETED: the final wording of the values — if you want different or additional ones.]'
+        vnote = 'Growing older means <em>connecting more deeply.</em>'
         tye, th = 'Our team', 'The people <em>behind ESTIA.</em>'
-        team = [('[Name]','Co-founder','[Short bio.]'),('[Name]','Co-founder','[Short bio.]'),('[Name]','[Role]','[Short bio.]')]
+        team = [('Christos Chronis','Co-founder','Christos Chronis is a co-founder of ESTIA. Originally from Nafplio, he studied Physiotherapy at the University of West Attica, with a clinical focus on musculoskeletal and geriatric physiotherapy. He is a member of the Mental-Health Physiotherapy scientific section of the Panhellenic Physiotherapists Association. His vision is captured in a line by Nikos Kazantzakis from “Report to Greco”: “Reach what you cannot!”'),('[Name]','Co-founder','[Short bio — to be added.]')]
         cta = ('Join our team','We are building something new for Greece. If you share our vision, we would love to meet you.',
                '<a href="careers.html" class="btn btn-primary">See our open roles</a>')
     vpills = "".join('        <div class="pillar reveal"><h3>' + t + '</h3><p>' + d + '</p></div>\n' for t, d in values)
@@ -673,7 +674,7 @@ def body_careers(lang):
           ('Υπεύθυνος/η Κοινότητας & Λειτουργίας','Πλήρης απασχόληση','Αθήνα',
            'Είστε το ανθρώπινο πρόσωπο της ΕΣΤΙΑ — φροντίζετε ώστε κάθε κοινότητα να λειτουργεί αρμονικά και κάθε κάτοικος να νιώθει σαν στο σπίτι του.',
            ['Υποδοχή και ένταξη (onboarding) των νέων κατοίκων.','Καθημερινή λειτουργία και συντονισμός των υπηρεσιών (καθαριότητα, γιατρός, συντήρηση).',
-            'Υποστήριξη του ταιριάσματος συγκατοίκων και της ζωής της κοινότητας.','Επίλυση ζητημάτων, διαμεσολάβηση και οργάνωση δραστηριοτήτων.'],
+            'Υποστήριξη της αντιστοίχισης συγκατοίκων και της ζωής της κοινότητας.','Επίλυση ζητημάτων, διαμεσολάβηση και οργάνωση δραστηριοτήτων.'],
            ['Εμπειρία σε community management, hospitality, φροντίδα ή διαχείριση.','Εξαιρετική επικοινωνία, ενσυναίσθηση και οργανωτικότητα.',
             'Άνεση και σεβασμός στη σχέση με ανθρώπους 60+.','Άριστα ελληνικά και καλά αγγλικά.']),
           ('Υπεύθυνος/η Ανάπτυξης & Συνεργασιών','Πλήρης απασχόληση','Αθήνα',
@@ -682,9 +683,9 @@ def body_careers(lang):
             'Lead generation, marketing και χτίσιμο του pipeline κατοίκων (συμπ. ξένων συνταξιούχων).','Διαπραγματεύσεις και διαχείριση σχέσεων.'],
            ['Εμπειρία σε business development, sales, partnerships ή real estate.','Δίκτυο επαφών και άνεση στη διαπραγμάτευση.',
             'Προσανατολισμός στο αποτέλεσμα και αυτονομία.','Άριστα ελληνικά και αγγλικά.']),
-          ('Μηχανικός Λογισμικού (Full-Stack) — Πλατφόρμα & Ταίριασμα','Πλήρης απασχόληση','Αθήνα / Remote',
-           'Χτίζετε την τεχνολογική καρδιά της ΕΣΤΙΑ: το λογισμικό ταιριάσματος, την πλατφόρμα ενημέρωσης και αναφοράς, και τον αλγόριθμο επιλογής περιοχής.',
-           ['Σχεδιασμός και ανάπτυξη του λογισμικού ταιριάσματος ανθρώπων.','Πλατφόρμα κεντρικής ενημέρωσης και αναφοράς παραπόνων.',
+          ('Μηχανικός Λογισμικού (Full-Stack) — Πλατφόρμα & Αντιστοίχιση','Πλήρης απασχόληση','Αθήνα / Remote',
+           'Χτίζετε την τεχνολογική καρδιά της ΕΣΤΙΑ: το λογισμικό αντιστοίχισης ανθρώπων & κοινότητας, την πλατφόρμα ενημέρωσης και αναφοράς, και τον αλγόριθμο επιλογής περιοχής.',
+           ['Σχεδιασμός και ανάπτυξη του λογισμικού αντιστοίχισης ανθρώπων & κοινότητας.','Πλατφόρμα κεντρικής ενημέρωσης και αναφοράς παραπόνων.',
             'Αλγόριθμος επιλογής περιοχής με βάση τις ανάγκες των ενδιαφερομένων.','Ανάπτυξη end-to-end (frontend + backend), με σεβασμό στα δεδομένα και την ιδιωτικότητα.'],
            ['Σταθερή εμπειρία full-stack (π.χ. JavaScript/TypeScript, Python, SQL).','Καθαρός κώδικας και προϊοντική σκέψη.',
             'Όρεξη για 0→1 ανάπτυξη σε περιβάλλον startup.','Ελληνικά ή/και αγγλικά.']),
@@ -1024,8 +1025,8 @@ PAGES = [
   {'el':('Το μοντέλο μας — ΕΣΤΙΑ · Συστέγαση / Co-Housing','Πώς λειτουργεί το μοντέλο της ΕΣΤΙΑ: ιδιωτικός χώρος 21 τ.μ. ανά άτομο με δικό σας μπάνιο και γραφείο, κοινόχρηστοι χώροι, κήπος και περισσότερα.'),
    'en':('Our Model — ESTIA · Co-Housing','How the ESTIA model works: 21 m² of private space per person with your own bathroom and study, shared areas, a garden and more.')}),
  ('technology.html','cohousing','technology', body_technology,
-  {'el':('Τεχνολογία — ΕΣΤΙΑ','Η τεχνολογία της ΕΣΤΙΑ: έξυπνο σπίτι, βιωσιμότητα, λογισμικό ταιριάσματος ανθρώπων και αναφοράς.'),
-   'en':('Technology — ESTIA','The technology of ESTIA: smart home, sustainability, people-matching software and a reporting platform.')}),
+  {'el':('Τεχνολογία — ΕΣΤΙΑ','Η τεχνολογία της ΕΣΤΙΑ: έξυπνο σπίτι, βιωσιμότητα, αντιστοίχιση ανθρώπων με την κοινότητα και πλατφόρμα αναφοράς.'),
+   'en':('Technology — ESTIA','The technology of ESTIA: smart home, sustainability, matching people to the right community, and a reporting platform.')}),
  ('membership.html','membership','', body_membership,
   {'el':('Γίνετε Μέλος — ΕΣΤΙΑ','Τα βήματα για να γίνετε μέλος της κοινότητας ΕΣΤΙΑ, και η δυνατότητα αξιοποίησης του προηγούμενου σπιτιού σας.'),
    'en':('Become a Member — ESTIA','The steps to join the ESTIA community, and the option to make your previous home work for you.')}),

@@ -326,7 +326,7 @@ a { color: inherit; }
 .step p { font-size: 0.95rem; color: var(--muted); line-height: 1.65; }
 
 /* ── Team ── */
-.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+.team { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 260px)); justify-content: center; gap: 2.5rem; margin-top: 3rem; }
 .member { text-align: center; }
 .member .img-ph { aspect-ratio: 1/1; border-radius: 50%; margin: 0 auto 1.2rem; max-width: 190px; }
 .member h3 { font-size: 1.4rem; color: var(--deep); }
