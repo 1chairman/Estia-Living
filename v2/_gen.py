@@ -610,7 +610,7 @@ def body_about(lang):
         H = hero('Η Ομάδα μας','Ποιοι<br><em>Είμαστε.</em>',
             'Δύο φίλοι με μια κοινή πεποίθηση: ότι τα χρόνια μετά τα 60 πρέπει να είναι πιο ουσιαστικά.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a>',
-            'Φωτογραφία','η ομάδα / οι ιδρυτές')
+            'Ναύπλιο','η έδρα της ομάδας','', 'images/ναύπλιο.jpg', lang)
         se, sh = 'Πώς ξεκινήσαμε', 'Από μια απλή <em>διαπίστωση.</em>'
         sp = '<p>Ζούμε περισσότερο — και οφείλουμε να ζούμε καλύτερα. Τα χρόνια της μέσης ηλικίας έχουν πάρει παράταση, με τους ανθρώπους να είναι πιο δραστήριοι, γεμάτοι σχέδια, αρνούμενοι να πατήσουν φρένο στην κοινωνική και προσωπική τους ζωή. Αυτή η νέα εποχή ζητά και νέες επιλογές στον τρόπο κατοίκησης.</p>'
         svl, svs = 'Φωτογραφία','η αρχή της ιδέας'
@@ -620,14 +620,14 @@ def body_about(lang):
                   ('Αξιοπρέπεια','Κάθε κάτοικος είναι μέλος μιας κοινότητας — όχι ασθενής, όχι νούμερο.')]
         vnote = 'Να μεγαλώνεις σημαίνει <em>να συνδέεσαι βαθύτερα.</em>'
         tye, th = 'Η ομάδα μας', 'Οι άνθρωποι <em>πίσω από την ΕΣΤΙΑ.</em>'
-        team = [('Χρήστος Χρόνης','Συνιδρυτής','Ο Χρήστος Χρόνης είναι συνιδρυτής της ΕΣΤΙΑ. Με καταγωγή από το Ναύπλιο, σπούδασε Φυσικοθεραπεία στο Πανεπιστήμιο Δυτικής Αττικής, με κλινικό ενδιαφέρον στη μυοσκελετική και γηριατρική φυσικοθεραπεία. Είναι μέλος του επιστημονικού τμήματος Φυσικοθεραπείας στην Ψυχική Υγεία του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών. Το όραμά του συνοψίζεται σε μια φράση του Ν. Καζαντζάκη από την «Αναφορά στον Γκρέκο»: «Φτάσε όπου δεν μπορείς!»','images/χρήστος χρόνης.jpg'),('[Όνομα]','Συνιδρυτής','[Σύντομο βιογραφικό — προς συμπλήρωση.]',None)]
+        team = [('Χρήστος Χρόνης','Συνιδρυτής','Ο Χρήστος Χρόνης είναι συνιδρυτής της ΕΣΤΙΑ. Με καταγωγή από το Ναύπλιο, σπούδασε Φυσικοθεραπεία στο Πανεπιστήμιο Δυτικής Αττικής, με κλινικό ενδιαφέρον στη μυοσκελετική και γηριατρική φυσικοθεραπεία. Είναι μέλος του επιστημονικού τμήματος Φυσικοθεραπείας στην Ψυχική Υγεία του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών. Το όραμά του συνοψίζεται σε μια φράση του Ν. Καζαντζάκη από την «Αναφορά στον Γκρέκο»: «Φτάσε όπου δεν μπορείς!»','images/χρήστος χρόνης.jpg'),('Φώτης Ξηνταρόπουλος','Συνιδρυτής','Ο Φώτης Ξηνταρόπουλος, με καταγωγή από το Ναύπλιο και το Άργος, είναι διπλωματούχος Ηλεκτρολόγος Μηχανικός και Μηχανικός Υπολογιστών του Εθνικού Μετσοβίου Πολυτεχνείου μετά από ένα χρόνο εκπαίδευσης στη Στρατιωτική Σχολή Αξιωματικών Σωμάτων στο Ιατρικό τμήμα. Έχει παρακολουθήσει μεταπτυχιακά προγράμματα στη διοίκηση επιχειρήσεων, στην εκπαίδευση και στα οικονομικά. Εργάστηκε για 4 χρόνια ως καθηγητής Τεχνολογίας στο Institut Le Rosey στην Ελβετία πριν επιστρέψει στην Ελλάδα. Επιθυμία του η δημιουργία αυτόνομων και βιώσιμων κοινοτήτων στην Ελλάδα και την Ευρώπη.<br><br><em>«Πᾶσά τε ἐπιστήμη χωριζομένη δικαιοσύνης καὶ τῆς ἄλλης ἀρετῆς πανουργία, οὐ σοφία φαίνεται»<br>— Μενέξενος, Πλάτωνας, 247α</em>','images/φώτης ξηνταρόπουλος.jpg')]
         cta = ('Ελάτε στην ομάδα μας','Χτίζουμε κάτι καινούργιο για την Ελλάδα. Αν μοιράζεστε το όραμά μας, θα χαρούμε να σας γνωρίσουμε.',
                '<a href="careers.html" class="btn btn-primary">Δείτε τις θέσεις μας</a>')
     else:
         H = hero('Our Team','Who<br><em>We Are.</em>',
             'Two friends with one shared belief: that the years after 60 should be more meaningful.',
             '<a href="contact.html" class="btn btn-primary">Contact</a>',
-            'Photo','the team / the founders')
+            'Nafplio','where the team is rooted','', 'images/ναύπλιο.jpg', lang)
         se, sh = 'How we started', 'From a simple <em>realisation.</em>'
         sp = '<p>We live longer — and we owe it to ourselves to live better. Middle age has been extended: people are more active, full of plans, and refuse to put the brakes on their social and personal lives. This new era calls for new choices in how we live, too.</p>'
         svl, svs = 'Photo','the beginning of the idea'
@@ -637,7 +637,7 @@ def body_about(lang):
                   ('Dignity','Every resident is a member of a community — not a patient, not a number.')]
         vnote = 'Growing older means <em>connecting more deeply.</em>'
         tye, th = 'Our team', 'The people <em>behind ESTIA.</em>'
-        team = [('Christos Chronis','Co-founder','Christos Chronis is a co-founder of ESTIA. Originally from Nafplio, he studied Physiotherapy at the University of West Attica, with a clinical focus on musculoskeletal and geriatric physiotherapy. He is a member of the Mental-Health Physiotherapy scientific section of the Panhellenic Physiotherapists Association. His vision is captured in a line by Nikos Kazantzakis from “Report to Greco”: “Reach what you cannot!”','images/χρήστος χρόνης.jpg'),('[Name]','Co-founder','[Short bio — to be added.]',None)]
+        team = [('Christos Chronis','Co-founder','Christos Chronis is a co-founder of ESTIA. Originally from Nafplio, he studied Physiotherapy at the University of West Attica, with a clinical focus on musculoskeletal and geriatric physiotherapy. He is a member of the Mental-Health Physiotherapy scientific section of the Panhellenic Physiotherapists Association. His vision is captured in a line by Nikos Kazantzakis from “Report to Greco”: “Reach what you cannot!”','images/χρήστος χρόνης.jpg'),('Fotios Xintaropoulos','Co-founder','Fotios Xintaropoulos, with roots in Nafplio and Argos, is a graduate Electrical & Computer Engineer of the National Technical University of Athens, after a year of training at the Military Academy of the Medical Corps. He has completed postgraduate programmes in business administration, education and economics. He worked for four years as a Technology teacher at Institut Le Rosey in Switzerland before returning to Greece. His aspiration is to create autonomous, sustainable communities in Greece and Europe.<br><br><em>“Knowledge divorced from justice and the rest of virtue appears as cunning, not wisdom.”<br>— Plato, Menexenus 247a</em>','images/φώτης ξηνταρόπουλος.jpg')]
         cta = ('Join our team','We are building something new for Greece. If you share our vision, we would love to meet you.',
                '<a href="careers.html" class="btn btn-primary">See our open roles</a>')
     vpills = "".join('        <div class="pillar reveal"><h3>' + t + '</h3><p>' + d + '</p></div>\n' for t, d in values)
