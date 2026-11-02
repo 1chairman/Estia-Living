@@ -1,75 +1,73 @@
-// ── Scroll reveal ──
-const reveals = document.querySelectorAll('.reveal');
-if (reveals.length) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
-}
-
-// ── Hamburger menu toggle ──
-// On mobile this opens/closes the navigation links.
-// On desktop the links are always visible, so this is a placeholder
-// ready for future menu items.
+// ── Mobile menu toggle ──
 const hamburger = document.getElementById('hamburger');
-const primaryNav = document.querySelector('nav');
-if (hamburger && primaryNav) {
+const navLinks = document.getElementById('navLinks');
+if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
-    const open = primaryNav.classList.toggle('nav-open');
+    const open = navLinks.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-
-  // Close the menu when a link is tapped (mobile)
-  primaryNav.querySelectorAll('.nav-link, .nav-sublink').forEach(link => {
+  navLinks.querySelectorAll('.nav-link, .nav-sublink').forEach(link => {
     link.addEventListener('click', () => {
-      primaryNav.classList.remove('nav-open');
+      navLinks.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
-// ── Formspree AJAX submit (only runs on pages with the form) ──
+// ── Scroll reveal ──
+const reveals = document.querySelectorAll('.reveal');
+if (reveals.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 70);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => io.observe(r));
+}
+
+// ── Formspree AJAX submit (only on pages with the form) ──
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+  const isEN = (document.documentElement.lang || 'el').toLowerCase().indexOf('en') === 0;
+  const T = isEN ? {
+    need: 'Please enter at least your name and phone number.',
+    sending: 'Sending…',
+    error: 'Something went wrong. Please try again or email us at estia.cohousing@gmail.com',
+    conn: 'Connection problem. Please try again.'
+  } : {
+    need: 'Παρακαλώ συμπλήρωσε τουλάχιστον το όνομα και το τηλέφωνό σου.',
+    sending: 'Αποστολή…',
+    error: 'Κάτι πήγε στραβά. Δοκίμασε ξανά ή γράψε μας στο estia.cohousing@gmail.com',
+    conn: 'Πρόβλημα σύνδεσης. Δοκίμασε ξανά.'
+  };
   contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-
+    const name = (document.getElementById('name') || {}).value?.trim();
+    const phone = (document.getElementById('phone') || {}).value?.trim();
     if (!name || !phone) {
-      alert('Παρακαλώ συμπλήρωσε τουλάχιστον το όνομα και το τηλέφωνό σου.');
+      alert(T.need);
       return;
     }
-
-    const btn = this.querySelector('.submit-btn');
-    btn.textContent = 'Αποστολή...';
+    const btn = this.querySelector('.submit-btn, button[type=submit]');
+    const original = btn.textContent;
+    btn.textContent = T.sending;
     btn.disabled = true;
-
     try {
-      const response = await fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
+      const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
         this.style.display = 'none';
-        document.getElementById('successMsg').style.display = 'block';
+        const ok = document.getElementById('successMsg');
+        if (ok) ok.style.display = 'block';
       } else {
-        btn.textContent = 'Αποστολή Στοιχείων';
-        btn.disabled = false;
-        alert('Κάτι πήγε στραβά. Παρακαλώ δοκίμασε ξανά ή επικοινώνησε μαζί μας στο estia.cohousing@gmail.com');
+        btn.textContent = original; btn.disabled = false;
+        alert(T.error);
       }
     } catch (err) {
-      btn.textContent = 'Αποστολή Στοιχείων';
-      btn.disabled = false;
-      alert('Πρόβλημα σύνδεσης. Παρακαλώ δοκίμασε ξανά.');
+      btn.textContent = original; btn.disabled = false;
+      alert(T.conn);
     }
   });
 }
