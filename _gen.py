@@ -313,7 +313,7 @@ def body_home(lang):
      '        <div class="split-text reveal">\n          <p class="eyebrow">' + mission_eye + '</p>\n'
      '          <h2 class="h-lg">' + mission_h + '</h2>\n'
      '          <div class="prose" style="margin-top:1.5rem;">' + mission_p + '</div>\n        </div>\n'
-     '        <div class="split-visual reveal">' + imgtag('images/κοινόχρηστος κτηρίου 1.jpg', mvis[0], lang) + '</div>\n'
+     '        <div class="split-visual reveal">' + imgtag('images/common-building-1.jpg', mvis[0], lang) + '</div>\n'
      '      </div>\n    </div>\n  </section>\n\n'
      '  <section class="section warm">\n    <div class="wrap">\n' + sechead(serv_eye, serv_h) +
      '      <div class="cards">\n' + serv_html + '      </div>\n    </div>\n  </section>\n\n'
@@ -378,7 +378,7 @@ def body_cohousing(lang):
             '        <div class="split-visual reveal">' + (imgtag(im, vl, lang, imcls) if im else ph(vl, vs, "tall")) + '</div>\n'
             '      </div>\n    </div>\n  </section>\n\n')
 
-    gal_imgs = ['images/υπνοδωμάτιο 1.jpg','images/μπάνιο 1.jpg','images/κήπος 1.jpg','images/κοινόχρηστος κτηρίου 1.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/εξωτερική κτιρίου.jpg']
+    gal_imgs = ['images/υπνοδωμάτιο 1.jpg','images/μπάνιο 1.jpg','images/garden-1.jpg','images/common-building-1.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/building-exterior.jpg']
     gallery = '      <div class="gallery">\n'
     for gi in gal_imgs:
         gallery += '        ' + imgtag(gi, 'ΕΣΤΙΑ', lang) + '\n'
@@ -394,7 +394,7 @@ def body_technology(lang):
         H = hero('Συστέγαση / Co-Housing','Η τεχνολογία<br><em>πίσω από την κοινότητα.</em>',
             "Μια κοινότητα δουλεύει όταν οι άνθρωποι ταιριάζουν. Γι' αυτό στην ΕΣΤΙΑ η τεχνολογία δεν είναι αυτοσκοπός — είναι το εργαλείο που φέρνει τους σωστούς ανθρώπους κοντά.",
             '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a> <a href="cohousing.html" class="btn btn-ghost">Το μοντέλο μας</a>',
-            'Απεικόνιση','έξυπνο σπίτι / πλατφόρμα')
+            'Κοινόχρηστος χώρος','το εργαστήρι','', 'images/textile-atelier.jpg', lang)
         eye, h = 'Τι χρησιμοποιούμε', 'Πέντε πυλώνες <em>τεχνολογίας.</em>'
         items = [
          ('Έξυπνο Σπίτι','Αυτοματισμοί φωτισμού, θέρμανσης και ασφάλειας που κάνουν την καθημερινότητα απλή, άνετη και ασφαλή.'),
@@ -410,7 +410,7 @@ def body_technology(lang):
         H = hero('Co-Housing','The technology<br><em>behind the community.</em>',
             'A community works when the people fit together. That is why, at ESTIA, technology is never the goal in itself — it is the tool that brings the right people together.',
             '<a href="contact.html" class="btn btn-primary">Contact</a> <a href="cohousing.html" class="btn btn-ghost">Our model</a>',
-            'Illustration','smart home / platform')
+            'Shared space','the atelier','', 'images/textile-atelier.jpg', lang)
         eye, h = 'What we use', 'Five pillars <em>of technology.</em>'
         items = [
          ('Smart Home','Lighting, heating and safety automation that makes everyday life simple, comfortable and secure.'),
@@ -528,7 +528,7 @@ def body_municipalities(lang):
      '          <h2 class="h-lg">' + sh + '</h2>\n'
      '          <div class="prose" style="margin-top:1.3rem;">' + sp + '</div>\n'
      '          <ul class="ticks">\n' + ticks_html + '          </ul>\n        </div>\n'
-     '        <div class="split-visual reveal">' + ph(svl, svs, "tall") + '</div>\n'
+     '        <div class="split-visual reveal">' + imgtag('images/culinary-hub.jpg', svs, lang) + '</div>\n'
      '      </div>\n    </div>\n  </section>\n\n'
      '  <section class="section warm">\n    <div class="wrap">\n' + sechead(beye, bh, center=True) +
      '      <div class="cards">\n' + bcards + '      </div>\n    </div>\n  </section>\n\n' + cta_band(*cta))
@@ -539,7 +539,7 @@ def body_expats(lang):
         H = hero('Για κατοίκους εξωτερικού · Μετακόμιση στην Ελλάδα','Συνταξιοδότηση στην Ελλάδα,<br><em>μια νέα αρχή, όπως σας αξίζει.</em>',
             'Ονειρεύεστε να ζήσετε τα χρόνια της σύνταξης στον ήλιο της Μεσογείου; Σας υποδεχόμαστε σε μια έτοιμη κοινότητα — και αναλαμβάνουμε όλη τη μετακόμιση, από την πρώτη απόφαση μέχρι το κλειδί του δωματίου σας.',
             '<a href="#interest" class="btn btn-primary">Εκδήλωση Ενδιαφέροντος</a> <a href="cohousing.html" class="btn btn-ghost">Γνωρίστε το μοντέλο</a>',
-            'Φωτογραφία','μεσογειακό τοπίο / κοινότητα', img='images/εξωτερική κτιρίου.jpg', lang=lang)
+            'Φωτογραφία','μεσογειακό τοπίο / κοινότητα', img='images/building-exterior.jpg', lang=lang)
         wye, wh = 'Γιατί η Ελλάδα', 'Ένας τόπος <em>με πολλές προοπτικές.</em>'
         why = [(IC_GLOBE,'Μεσογειακή ζωή','Ήλιος, φύση και φαγητό που όλοι ονειρεύονται.'),
                (IC_HEART,'Χαμηλότερο κόστος','Η καθημερινότητα στην Ελλάδα κοστίζει σημαντικά λιγότερο από τις περισσότερες χώρες της Δύσης.'),
@@ -563,7 +563,7 @@ def body_expats(lang):
         H = hero('For Expats/Retirees · Relocating to Greece','Retire in Greece,<br><em>a new beginning you deserve.</em>',
             'Dreaming of spending your retirement years in the Mediterranean sun? We welcome you into a ready-made community — and we handle the whole move, from your first decision to the key to your room.',
             '<a href="#interest" class="btn btn-primary">Register Your Interest</a> <a href="cohousing.html" class="btn btn-ghost">See the model</a>',
-            'Photo','Mediterranean landscape / community', img='images/εξωτερική κτιρίου.jpg', lang=lang)
+            'Photo','Mediterranean landscape / community', img='images/building-exterior.jpg', lang=lang)
         wye, wh = 'Why Greece', 'A place <em>full of possibility.</em>'
         why = [(IC_GLOBE,'Mediterranean life','Sun, nature and food everyone dreams of.'),
                (IC_HEART,'A lower cost of living','Everyday life in Greece costs significantly less than in most Western countries.'),
@@ -599,7 +599,7 @@ def body_expats(lang):
      '        <div class="split-text reveal">\n          <p class="eyebrow">' + cye + '</p>\n'
      '          <h2 class="h-lg">' + ch + '</h2>\n'
      '          <div class="prose" style="margin-top:1.3rem;">' + cprose + '</div>\n        </div>\n'
-     '        <div class="split-visual reveal">' + imgtag('images/κήπος 1.jpg', ('Φωτογραφία' if EL else 'Photo'), lang, "tall") + '</div>\n'
+     '        <div class="split-visual reveal">' + imgtag('images/garden-1.jpg', ('Φωτογραφία' if EL else 'Photo'), lang, "tall") + '</div>\n'
      '      </div>\n    </div>\n  </section>\n\n'
      '  <section class="section cream" id="interest">\n    <div class="wrap">\n' + sechead(iye, ih, ilead) + form +
      '    </div>\n  </section>\n\n')
