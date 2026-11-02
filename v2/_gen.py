@@ -874,12 +874,12 @@ def body_contact(lang):
         eye, h = 'Επικοινωνία', 'Ας τα πούμε<br><em>από κοντά.</em>'
         info_h = 'Θα χαρούμε να σας ακούσουμε.'
         info_p = 'Αφήστε τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας για να σας εξηγήσουμε το μοντέλο, το κόστος και τις διαθέσιμες θέσεις.'
-        phone_t = '[Τηλέφωνο — συμπληρώνεται]'; loc_t = 'Αθήνα, Ελλάδα'
+        phone_t = '699 944 8412'; loc_t = 'Αθήνα, Ελλάδα'
     else:
         eye, h = 'Contact', "Let's talk<br><em>in person.</em>"
         info_h = 'We would love to hear from you.'
         info_p = 'Leave your details and we will get in touch to walk you through the model, the cost and the available places.'
-        phone_t = '[Phone — to be added]'; loc_t = 'Athens, Greece'
+        phone_t = '699 944 8412'; loc_t = 'Athens, Greece'
     return ('  <section class="section" style="padding-top:4rem;">\n    <div class="wrap">\n' +
      sechead(eye, h, size="h-xl") +
      '      <div class="contact-grid">\n'
@@ -887,7 +887,7 @@ def body_contact(lang):
      '          <h3>' + info_h + '</h3>\n'
      '          <p style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem;">' + info_p + '</p>\n'
      '          <a href="mailto:estia.cohousing@gmail.com" class="info-row">' + IC_MAIL + ' estia.cohousing@gmail.com</a>\n'
-     '          <div class="info-row">' + IC_PHONE + ' ' + phone_t + '</div>\n'
+     '          <a href="tel:+306999448412" class="info-row">' + IC_PHONE + ' ' + phone_t + '</a>\n'
      '          <div class="info-row">' + IC_PIN + ' ' + loc_t + '</div>\n'
      '        </div>\n' + contact_form(lang) +
      '      </div>\n    </div>\n  </section>\n\n')
