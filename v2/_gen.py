@@ -156,7 +156,7 @@ def nav(lang, p, active, sub):
     '      <div class="nav-side">\n'
     '        <div class="socials">\n'
     '          <a href="https://www.facebook.com/profile.php?id=61590165540577" target="_blank" rel="noopener noreferrer" class="social fb" aria-label="Facebook">' + FB + '</a>\n'
-    '          <a href="#" class="social li" aria-label="LinkedIn">' + LI + '</a>\n'
+    '          <a href="https://www.linkedin.com/company/estia-living-together" target="_blank" rel="noopener noreferrer" class="social li" aria-label="LinkedIn">' + LI + '</a>\n'
     '        </div>\n'
     + lang_switch +
     '        <span class="nav-divider"></span>\n'
@@ -201,7 +201,7 @@ def footer(lang, p):
     '          <a href="contact.html">' + U['f_form'] + '</a>\n'
     '          <div class="socials" style="margin-top:0.8rem;">\n'
     '            <a href="https://www.facebook.com/profile.php?id=61590165540577" target="_blank" rel="noopener noreferrer" class="social fb" aria-label="Facebook">' + FB + '</a>\n'
-    '            <a href="#" class="social li" aria-label="LinkedIn">' + LI + '</a>\n'
+    '            <a href="https://www.linkedin.com/company/estia-living-together" target="_blank" rel="noopener noreferrer" class="social li" aria-label="LinkedIn">' + LI + '</a>\n'
     '          </div>\n'
     '        </div>\n'
     '      </div>\n'
