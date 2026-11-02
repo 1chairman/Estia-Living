@@ -91,7 +91,7 @@ def head(lang, p, title, desc):
     '  <link rel="icon" href="' + p + 'logo.svg" type="image/svg+xml">\n'
     '  <link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">\n'
-    '  <link rel="stylesheet" href="' + p + 'styles.css?v=3">\n</head>\n\n<body>\n')
+    '  <link rel="stylesheet" href="' + p + 'styles.css?v=4">\n</head>\n\n<body>\n')
 
 # ============================================================ NAV
 def nav(lang, p, active, sub):
@@ -327,7 +327,7 @@ def body_cohousing(lang):
         H = hero('Συστέγαση / Co-Housing','Το μοντέλο<br><em>μας.</em>',
             'Ένας ιδιωτικός χώρος, με όλη την άνεση και την ιδιωτικότητα του σπιτιού σας — και κοινόχρηστοι χώροι που δημιουργούν την ενεργή κοινότητα για να μοιράζεστε την ημέρα σας.',
             '<a href="membership.html" class="btn btn-primary">Γίνετε Μέλος</a> <a href="contact.html" class="btn btn-ghost">Ρωτήστε μας</a>',
-            'Ενδεικτική απεικόνιση χώρου','render (AI) — προς αντικατάσταση', img='images/κοινόχρηστος δωματίων 2.jpg', lang=lang)
+            'Κοινόχρηστος χώρος της ΕΣΤΙΑ','', img='images/κοινόχρηστος χώρος 1.jpg', lang=lang)
         priv = ('Ο ιδιωτικός σας χώρος','Δικό σας σπίτι, <em>όχι δωμάτιο.</em>',
             '<p>Κάθε κάτοικος έχει <strong>21 τ.μ. αποκλειστικά δικά του</strong>: υπνοδωμάτιο με κρεβάτι, δικό του μπάνιο, γραφείο και ντουλάπες. Μοιράζεστε ένα άνετο σαλονάκι με καναπέ και κουζίνα με ακόμη ένα άτομο — κάποιον που ταιριάζει μαζί σας ή έναν δικό σας φίλο.</p>',
             [ '21 τ.μ. ιδιωτικός χώρος ανά άτομο','Δικό σας μπάνιο, γραφείο και ντουλάπες',
@@ -347,7 +347,7 @@ def body_cohousing(lang):
         H = hero('Co-Housing','Our<br><em>model.</em>',
             'Your own private space, with all the comfort and privacy of a home — and, right beside it, a warm community and shared areas to share your day.',
             '<a href="membership.html" class="btn btn-primary">Become a Member</a> <a href="contact.html" class="btn btn-ghost">Ask us</a>',
-            'Indicative render of a space','render (AI) — to be replaced', img='images/κοινόχρηστος δωματίων 2.jpg', lang=lang)
+            'ESTIA shared space','', img='images/κοινόχρηστος χώρος 1.jpg', lang=lang)
         priv = ('Your private space','A home of your own, <em>not a room.</em>',
             '<p>Each resident has <strong>21 m² entirely their own</strong>: a bedroom, their own bathroom, a study and wardrobes. You share a comfortable lounge with a sofa and a kitchen with one other person — someone who fits with you, or a friend of yours.</p>',
             [ '21 m² of private space per person','Your own bathroom, study and wardrobes',
@@ -378,7 +378,7 @@ def body_cohousing(lang):
             '        <div class="split-visual reveal">' + (imgtag(im, vl, lang, imcls) if im else ph(vl, vs, "tall")) + '</div>\n'
             '      </div>\n    </div>\n  </section>\n\n')
 
-    gal_imgs = ['images/κοινόχρηστος δωματίων 1.jpg','images/μπάνιο 1.jpg','images/κήπος 1.jpg','images/κοινόχρηστος κτηρίου 1.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/εξωτερική κτιρίου.jpg']
+    gal_imgs = ['images/υπνοδωμάτιο 1.jpg','images/μπάνιο 1.jpg','images/κήπος 1.jpg','images/κοινόχρηστος κτηρίου 1.jpg','images/κοινόχρηστος κτηρίου 3.jpg','images/εξωτερική κτιρίου.jpg']
     gallery = '      <div class="gallery">\n'
     for gi in gal_imgs:
         gallery += '        ' + imgtag(gi, 'ΕΣΤΙΑ', lang) + '\n'
@@ -491,7 +491,7 @@ def body_municipalities(lang):
         H = hero('Για Δήμους','Μια λύση για τους<br><em>δημότες σας.</em>',
             'Ο Δήμος διαθέτει ένα ακίνητο για την ανάπτυξη μιας κοινότητας, ενώ εμείς αναλαμβάνουμε την ανακαίνιση και την κατάλληλη διαμόρφωσή του, παρέχοντας στον δήμο συγκεκριμένες θέσεις για δημότες του.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>',
-            'Απεικόνιση','δημοτικό κτίριο / ανακαίνιση')
+            'Το κτίριο της κοινότητας','δημοτικό κτίριο','tall','images/κτίριο εξωτερικό 1.jpg',lang)
         split = ('Η συνεργασία','Μια συμφωνία <em>που ωφελεί όλους.</em>',
             '<p>Πολλοί δήμοι διαθέτουν ακίνητα που παραμένουν αναξιοποίητα, ενώ αρκετοί ηλικιωμένοι συμπολίτες μας αντιμετωπίζουν δυσκολίες στην εξεύρεση προσιτής στέγασης ή και μένουν σε ακίνητα με κακές συνθήκες. Μετατρέπουμε αυτή την πρόκληση σε μια ευκαιρία κοινωνικής προσφοράς, αξιοποιώντας δημοτικά ακίνητα για τη δημιουργία σύγχρονων, αξιοπρεπών και φιλόξενων χώρων κατοίκησης, με ουσιαστικό όφελος τόσο για τους δημότες όσο και για την τοπική κοινωνία.</p>',
             ['Ο δήμος διαθέτει το ακίνητο — χωρίς κεφαλαιακή δαπάνη.','Εμείς αναλαμβάνουμε την ανακαίνιση και τη λειτουργία.',
@@ -507,7 +507,7 @@ def body_municipalities(lang):
         H = hero('For Municipalities','A solution for your<br><em>residents.</em>',
             'The municipality provides a building for a new community, while we take on its renovation and fit-out, giving the municipality dedicated places for its own residents.',
             '<a href="contact.html" class="btn btn-primary">Get in touch</a>',
-            'Illustration','municipal building / renovation')
+            'The community building','municipal building','tall','images/κτίριο εξωτερικό 1.jpg',lang)
         split = ('The partnership','An agreement <em>that benefits everyone.</em>',
             '<p>Many municipalities own buildings that sit unused, while many older residents struggle to find affordable housing or live in poor conditions. We turn that challenge into an opportunity for social good — using municipal buildings to create modern, dignified and welcoming places to live, with real benefit for residents and the wider community alike.</p>',
             ['The municipality provides the building — with no capital outlay.','We take on the renovation and the operation.',
@@ -620,7 +620,7 @@ def body_about(lang):
                   ('Αξιοπρέπεια','Κάθε κάτοικος είναι μέλος μιας κοινότητας — όχι ασθενής, όχι νούμερο.')]
         vnote = 'Να μεγαλώνεις σημαίνει <em>να συνδέεσαι βαθύτερα.</em>'
         tye, th = 'Η ομάδα μας', 'Οι άνθρωποι <em>πίσω από την ΕΣΤΙΑ.</em>'
-        team = [('Χρήστος Χρόνης','Συνιδρυτής','Ο Χρήστος Χρόνης είναι συνιδρυτής της ΕΣΤΙΑ. Με καταγωγή από το Ναύπλιο, σπούδασε Φυσικοθεραπεία στο Πανεπιστήμιο Δυτικής Αττικής, με κλινικό ενδιαφέρον στη μυοσκελετική και γηριατρική φυσικοθεραπεία. Είναι μέλος του επιστημονικού τμήματος Φυσικοθεραπείας στην Ψυχική Υγεία του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών. Το όραμά του συνοψίζεται σε μια φράση του Ν. Καζαντζάκη από την «Αναφορά στον Γκρέκο»: «Φτάσε όπου δεν μπορείς!»'),('[Όνομα]','Συνιδρυτής','[Σύντομο βιογραφικό — προς συμπλήρωση.]')]
+        team = [('Χρήστος Χρόνης','Συνιδρυτής','Ο Χρήστος Χρόνης είναι συνιδρυτής της ΕΣΤΙΑ. Με καταγωγή από το Ναύπλιο, σπούδασε Φυσικοθεραπεία στο Πανεπιστήμιο Δυτικής Αττικής, με κλινικό ενδιαφέρον στη μυοσκελετική και γηριατρική φυσικοθεραπεία. Είναι μέλος του επιστημονικού τμήματος Φυσικοθεραπείας στην Ψυχική Υγεία του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών. Το όραμά του συνοψίζεται σε μια φράση του Ν. Καζαντζάκη από την «Αναφορά στον Γκρέκο»: «Φτάσε όπου δεν μπορείς!»','images/χρήστος χρόνης.jpg'),('[Όνομα]','Συνιδρυτής','[Σύντομο βιογραφικό — προς συμπλήρωση.]',None)]
         cta = ('Ελάτε στην ομάδα μας','Χτίζουμε κάτι καινούργιο για την Ελλάδα. Αν μοιράζεστε το όραμά μας, θα χαρούμε να σας γνωρίσουμε.',
                '<a href="careers.html" class="btn btn-primary">Δείτε τις θέσεις μας</a>')
     else:
@@ -637,19 +637,21 @@ def body_about(lang):
                   ('Dignity','Every resident is a member of a community — not a patient, not a number.')]
         vnote = 'Growing older means <em>connecting more deeply.</em>'
         tye, th = 'Our team', 'The people <em>behind ESTIA.</em>'
-        team = [('Christos Chronis','Co-founder','Christos Chronis is a co-founder of ESTIA. Originally from Nafplio, he studied Physiotherapy at the University of West Attica, with a clinical focus on musculoskeletal and geriatric physiotherapy. He is a member of the Mental-Health Physiotherapy scientific section of the Panhellenic Physiotherapists Association. His vision is captured in a line by Nikos Kazantzakis from “Report to Greco”: “Reach what you cannot!”'),('[Name]','Co-founder','[Short bio — to be added.]')]
+        team = [('Christos Chronis','Co-founder','Christos Chronis is a co-founder of ESTIA. Originally from Nafplio, he studied Physiotherapy at the University of West Attica, with a clinical focus on musculoskeletal and geriatric physiotherapy. He is a member of the Mental-Health Physiotherapy scientific section of the Panhellenic Physiotherapists Association. His vision is captured in a line by Nikos Kazantzakis from “Report to Greco”: “Reach what you cannot!”','images/χρήστος χρόνης.jpg'),('[Name]','Co-founder','[Short bio — to be added.]',None)]
         cta = ('Join our team','We are building something new for Greece. If you share our vision, we would love to meet you.',
                '<a href="careers.html" class="btn btn-primary">See our open roles</a>')
     vpills = "".join('        <div class="pillar reveal"><h3>' + t + '</h3><p>' + d + '</p></div>\n' for t, d in values)
     members = ""
-    for n, r, b in team:
-        members += '        <div class="member reveal">' + ph('Φωτογραφία' if EL else 'Photo') + '<h3>' + n + '</h3><p class="role">' + r + '</p><p>' + b + '</p></div>\n'
+    for m in team:
+        n, r, b = m[:3]; im = m[3] if len(m) > 3 else None
+        avatar = imgtag(im, n, lang, "avatar") if im else ph('Φωτογραφία' if EL else 'Photo')
+        members += '        <div class="member reveal">' + avatar + '<h3>' + n + '</h3><p class="role">' + r + '</p><p>' + b + '</p></div>\n'
     return (H +
      '  <section class="section">\n    <div class="wrap">\n      <div class="split">\n'
      '        <div class="split-text reveal"><p class="eyebrow">' + se + '</p>\n'
      '          <h2 class="h-lg">' + sh + '</h2>\n'
      '          <div class="prose" style="margin-top:1.3rem;">' + sp + '</div>\n        </div>\n'
-     '        <div class="split-visual reveal">' + ph(svl, svs, "tall") + '</div>\n'
+     '        <div class="split-visual reveal">' + imgtag('images/δωμάτιο γραφείο 1.jpg', svl, lang) + '</div>\n'
      '      </div>\n    </div>\n  </section>\n\n'
      '  <section class="section warm">\n    <div class="wrap">\n' + sechead(vye, vh) +
      '      <div class="pillars">\n' + vpills + '      </div>\n'
