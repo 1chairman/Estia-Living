@@ -610,7 +610,7 @@ def body_about(lang):
         H = hero('Η Ομάδα μας','Ποιοι<br><em>Είμαστε.</em>',
             'Δύο φίλοι με μια κοινή πεποίθηση: ότι τα χρόνια μετά τα 60 πρέπει να είναι πιο ουσιαστικά.',
             '<a href="contact.html" class="btn btn-primary">Επικοινωνία</a>',
-            'Ναύπλιο','η έδρα της ομάδας','', 'images/ναύπλιο.jpg', lang)
+            'Οι ιδρυτές','η ομάδα της ΕΣΤΙΑ','tall', 'images/ιδρυτές.jpg', lang)
         se, sh = 'Πώς ξεκινήσαμε', 'Από μια απλή <em>διαπίστωση.</em>'
         sp = '<p>Ζούμε περισσότερο — και οφείλουμε να ζούμε καλύτερα. Τα χρόνια της μέσης ηλικίας έχουν πάρει παράταση, με τους ανθρώπους να είναι πιο δραστήριοι, γεμάτοι σχέδια, αρνούμενοι να πατήσουν φρένο στην κοινωνική και προσωπική τους ζωή. Αυτή η νέα εποχή ζητά και νέες επιλογές στον τρόπο κατοίκησης.</p>'
         svl, svs = 'Φωτογραφία','η αρχή της ιδέας'
@@ -627,7 +627,7 @@ def body_about(lang):
         H = hero('Our Team','Who<br><em>We Are.</em>',
             'Two friends with one shared belief: that the years after 60 should be more meaningful.',
             '<a href="contact.html" class="btn btn-primary">Contact</a>',
-            'Nafplio','where the team is rooted','', 'images/ναύπλιο.jpg', lang)
+            'The founders','the ESTIA team','tall', 'images/ιδρυτές.jpg', lang)
         se, sh = 'How we started', 'From a simple <em>realisation.</em>'
         sp = '<p>We live longer — and we owe it to ourselves to live better. Middle age has been extended: people are more active, full of plans, and refuse to put the brakes on their social and personal lives. This new era calls for new choices in how we live, too.</p>'
         svl, svs = 'Photo','the beginning of the idea'
@@ -666,7 +666,7 @@ def body_careers(lang):
         H = hero('Καριέρα','Χτίζουμε κάτι καινούργιο.<br><em>Ελάτε μαζί μας.</em>',
             'Η ΕΣΤΙΑ φέρνει στην Ελλάδα ένα μοντέλο που αλλάζει τη ζωή ανθρώπων. Ψάχνουμε ανθρώπους που θέλουν να φτιάξουν κάτι ουσιαστικό από την αρχή — όχι απλώς μια δουλειά.',
             '<a href="#positions" class="btn btn-primary">Δείτε τις θέσεις</a> <a href="about.html" class="btn btn-ghost">Ποιοι Είμαστε</a>',
-            'Φωτογραφία','η ομάδα σε δράση')
+            'Ναύπλιο','η έδρα μας','', 'images/ναύπλιο.jpg', lang)
         wye, wh = 'Γιατί ΕΣΤΙΑ', 'Μια δουλειά <em>με νόημα.</em>'
         why = [(IC_HEART,'Πραγματικός αντίκτυπος','Η δουλειά σας βελτιώνει άμεσα την καθημερινότητα πραγματικών ανθρώπων.'),
                (IC_SEED,'Από το μηδέν','Μπαίνετε νωρίς, με λόγο στις αποφάσεις και χώρο να μεγαλώσετε μαζί με την εταιρία.'),
@@ -702,7 +702,7 @@ def body_careers(lang):
         H = hero('Careers','We are building something new.<br><em>Come build it with us.</em>',
             'ESTIA is bringing a life-changing model to Greece. We are looking for people who want to build something meaningful from the ground up — not just take a job.',
             '<a href="#positions" class="btn btn-primary">See the roles</a> <a href="about.html" class="btn btn-ghost">About Us</a>',
-            'Photo','the team at work')
+            'Nafplio','our home base','', 'images/ναύπλιο.jpg', lang)
         wye, wh = 'Why ESTIA', 'Work <em>that matters.</em>'
         why = [(IC_HEART,'Real impact','Your work directly improves the everyday lives of real people.'),
                (IC_SEED,'From the ground up','You join early, with a say in decisions and room to grow with the company.'),
@@ -900,7 +900,7 @@ def body_history(lang):
         H = hero('Συστέγαση / Co-Housing','Ιστορία του<br><em>Cohousing.</em>',
             'Μια ιδέα με περισσότερα από πενήντα χρόνια ζωής — από τη Δανία του 1972 μέχρι τις σύγχρονες κοινότητες σε όλο τον κόσμο.',
             '<a href="research.html" class="btn btn-primary">Έρευνες & Τεκμηρίωση</a> <a href="cohousing.html" class="btn btn-ghost">Το μοντέλο μας</a>',
-            'Απεικόνιση','κοινότητα cohousing')
+            'Cohousing','απεικόνιση κοινότητας','', 'images/σκίτσο 1.jpg', lang)
         s1e, s1h = 'Τι είναι', 'Ιδιωτικότητα και κοινότητα, <em>μαζί.</em>'
         s1p = ('<p>Ο όρος Συστέγαση / Cohousing περιγράφει έναν σύγχρονο τρόπο κατοίκησης που συνδυάζει την ιδιωτικότητα ενός ανεξάρτητου σπιτιού με τα οφέλη μιας μικρής, ενεργής κοινότητας. Κάθε κάτοικος διατηρεί τον προσωπικό του χώρο και την ανεξαρτησία του, ενώ παράλληλα μοιράζεται κοινόχρηστους χώρους και στιγμές της καθημερινότητας.</p>'
                '<p>Δεν πρόκειται για συγκατοίκηση, ούτε για μονάδα φροντίδας — αλλά για μια διαφορετική φιλοσοφία κατοίκησης, βασισμένη στην ελευθερία επιλογής και την αμοιβαία υποστήριξη.</p>')
@@ -925,7 +925,7 @@ def body_history(lang):
         H = hero('Co-Housing','History of<br><em>Cohousing.</em>',
             'An idea more than fifty years in the making — from 1972 Denmark to modern communities across the world.',
             '<a href="research.html" class="btn btn-primary">Research & Evidence</a> <a href="cohousing.html" class="btn btn-ghost">Our model</a>',
-            'Illustration','a cohousing community')
+            'Cohousing','a cohousing community','', 'images/σκίτσο 1.jpg', lang)
         s1e, s1h = 'What it is', 'Privacy and community, <em>together.</em>'
         s1p = ('<p>Cohousing describes a modern way of living that combines the privacy of an independent home with the benefits of a small, active community. Each resident keeps their own space and independence, while sharing common areas and everyday moments.</p>'
                '<p>It is neither a flatshare nor a care facility — but a different philosophy of living, built on freedom of choice and mutual support.</p>')
@@ -990,7 +990,7 @@ def body_research(lang):
         H = hero('Συστέγαση / Co-Housing','Έρευνες &<br><em>Τεκμηρίωση.</em>',
             'Τι δείχνουν οι διεθνείς επιστημονικές μελέτες για το Senior Cohousing — με διαφάνεια και σεβασμό στα δεδομένα.',
             '<a href="history.html" class="btn btn-primary">Ιστορία του Cohousing</a> <a href="cohousing.html" class="btn btn-ghost">Το μοντέλο μας</a>',
-            'Απεικόνιση','έρευνα / κοινότητα')
+            'Cohousing','ζωή σε κοινότητα','', 'images/σκίτσο 2.jpg', lang)
         s1e, s1h = 'Τι δείχνουν οι μελέτες', 'Ενθαρρυντικά <em>ευρήματα.</em>'
         s1p = ('<p>Οι έρευνες των τελευταίων ετών δείχνουν ότι το Senior Cohousing μπορεί να προσφέρει σημαντικά οφέλη στην ποιότητα ζωής των ανθρώπων μεγαλύτερης ηλικίας. Η συνύπαρξη ιδιωτικού χώρου με κοινόχρηστους χώρους φαίνεται να ενισχύει την κοινωνική υποστήριξη, την αίσθηση του «ανήκειν» και την ασφάλεια, ενώ μπορούν να περιορίσουν το αίσθημα μοναξιάς.</p>'
                '<p>Το σημαντικότερο: το Co-Housing δεν σημαίνει ότι οι άνθρωποι εγκαταλείπουν την ιδιωτικότητα και την ανεξαρτησία τους. Αντίθετα, βασίζεται στην ισορροπία ανάμεσα στον προσωπικό χώρο και την κοινότητα.</p>')
@@ -1002,7 +1002,7 @@ def body_research(lang):
         H = hero('Co-Housing','Research &<br><em>Evidence.</em>',
             'What the international scientific studies show about Senior Cohousing — with transparency and respect for the data.',
             '<a href="history.html" class="btn btn-primary">History of Cohousing</a> <a href="cohousing.html" class="btn btn-ghost">Our model</a>',
-            'Illustration','research / community')
+            'Cohousing','community life','', 'images/σκίτσο 2.jpg', lang)
         s1e, s1h = 'What the studies show', 'Encouraging <em>findings.</em>'
         s1p = ('<p>Research in recent years shows that Senior Cohousing can offer significant benefits to the quality of life of older people. Pairing private space with shared areas appears to strengthen social support, the sense of belonging and safety, while it may reduce feelings of loneliness.</p>'
                '<p>Most importantly: Co-Housing does not mean people give up their privacy and independence. On the contrary, it rests on the balance between personal space and community.</p>')
